@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { TypographyHeadingType, TypographyFontWeight } from "../../shared/theme/theme";
 
-export const StyledHeading = styled.h1<{
+export const StyledHeading = styled.p<{
   headingType: TypographyHeadingType;
   fontWeight: TypographyFontWeight;
 }>`

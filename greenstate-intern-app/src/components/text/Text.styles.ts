@@ -1,15 +1,14 @@
 import styled from "styled-components";
-// import { TypographySizes } from "../../shared/theme/theme";
-import { TypographyFontSizeHeading } from "../../shared/theme/theme";
+import { TypographyFontSizeBody } from "../../shared/theme/theme";
 import { TypographyFontWeight } from "../../shared/theme/theme";
-import { TypographyLineHeightHeading } from "../../shared/theme/theme";
+import { TypographyLineHeightBody } from "../../shared/theme/theme";
 
 export const StyledText = styled.p<{
-    fontSize: TypographyFontSizeHeading;
+    fontSize: TypographyFontSizeBody;
     fontWeight: TypographyFontWeight;
-    lineHeight: TypographyLineHeightHeading;
+    lineHeight: TypographyLineHeightBody;
   }>`
-    font-size: ${({theme, fontSize}) => theme.typography.fontSizeHeading[fontSize]};
+    font-size: ${({theme, fontSize}) => theme.typography.fontSizeBody[fontSize]};
     font-weight: ${({theme, fontWeight}) => theme.typography.fontWeight[fontWeight]};
-    line-height: ${({theme, lineHeight}) => theme.typography.lineHeightHeading[lineHeight]};
+    line-height: ${({theme, lineHeight}) => theme.typography.lineHeightBody[lineHeight]};
 `
