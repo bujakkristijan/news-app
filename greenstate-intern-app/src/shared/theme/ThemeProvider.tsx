@@ -1,4 +1,4 @@
-import defaultTheme from "./Theme";
+import defaultTheme from "./theme";
 import { ReactNode } from "react";
 import { ThemeProvider as Theme } from "styled-components";
 
