@@ -6,10 +6,11 @@ type TextProps = {
   fontSize:TypographyFontSizeBody;
   lineHeight: TypographyLineHeightBody;
   fontWeight: TypographyFontWeight;
+  children: React.ReactNode; 
 }
 
-export const Text = ({ fontSize, lineHeight, fontWeight }: TextProps) => {
+export const Text = ({ fontSize, lineHeight, fontWeight, children }: TextProps) => {
   return (
-    <StyledText fontSize={fontSize} lineHeight = {lineHeight} fontWeight = {fontWeight}>Text</StyledText>
+    <StyledText fontSize={fontSize} lineHeight = {lineHeight} fontWeight = {fontWeight}>{children}</StyledText>
   )
 }

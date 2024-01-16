@@ -5,12 +5,13 @@ import { StyledHeading } from "./Heading.styles";
 type HeadingProps = {
   headingType: TypographyHeadingType;
   fontWeight: TypographyFontWeight;
+  children: React.ReactNode; 
 }
 
-export const Heading = ({ headingType, fontWeight }: HeadingProps) => {
+export const Heading = ({ headingType, fontWeight, children }: HeadingProps) => {
   return (
     <StyledHeading headingType={headingType} fontWeight={fontWeight}>
-      Text
+      {children}
     </StyledHeading>
   );
 };
