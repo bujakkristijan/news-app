@@ -1,15 +1,10 @@
 export type Theme = {
     typography:{
-        font:{
-            navigation:string,
-            body:string
+        fontFamily:{
+            montserrat:string,
+            inter:string
         },
-        // fontSizeHeading:{
-        //     sm:string,
-        //     md:string,
-        //     lg:string
-        // },
-        fontSizeBody:{
+        fontSize:{
             sm:string;
             md:string;
             lg:string
@@ -19,13 +14,7 @@ export type Theme = {
             semiBold:string,
             regular:string
         },
-        
-        // lineHeightHeading:{
-        //     sm:string,
-        //     md:string,
-        //     lg:string
-        // },
-        lineHeightBody:{
+        lineHeight:{
             sm:string,
             md:string,
             lg:string

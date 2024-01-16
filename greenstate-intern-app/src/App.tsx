@@ -12,9 +12,8 @@ function App() {
     <>
     <ThemeProvider>
         <GlobalStyles/>
-        <HeaderComponent/>
-        <Text fontSize='lg' fontWeight='bold' lineHeight='lg' >Neki tekst test</Text>
-        <Heading headingType='h2' fontWeight='bold'>TEST HEADING</Heading>
+        <Text fontSize='lg' fontWeight='bold' lineHeight='lg' fontFamily='inter'>Neki tekst test</Text>
+        <Heading headingType='h1' fontWeight='bold' fontFamily='montserrat'>TEST HEADING</Heading>
     </ThemeProvider>
     </>
   )

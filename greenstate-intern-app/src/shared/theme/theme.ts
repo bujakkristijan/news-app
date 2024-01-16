@@ -1,25 +1,18 @@
 import { Theme } from "./ThemeTypeProps";
-// export type TypographyFontSizeHeading = keyof Theme['typography']['fontSizeHeading'];
-export type TypographyFontSizeBody = keyof Theme['typography']['fontSizeBody'];
-export type TypographyFont = keyof Theme['typography']['font'];
+export type TypographyFontSize = keyof Theme['typography']['fontSize'];
+export type TypographyFontFamily = keyof Theme['typography']['fontFamily'];
 export type TypographyFontWeight = keyof Theme['typography']['fontWeight'];
-// export type TypographyLineHeightHeading = keyof Theme['typography']['lineHeightHeading'];
-export type TypographyLineHeightBody = keyof Theme['typography']['lineHeightBody'];
+export type TypographyLineHeight = keyof Theme['typography']['lineHeight'];
 export type TypographyHeadingType = keyof Theme['typography']['headingType'];
 
 
 const defaultTheme: Theme = {
     typography: {
-        font:{
-            navigation: "Montserrat",
-            body: "Inter"
+        fontFamily:{
+            montserrat: "Montserrat",
+            inter: "Inter"
         },
-        // fontSizeHeading: {
-        //     lg: "3rem",
-        //     md: "2rem",
-        //     sm: "1.5rem"
-        // },
-        fontSizeBody: {
+        fontSize: {
             lg: "1.25rem",
             md: "1rem",
             sm: "0.875rem"
@@ -29,28 +22,23 @@ const defaultTheme: Theme = {
             semiBold: "600",
             regular: "400"  
         },
-        // lineHeightHeading: {
-        //     lg: "56px",
-        //     md: "44px",
-        //     sm: "28px"
-        // },
-        lineHeightBody: {
-            lg: "24px",
-            md: "20px",
-            sm: "16px"
+        lineHeight: {
+            lg: "1.5rem", 
+            md: "1.25rem", 
+            sm: "1rem", 
         },
         headingType:{
             h1:{
                 fontSize: "3rem",
-                lineHeight: "56px"
+                lineHeight: "3.5rem"
             },
             h2:{
                 fontSize: "2rem",
-                lineHeight: "44px"
+                lineHeight: "2.75rem"
             },
             h3:{
                 fontSize: "1.5rem",
-                lineHeight: "28px"
+                lineHeight: "1.75rem"
             }
         }
     } 

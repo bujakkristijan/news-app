@@ -1,16 +1,17 @@
 import React from "react";
-import { TypographyHeadingType, TypographyFontWeight } from "../../shared/theme/theme";
+import { TypographyHeadingType, TypographyFontWeight, TypographyFontFamily } from "../../shared/theme/theme";
 import { StyledHeading } from "./Heading.styles";
 
 type HeadingProps = {
   headingType: TypographyHeadingType;
   fontWeight: TypographyFontWeight;
-  children: React.ReactNode; 
+  fontFamily: TypographyFontFamily;
+  children: string; 
 }
 
-export const Heading = ({ headingType, fontWeight, children }: HeadingProps) => {
+export const Heading = ({ headingType, fontWeight, fontFamily, children }: HeadingProps) => {
   return (
-    <StyledHeading headingType={headingType} fontWeight={fontWeight}>
+    <StyledHeading headingType={headingType} fontWeight={fontWeight} fontFamily={fontFamily}>
       {children}
     </StyledHeading>
   );
