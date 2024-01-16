@@ -1,4 +1,3 @@
-import { ThemeProvider } from "styled-components";
 const defaultTheme = {
     colors: {
         header: "red"
@@ -6,7 +5,6 @@ const defaultTheme = {
     fonts:{
         header: "Montserrat",
         body: "Inter"
-
     },
     fontSizesHeader: {
         large: "3rem",
@@ -21,7 +19,4 @@ const defaultTheme = {
         
   };
 
-  export default function Theme({children}: any){
-    return <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>
-  }
-
+export default defaultTheme;
