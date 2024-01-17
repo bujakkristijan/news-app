@@ -10,6 +10,7 @@ export type Theme = {
             lg:string
         }
         fontWeight:{
+            extraBold: string,
             bold:string,
             semiBold:string,
             regular:string
@@ -32,6 +33,15 @@ export type Theme = {
                 fontSize: string,
                 lineHeight: string
             }
+        },
+        borderRadius:{
+            sm: string,
+            md: string
+        },
+        colors: {
+            red: string,
+            white: string,
+            lightGrey: string
         }
     }
 }

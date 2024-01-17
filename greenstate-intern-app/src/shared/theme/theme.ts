@@ -18,8 +18,9 @@ const defaultTheme: Theme = {
             sm: "0.875rem"
         },
         fontWeight: {
-            bold: "700",
-            semiBold: "600",
+            extraBold: "700",
+            bold: "600",
+            semiBold: "500",
             regular: "400"  
         },
         lineHeight: {
@@ -40,6 +41,15 @@ const defaultTheme: Theme = {
                 fontSize: "1.5rem",
                 lineHeight: "1.75rem"
             }
+        },
+        borderRadius:{
+            sm: "0.5rem",
+            md: "1rem"
+        },
+        colors: {
+            red: "#EE2636",
+            white: "white",
+            lightGrey: "#EFEFEF"
         }
     } 
   };
