@@ -33,7 +33,7 @@ const defaultTheme: Theme = {
                 lineHeight: "3.5rem"
             },
             h2:{
-                fontSize: "2rem",
+                fontSize: "2.25rem",
                 lineHeight: "2.75rem"
             },
             h3:{
