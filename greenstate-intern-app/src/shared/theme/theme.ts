@@ -48,7 +48,8 @@ const defaultTheme: Theme = {
         },
         colors: {
             red: "#EE2636",
-            white: "white"
+            white: "white",
+            lightGrey: "#EFEFEF"
         }
     } 
   };

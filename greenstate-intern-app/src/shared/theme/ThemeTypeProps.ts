@@ -40,7 +40,8 @@ export type Theme = {
         },
         colors: {
             red: string,
-            white: string
+            white: string,
+            lightGrey: string
         }
     }
 }

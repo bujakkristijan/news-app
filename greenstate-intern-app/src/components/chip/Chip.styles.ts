@@ -8,6 +8,7 @@ export const StyledChip = styled.div`
     align-items: center;
     gap: 0.25rem;
     border-radius: ${(props)=> props.theme.typography.borderRadius.sm};
+    border: 1px solid ${(props)=> props.theme.typography.colors.lightGrey};
     background-color: ${(props)=> props.theme.typography.colors.white};
     box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.10);
 `
