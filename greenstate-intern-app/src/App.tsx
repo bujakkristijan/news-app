@@ -11,7 +11,7 @@ function App() {
     <ThemeProvider>
         <GlobalStyles/>
         <Text fontSize='lg' fontWeight='bold' lineHeight='lg' fontFamily='inter'>Neki tekst test</Text>
-        <Heading headingType='h1' fontWeight='bold' fontFamily='montserrat'>TEST HEADING</Heading>
+        <Heading headingType='h1' fontWeight='bold' fontFamily='montserrat'>TEST HEADING1</Heading>
     </ThemeProvider>
     </>
   )

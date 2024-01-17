@@ -11,7 +11,7 @@ type HeadingProps = {
 
 export const Heading = ({ headingType, fontWeight, fontFamily, children }: HeadingProps) => {
   return (
-    <StyledHeading headingType={headingType} fontWeight={fontWeight} fontFamily={fontFamily}>
+    <StyledHeading $headingType={headingType} $fontWeight={fontWeight} $fontFamily={fontFamily}>
       {children}
     </StyledHeading>
   );

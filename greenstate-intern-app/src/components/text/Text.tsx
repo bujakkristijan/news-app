@@ -12,6 +12,6 @@ type TextProps = {
 
 export const Text = ({ fontSize, lineHeight, fontWeight, fontFamily, children }: TextProps) => {
   return (
-    <StyledText fontSize={fontSize} lineHeight = {lineHeight} fontWeight = {fontWeight} fontFamily={fontFamily}>{children}</StyledText>
+    <StyledText $fontSize={fontSize} $lineHeight = {lineHeight} $fontWeight = {fontWeight} $fontFamily={fontFamily}>{children}</StyledText>
   )
 }
