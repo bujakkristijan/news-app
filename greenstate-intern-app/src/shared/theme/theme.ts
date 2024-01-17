@@ -18,8 +18,9 @@ const defaultTheme: Theme = {
             sm: "0.875rem"
         },
         fontWeight: {
-            bold: "700",
-            semiBold: "600",
+            extraBold: "700",
+            bold: "600",
+            semiBold: "500",
             regular: "400"  
         },
         lineHeight: {
@@ -42,12 +43,12 @@ const defaultTheme: Theme = {
             }
         },
         borderRadius:{
-            chip: "0.5rem",
-            card: "1rem"
+            sm: "0.5rem",
+            md: "1rem"
         },
         colors: {
-            circle: "#EE2636",
-            primaryBg: "white"
+            red: "#EE2636",
+            white: "white"
         }
     } 
   };
