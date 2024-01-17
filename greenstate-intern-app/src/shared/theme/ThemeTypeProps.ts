@@ -32,6 +32,14 @@ export type Theme = {
                 fontSize: string,
                 lineHeight: string
             }
+        },
+        borderRadius:{
+            chip: string,
+            card: string
+        },
+        colors: {
+            circle: string,
+            primaryBg: string
         }
     }
 }

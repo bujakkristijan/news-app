@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const StyledChipCircle = styled.div`
-    width: 8px;
-    height: 8px;
-    background-color: #EE2636;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: ${(props)=> props.theme.typography.colors.circle};
     border-radius: 50%;
 `

@@ -13,8 +13,8 @@ function App() {
         <GlobalStyles/>
         <Text fontSize='lg' fontWeight='bold' lineHeight='lg' fontFamily='inter'>Neki tekst test</Text>
         <Heading headingType='h1' fontWeight='bold' fontFamily='montserrat'>TEST HEADING1</Heading>
-        <Chip isLatest={true} >23/12/2023</Chip>
-        <Chip isLatest={false} >23/12/2023</Chip>
+        <Chip isActive={true} >23/12/2023</Chip>
+        <Chip isActive={false} >23/12/2023</Chip>
     </ThemeProvider>
     </>
   )

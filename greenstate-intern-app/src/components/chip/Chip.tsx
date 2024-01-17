@@ -5,14 +5,14 @@ import { StyledChipCircle } from './ChipCircle.styles';
 
 type ChipProps = {
     children: string; 
-    isLatest: boolean;
+    isActive: boolean;
   }
 
-export const Chip = ({children, isLatest}: ChipProps) => {
+export const Chip = ({children, isActive}: ChipProps) => {
   return (
     <StyledChip>
         <Text fontSize="sm" lineHeight = "sm" fontWeight = "semiBold" fontFamily="inter">{children}</Text>
-        {isLatest && <StyledChipCircle/>}
+        {isActive && <StyledChipCircle/>}
     </StyledChip>
   )
 }

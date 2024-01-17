@@ -40,6 +40,14 @@ const defaultTheme: Theme = {
                 fontSize: "1.5rem",
                 lineHeight: "1.75rem"
             }
+        },
+        borderRadius:{
+            chip: "0.5rem",
+            card: "1rem"
+        },
+        colors: {
+            circle: "#EE2636",
+            primaryBg: "white"
         }
     } 
   };
