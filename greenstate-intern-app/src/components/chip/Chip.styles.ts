@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const StyledChip = styled.div`
-    display: inline-flex;
+    display: flex;
+    width: fit-content;
     padding: 4px 8px;
     justify-content: center;
     align-items: center;
