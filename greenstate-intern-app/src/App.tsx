@@ -8,6 +8,7 @@ import { IconWrapper } from './components/icon/icon-wrapper/IconWrapper';
 import { HomeIcon } from './assets/icons/HomeIcon';
 import { NewPostIcon } from './assets/icons/NewPostIcon';
 import { AllNewsIcon } from './assets/icons/AllNewsIcon';
+import { NavItem } from './components/nav-item/NavItem';
 
 function App() {
 
@@ -25,6 +26,10 @@ function App() {
         <div style={{width:'250px', height:'250px'}}>
           <IconWrapper icon={AllNewsIcon} size='fill' color="blue"/>
         </div>
+        <NavItem>
+          <IconWrapper icon={AllNewsIcon} size ="lg" color="blue"></IconWrapper>
+          <Text fontSize='lg' fontWeight='bold' lineHeight='lg' fontFamily='inter'>Neki tekst test</Text>
+        </NavItem>
     </ThemeProvider>
     </>
   )
