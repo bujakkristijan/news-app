@@ -22,6 +22,9 @@ function App() {
         <IconWrapper icon={HomeIcon} size ="sm" color="red"></IconWrapper>
         <IconWrapper icon={NewPostIcon} size ="md" color="lightGrey"></IconWrapper>
         <IconWrapper icon={AllNewsIcon} size ="lg" color="blue"></IconWrapper>
+        <div style={{width:'250px', height:'250px'}}>
+          <IconWrapper icon={AllNewsIcon} size='fill' color="blue"/>
+        </div>
     </ThemeProvider>
     </>
   )

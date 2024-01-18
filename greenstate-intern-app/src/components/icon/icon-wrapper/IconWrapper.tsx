@@ -6,13 +6,13 @@ import { IconProps } from '../icon-prop/iconProps';
 
 type IconWrapperProps = {
   icon: React.ComponentType<IconProps>;
-  size: TypographyIconSize;
+  size: TypographyIconSize | 'fill';
   color: Color;
 };
 
 export const IconWrapper = ({ icon: IconComponent, size, color } :IconWrapperProps) => {
   return (
-    <StyledIcon size ={size}>
+    <StyledIcon size={size}>
       <IconComponent color={color} />
     </StyledIcon>
   );
