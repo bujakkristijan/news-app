@@ -5,9 +5,9 @@ import { Text } from './components/text/Text';
 import { Heading } from './components/heading/Heading';
 import { Chip } from './components/chip/Chip';
 import { IconWrapper } from './components/icon/icon-wrapper/IconWrapper';
-import { HomeIcon } from './components/icon/icons/HomeIcon';
-import { NewPostIcon } from './components/icon/icons/NewPostIcon';
-import { AllNewsIcon } from './components/icon/icons/AllNewsIcon';
+import { HomeIcon } from './assets/icons/HomeIcon';
+import { NewPostIcon } from './assets/icons/NewPostIcon';
+import { AllNewsIcon } from './assets/icons/AllNewsIcon';
 
 function App() {
 

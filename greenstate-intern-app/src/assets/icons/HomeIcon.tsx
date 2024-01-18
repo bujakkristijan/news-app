@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconProps } from './iconProps';
+import { IconProps } from '../../components/icon/icon-prop/iconProps';
 
 export const HomeIcon = ({ color } :IconProps) => {
     return (

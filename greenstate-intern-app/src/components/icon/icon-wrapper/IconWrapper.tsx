@@ -2,9 +2,10 @@ import React from 'react';
 import { StyledIcon } from './StyledIcon';
 import { TypographyIconSize } from '../../../shared/theme/theme';
 import { Color } from '../../../shared/theme/theme';
+import { IconProps } from '../icon-prop/iconProps';
 
 type IconWrapperProps = {
-  icon: React.ComponentType<{ color: Color }>;
+  icon: React.ComponentType<IconProps>;
   size: TypographyIconSize;
   color: Color;
 };
