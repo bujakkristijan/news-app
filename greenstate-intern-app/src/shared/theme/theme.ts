@@ -4,6 +4,9 @@ export type TypographyFontFamily = keyof Theme['typography']['fontFamily'];
 export type TypographyFontWeight = keyof Theme['typography']['fontWeight'];
 export type TypographyLineHeight = keyof Theme['typography']['lineHeight'];
 export type TypographyHeadingType = keyof Theme['typography']['headingType'];
+export type Color = keyof Theme['colors'];
+export type TypographyIconSize = keyof Theme['typography']['iconSizes'];
+
 
 
 const defaultTheme: Theme = {
@@ -46,12 +49,19 @@ const defaultTheme: Theme = {
             sm: "0.5rem",
             md: "1rem"
         },
-        colors: {
-            red: "#EE2636",
-            white: "white",
-            lightGrey: "#EFEFEF"
+        iconSizes: {
+            sm: "1.5rem",
+            md: "2rem",
+            lg: "2.5rem"
         }
-    } 
+    },
+    colors: {
+        red: "#EE2636",
+        white: "white",
+        lightGrey: "#EFEFEF",
+        blue: "#297BD2"
+    },
+    
   };
 
 export default defaultTheme;
