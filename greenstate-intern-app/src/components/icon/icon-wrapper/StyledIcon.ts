@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { TypographyIconSize } from "../../../shared/theme/theme";
 
 interface StyledIconProps {
-    size: string;
+    size: TypographyIconSize;
   }
 
 export const StyledIcon = styled.div<StyledIconProps>`
-  width: ${(props) => props.size };
-  height: ${(props) => props.size};
+  width: ${({ theme, size }) => theme.typography.iconSizes[size]};
+  height: ${({ theme, size }) => theme.typography.iconSizes[size]};
 `;

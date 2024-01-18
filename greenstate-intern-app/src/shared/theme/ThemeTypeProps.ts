@@ -38,10 +38,18 @@ export type Theme = {
             sm: string,
             md: string
         },
-        colors: {
-            red: string,
-            white: string,
-            lightGrey: string
+        iconSizes:{
+            sm: string,
+            md: string,
+            lg:string
         }
-    }
+    },
+    colors: {
+        red: string,
+        white: string,
+        lightGrey: string,
+        blue: string
+    },
+
+
 }

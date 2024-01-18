@@ -19,9 +19,9 @@ function App() {
         <Heading headingType='h1' fontWeight='bold' fontFamily='montserrat'>TEST HEADING1</Heading>
         <Chip isActive={true} >23/12/2023</Chip>
         <Chip isActive={false} >23/12/2023</Chip>
-        <IconWrapper icon={HomeIcon} size ="150px" color="red"></IconWrapper>
-        <IconWrapper icon={NewPostIcon} size ="80px" color="blue"></IconWrapper>
-        <IconWrapper icon={AllNewsIcon} size ="40px" color="green"></IconWrapper>
+        <IconWrapper icon={HomeIcon} size ="sm" color="red"></IconWrapper>
+        <IconWrapper icon={NewPostIcon} size ="md" color="lightGrey"></IconWrapper>
+        <IconWrapper icon={AllNewsIcon} size ="lg" color="blue"></IconWrapper>
     </ThemeProvider>
     </>
   )
