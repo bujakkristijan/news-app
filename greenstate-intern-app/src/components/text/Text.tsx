@@ -8,7 +8,7 @@ type TextProps = {
   fontWeight: TypographyFontWeight;
   fontFamily: TypographyFontFamily;
   color: Color;
-  children: string | React.ReactNode; 
+  children: string; 
 }
 
 export const Text = ({ fontSize, lineHeight, fontWeight, fontFamily, color, children }: TextProps) => {
