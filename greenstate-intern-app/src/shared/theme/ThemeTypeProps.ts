@@ -49,7 +49,8 @@ export type Theme = {
         white: string,
         lightGrey: string,
         blue: string,
-        grey: string
+        grey: string,
+        black: string
     },
 
 
