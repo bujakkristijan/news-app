@@ -30,10 +30,11 @@ function App() {
         <div style={{width:'250px', height:'250px'}}>
           <IconWrapper icon={AllNewsIcon} size='fill' color="blue"/>
         </div>
-        <NavItem>
+        <NavItem icon={AllNewsIcon} size ="lg" color="blue" text={<Text fontSize='lg' fontWeight='bold' lineHeight='lg' fontFamily='inter' color="red">Neki tekst test</Text>} />
+        {/* <NavItem>
           <IconWrapper icon={AllNewsIcon} size ="lg" color="blue"></IconWrapper>
           <Text fontSize='lg' fontWeight='bold' lineHeight='lg' fontFamily='inter' color="grey">Neki tekst test</Text>
-        </NavItem>
+        </NavItem> */}
     </ThemeProvider>
     </>
   )

@@ -1,13 +1,20 @@
-import { StyledNavItem } from './NavItem.styles'
+import { StyledNavItem } from './NavItem.styles';
+import { TypographyIconSize, Color } from '../../shared/theme/theme';
+import IconWrapper from '../icon/icon-wrapper/IconWrapper';
+import { IconProps } from '../icon/icon-prop/iconProps';
 
 interface NavItemProps {
-    children: React.ReactNode;
-  }
+  icon: React.ComponentType<IconProps>;
+  text: React.ReactNode;
+  size: TypographyIconSize | 'fill';
+  color: Color;
+}
 
-export const NavItem = ({children} : NavItemProps) => {
+export const NavItem = ({ icon, text, size, color }: NavItemProps) => {
   return (
     <StyledNavItem>
-        {children}
+      <IconWrapper icon={icon} size={size} color={color} />
+      {text}
     </StyledNavItem>
-  )
-}
+  );
+};

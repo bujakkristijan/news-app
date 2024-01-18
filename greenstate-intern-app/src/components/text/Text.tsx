@@ -2,7 +2,7 @@
 import { TypographyFontSize, TypographyLineHeight, TypographyFontWeight, TypographyFontFamily, Color } from "../../shared/theme/theme"
 import { StyledText } from "./Text.styles"
 
-type TextProps = {
+export type TextProps = {
   fontSize:TypographyFontSize;
   lineHeight: TypographyLineHeight;
   fontWeight: TypographyFontWeight;
