@@ -9,18 +9,28 @@ import { HomeIcon } from './assets/icons/HomeIcon';
 import { NewPostIcon } from './assets/icons/NewPostIcon';
 import { AllNewsIcon } from './assets/icons/AllNewsIcon';
 import { NavItem } from './components/nav-item/NavItem';
+import { useState } from 'react';
 
 function App() {
 
-  const handleHomeClick = () => {
-    alert("Home NavItem clicked");
-  };
+  const [activeNavItem, setActiveNavItem] = useState<string | null>(null);
 
-  const handleNewPostClick = () => {
-    alert("New post NavItem clicked");
-  };
-  const handleAllNewsClick = () => {
-    alert("All news NavItem clicked");
+  const handleNavItemClick = (itemName: string) => {
+    
+    if (activeNavItem === itemName) {
+      return;
+    }
+    setActiveNavItem(itemName);
+
+    if(itemName === "HomeNavItem"){
+      alert("Home NavItem clicked");
+    }
+    else if(itemName === "NewPostNavItem"){
+      alert("NewPost NavItem clicked");
+    }
+    else if(itemName === "AllNewsNavItem"){
+      alert("AllNews NavItem clicked");
+    }
   };
 
   return (
@@ -45,9 +55,21 @@ function App() {
           <IconWrapper icon={AllNewsIcon} size='fill' color="blue"/>
         </div>
 
-        <NavItem icon={HomeIcon} onClickFunc={handleHomeClick}>Home</NavItem>
-        <NavItem icon={NewPostIcon} onClickFunc={handleNewPostClick}>New post</NavItem>
-        <NavItem icon={AllNewsIcon} onClickFunc={handleAllNewsClick}>All news</NavItem>
+        <NavItem icon={HomeIcon} 
+                 onClick={() => handleNavItemClick('HomeNavItem')}
+                 isActive={activeNavItem === 'HomeNavItem'}>
+                 Home
+        </NavItem>
+        <NavItem icon={NewPostIcon}
+                 onClick={() => handleNavItemClick('NewPostNavItem')}
+                 isActive={activeNavItem === 'NewPostNavItem'}>
+                 New post
+        </NavItem>
+        <NavItem icon={AllNewsIcon}
+                 onClick={() => handleNavItemClick('AllNewsNavItem')}
+                 isActive={activeNavItem === 'AllNewsNavItem'}>
+                 All news
+        </NavItem>
 
     </ThemeProvider>
     </>

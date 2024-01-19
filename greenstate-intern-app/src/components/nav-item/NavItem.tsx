@@ -6,15 +6,16 @@ import { Text } from '../text/Text';
 interface NavItemProps {
   icon: React.ComponentType<IconProps>;
   children: string;
-  onClickFunc?: () => void;
+  onClick?: () => void;
+  isActive?: boolean;
 }
 
-export const NavItem = ({ icon: Icon, children, onClickFunc }: NavItemProps) => {
+export const NavItem = ({ icon: Icon, children, onClick, isActive }: NavItemProps) => {
 
   return (
-    <StyledNavItem onClick={onClickFunc}>
-      <IconWrapper icon={Icon} size='sm' color="grey" />
-      <Text fontSize="md" fontWeight="regular" lineHeight="lg" fontFamily="inter" color="grey">
+    <StyledNavItem onClick={onClick}>
+      <IconWrapper icon={Icon} size='sm' color={isActive ? "blue" : "grey"} />
+      <Text fontSize="md" fontWeight={isActive ? "extraBold" : "regular"} lineHeight="lg" fontFamily="inter" color={isActive ? "blue" : "grey"}>
         {children}
       </Text>
     </StyledNavItem>
