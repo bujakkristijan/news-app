@@ -12,7 +12,7 @@ export const WarningIcon = ({ color } :IconProps) => {
             </g>
             <defs>
                 <clipPath id="clip0_7_1676">
-                <rect fill="white"/>
+                <rect width="24" height="24" fill="white"/>
                 </clipPath>
             </defs>
         </svg>

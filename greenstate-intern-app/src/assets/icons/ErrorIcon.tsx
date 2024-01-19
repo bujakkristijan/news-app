@@ -11,7 +11,7 @@ export const ErrorIcon = ({ color } :IconProps) => {
             </g>
             <defs>
                 <clipPath id="clip0_7_1682">
-                <rect fill="white"/>
+                <rect width="24" height="24" fill="white"/>
                 </clipPath>
             </defs>
         </svg>
