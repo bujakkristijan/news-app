@@ -5,10 +5,10 @@ import { Text } from '../text/Text';
 
 type ChipProps = {
     children: string;
-    isActive: boolean;
+    isActive?: boolean;
   }
 
-export const Chip = ({children, isActive}: ChipProps) => {
+export const Chip = ({children, isActive=false}: ChipProps) => {
   
   return (
     <StyledChip>

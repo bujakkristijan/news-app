@@ -36,6 +36,7 @@ function App() {
 
         <Chip isActive={true}>23/12/2023</Chip>
         <Chip isActive={false}>23/12/2023</Chip>
+        <Chip>23/12/2023</Chip>
 
         <IconWrapper icon={HomeIcon} size ="sm" color="red"></IconWrapper>
         <IconWrapper icon={NewPostIcon} size ="md" color="lightGrey"></IconWrapper>
@@ -44,9 +45,9 @@ function App() {
           <IconWrapper icon={AllNewsIcon} size='fill' color="blue"/>
         </div>
 
-        <NavItem icon={HomeIcon} onClick={handleHomeClick}>Home</NavItem>
-        <NavItem icon={NewPostIcon} onClick={handleNewPostClick}>New post</NavItem>
-        <NavItem icon={AllNewsIcon} onClick={handleAllNewsClick}>All news</NavItem>
+        <NavItem icon={HomeIcon} onClickFunc={handleHomeClick}>Home</NavItem>
+        <NavItem icon={NewPostIcon} onClickFunc={handleNewPostClick}>New post</NavItem>
+        <NavItem icon={AllNewsIcon} onClickFunc={handleAllNewsClick}>All news</NavItem>
 
     </ThemeProvider>
     </>
