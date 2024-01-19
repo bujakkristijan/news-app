@@ -6,4 +6,8 @@ export const StyledNavItem = styled.div`
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+    &:hover {
+        cursor: pointer;
+    }
+    
 `
