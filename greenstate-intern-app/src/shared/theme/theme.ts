@@ -59,7 +59,9 @@ const defaultTheme: Theme = {
         red: "#EE2636",
         white: "white",
         lightGrey: "#EFEFEF",
-        blue: "#297BD2"
+        blue: "#297BD2",
+        grey: "#767B83",
+        black: "#111111"
     },
     
   };
