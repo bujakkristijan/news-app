@@ -10,6 +10,10 @@ import { NewPostIcon } from './assets/icons/NewPostIcon';
 import { AllNewsIcon } from './assets/icons/AllNewsIcon';
 import { NavItem } from './components/nav-item/NavItem';
 import { useState } from 'react';
+import { SuccessIcon } from './assets/icons/SuccessIcon';
+import { CircleIcon } from './components/circle-icon/CircleIcon';
+import { WarningIcon } from './assets/icons/WarningIcon';
+import { ErrorIcon } from './assets/icons/ErrorIcon';
 
 function App() {
 
@@ -51,6 +55,7 @@ function App() {
         <IconWrapper icon={HomeIcon} size ="sm" color="red"></IconWrapper>
         <IconWrapper icon={NewPostIcon} size ="md" color="lightGrey"></IconWrapper>
         <IconWrapper icon={AllNewsIcon} size ="lg" color="blue"></IconWrapper>
+        <IconWrapper icon={SuccessIcon} size ="md" color="blue"></IconWrapper>
         <div style={{width:'250px', height:'250px'}}>
           <IconWrapper icon={AllNewsIcon} size='fill' color="blue"/>
         </div>
@@ -70,6 +75,10 @@ function App() {
                  isActive={activeNavItem === 'AllNewsNavItem'}>
                  All news
         </NavItem>
+
+        <CircleIcon icon={SuccessIcon}></CircleIcon>
+        <CircleIcon icon={WarningIcon}></CircleIcon>
+        <CircleIcon icon={ErrorIcon}></CircleIcon>
 
     </ThemeProvider>
     </>
