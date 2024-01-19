@@ -18,12 +18,12 @@ function App() {
         <GlobalStyles/>
         <Text fontSize='lg' fontWeight='bold' lineHeight='lg' fontFamily='inter' color="grey">Neki tekst test</Text>
         <Heading headingType='h1' fontWeight='bold' fontFamily='montserrat' color="blue">TEST HEADING1</Heading>
-        <Chip isActive={true} >
-          <Text fontSize="sm" lineHeight = "sm" fontWeight = "semiBold" fontFamily="inter" color='black'>23/12/2023</Text>
-        </Chip>
-        <Chip isActive={false} >
-          <Text fontSize="sm" lineHeight = "sm" fontWeight = "semiBold" fontFamily="inter" color='black'>23/12/2023</Text>
-        </Chip>
+        
+        {/* <Chip isActive={true} text="23/12/2023"></Chip> */}
+        {/* <Chip isActive={false} text="23/12/2023"></Chip> */}
+        <Chip isActive={true}>23/12/2023</Chip>
+        <Chip isActive={false}>23/12/2023</Chip>
+
         <IconWrapper icon={HomeIcon} size ="sm" color="red"></IconWrapper>
         <IconWrapper icon={NewPostIcon} size ="md" color="lightGrey"></IconWrapper>
         <IconWrapper icon={AllNewsIcon} size ="lg" color="blue"></IconWrapper>
@@ -31,9 +31,12 @@ function App() {
           <IconWrapper icon={AllNewsIcon} size='fill' color="blue"/>
         </div>
 
-        <NavItem icon={HomeIcon} text="Home"/>
+        {/* <NavItem icon={HomeIcon} text="Home"/>
         <NavItem icon={NewPostIcon} text="New post"/>
-        <NavItem icon={AllNewsIcon} text="All news"/>
+        <NavItem icon={AllNewsIcon} text="All news"/> */}
+        <NavItem icon={HomeIcon}>Home</NavItem>
+        <NavItem icon={NewPostIcon}>New post</NavItem>
+        <NavItem icon={AllNewsIcon}>All news</NavItem>
 
     </ThemeProvider>
     </>

@@ -5,11 +5,11 @@ import { Text } from '../text/Text';
 
 interface NavItemProps {
   icon: React.ComponentType<IconProps>;
-  text: string;
+  children: string;
 }
 
-export const NavItem = ({ icon: Icon, text }: NavItemProps) => {
-    
+export const NavItem = ({ icon: Icon, children }: NavItemProps) => {
+
     const iconSize = 'sm'; 
     const iconColor = "grey";
     const fontSize = "md";
@@ -22,7 +22,7 @@ export const NavItem = ({ icon: Icon, text }: NavItemProps) => {
     <StyledNavItem>
       <IconWrapper icon={Icon} size={iconSize} color={iconColor} />
       <Text fontSize={fontSize} fontWeight={fontWeight} lineHeight={lineHeight} fontFamily={fontFamily} color={textColor}>
-        {text}
+        {children}
       </Text>
     </StyledNavItem>
   );
