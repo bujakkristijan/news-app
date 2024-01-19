@@ -9,16 +9,10 @@ type ChipProps = {
   }
 
 export const Chip = ({children, isActive}: ChipProps) => {
-
-  const fontSize = "sm";
-  const lineHeight = "sm";
-  const fontWeight = "semiBold";
-  const fontFamily = "inter";
-  const textColor = "black";
   
   return (
     <StyledChip>
-        <Text fontSize={fontSize} fontWeight={fontWeight} lineHeight={lineHeight} fontFamily={fontFamily} color={textColor}>
+        <Text fontSize="sm" fontWeight="semiBold" lineHeight="sm" fontFamily="inter" color="black">
           {children}
         </Text>
         {isActive && <StyledChipCircle/>}

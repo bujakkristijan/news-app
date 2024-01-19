@@ -17,10 +17,10 @@ function App() {
     <ThemeProvider>
         <GlobalStyles/>
         <Text fontSize='lg' fontWeight='bold' lineHeight='lg' fontFamily='inter' color="grey">Neki tekst test</Text>
+        <Text fontSize='lg' fontWeight='bold' lineHeight='lg' fontFamily='inter'>Neki tekst test</Text>
         <Heading headingType='h1' fontWeight='bold' fontFamily='montserrat' color="blue">TEST HEADING1</Heading>
-        
-        {/* <Chip isActive={true} text="23/12/2023"></Chip> */}
-        {/* <Chip isActive={false} text="23/12/2023"></Chip> */}
+        <Heading headingType='h1' fontWeight='bold' fontFamily='montserrat'>TEST HEADING1</Heading>
+
         <Chip isActive={true}>23/12/2023</Chip>
         <Chip isActive={false}>23/12/2023</Chip>
 
@@ -31,9 +31,6 @@ function App() {
           <IconWrapper icon={AllNewsIcon} size='fill' color="blue"/>
         </div>
 
-        {/* <NavItem icon={HomeIcon} text="Home"/>
-        <NavItem icon={NewPostIcon} text="New post"/>
-        <NavItem icon={AllNewsIcon} text="All news"/> */}
         <NavItem icon={HomeIcon}>Home</NavItem>
         <NavItem icon={NewPostIcon}>New post</NavItem>
         <NavItem icon={AllNewsIcon}>All news</NavItem>

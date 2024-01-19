@@ -8,12 +8,15 @@ type HeadingProps = {
   fontWeight: TypographyFontWeight;
   fontFamily: TypographyFontFamily;
   children: string; 
-  color: Color;
+  color?: Color;
 }
 
 export const Heading = ({ headingType, fontWeight, fontFamily, children, color }: HeadingProps) => {
+
+  const defaultColor = color || "black";
+  
   return (
-    <StyledHeading $headingType={headingType} $fontWeight={fontWeight} $fontFamily={fontFamily} $color = {color}>
+    <StyledHeading $headingType={headingType} $fontWeight={fontWeight} $fontFamily={fontFamily} $color = {defaultColor}>
       {children}
     </StyledHeading>
   );
