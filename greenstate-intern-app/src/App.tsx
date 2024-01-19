@@ -12,14 +12,27 @@ import { NavItem } from './components/nav-item/NavItem';
 
 function App() {
 
+  const handleHomeClick = () => {
+    alert("Home NavItem clicked");
+  };
+
+  const handleNewPostClick = () => {
+    alert("New post NavItem clicked");
+  };
+  const handleAllNewsClick = () => {
+    alert("All news NavItem clicked");
+  };
+
   return (
     <>
     <ThemeProvider>
         <GlobalStyles/>
         <Text fontSize='lg' fontWeight='bold' lineHeight='lg' fontFamily='inter' color="grey">Neki tekst test</Text>
         <Text fontSize='lg' fontWeight='bold' lineHeight='lg' fontFamily='inter'>Neki tekst test</Text>
+        <Text>Neki tekst test</Text>
         <Heading headingType='h1' fontWeight='bold' fontFamily='montserrat' color="blue">TEST HEADING1</Heading>
         <Heading headingType='h1' fontWeight='bold' fontFamily='montserrat'>TEST HEADING1</Heading>
+        <Heading headingType='h1' fontFamily='montserrat'>TEST HEADING1</Heading>
 
         <Chip isActive={true}>23/12/2023</Chip>
         <Chip isActive={false}>23/12/2023</Chip>
@@ -31,9 +44,9 @@ function App() {
           <IconWrapper icon={AllNewsIcon} size='fill' color="blue"/>
         </div>
 
-        <NavItem icon={HomeIcon}>Home</NavItem>
-        <NavItem icon={NewPostIcon}>New post</NavItem>
-        <NavItem icon={AllNewsIcon}>All news</NavItem>
+        <NavItem icon={HomeIcon} onClick={handleHomeClick}>Home</NavItem>
+        <NavItem icon={NewPostIcon} onClick={handleNewPostClick}>New post</NavItem>
+        <NavItem icon={AllNewsIcon} onClick={handleAllNewsClick}>All news</NavItem>
 
     </ThemeProvider>
     </>

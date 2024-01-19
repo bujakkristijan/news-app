@@ -6,12 +6,19 @@ import { Text } from '../text/Text';
 interface NavItemProps {
   icon: React.ComponentType<IconProps>;
   children: string;
+  onClick?: () => void;
 }
 
-export const NavItem = ({ icon: Icon, children }: NavItemProps) => {
+export const NavItem = ({ icon: Icon, children, onClick }: NavItemProps) => {
+
+    const handleClick = () => {
+        if (onClick) {
+          onClick();
+        }
+      };
 
   return (
-    <StyledNavItem>
+    <StyledNavItem onClick={handleClick}>
       <IconWrapper icon={Icon} size='sm' color="grey" />
       <Text fontSize="md" fontWeight="regular" lineHeight="lg" fontFamily="inter" color="grey">
         {children}
