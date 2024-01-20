@@ -14,7 +14,6 @@ import { SuccessIcon } from './assets/icons/SuccessIcon';
 import { CircleIcon } from './components/circle-icon/CircleIcon';
 import { WarningIcon } from './assets/icons/WarningIcon';
 import { ErrorIcon } from './assets/icons/ErrorIcon';
-import { useEffect, useRef } from 'react';
 
 function App() {
 
@@ -22,25 +21,18 @@ function App() {
     const storedActiveNavItem = localStorage.getItem('activeNavItem');
     return storedActiveNavItem || 'HomeNavItem';
   });
-  const hasMounted = useRef(false);
 
-  useEffect(() => {
-    if (hasMounted.current) {
-      if (activeNavItem === 'HomeNavItem') {
-        alert('Home NavItem clicked');
-      } else if (activeNavItem === 'NewPostNavItem') {
-        alert('NewPost NavItem clicked');
-      } else if (activeNavItem === 'AllNewsNavItem') {
-        alert('AllNews NavItem clicked');
-      }
-      localStorage.setItem('activeNavItem', activeNavItem);
-    } else {
-      hasMounted.current = true;
-    }
-  }, [activeNavItem]);
-  
   const handleNavItemClick = (itemName: string) => {
+    
+    if (itemName === 'HomeNavItem') {
+      alert('Home NavItem clicked');
+    } else if (itemName === 'NewPostNavItem') {
+      alert('NewPost NavItem clicked');
+    } else if (itemName === 'AllNewsNavItem') {
+      alert('AllNews NavItem clicked');
+    }
     setActiveNavItem(itemName);
+    localStorage.setItem('activeNavItem', itemName);
   };
 
   return (
