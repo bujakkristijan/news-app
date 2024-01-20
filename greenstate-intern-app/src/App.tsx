@@ -14,16 +14,22 @@ import { SuccessIcon } from './assets/icons/SuccessIcon';
 import { CircleIcon } from './components/circle-icon/CircleIcon';
 import { WarningIcon } from './assets/icons/WarningIcon';
 import { ErrorIcon } from './assets/icons/ErrorIcon';
+import { useEffect, useRef } from 'react';
 
 function App() {
 
-  const [activeNavItem, setActiveNavItem] = useState<string | null>(null);
+  const [activeNavItem, setActiveNavItem] = useState<string>("HomeNavItem");
+  const hasEffectRun = useRef(false);
 
-  const handleNavItemClick = (itemName: string) => {
-    
-    if (activeNavItem === itemName) {
-      return;
+  useEffect(() => {
+    if (!hasEffectRun.current) {
+      handleNavItemClick(activeNavItem);
+      hasEffectRun.current = true;
     }
+  }, [])
+  
+  const handleNavItemClick = (itemName: string) => {
+
     setActiveNavItem(itemName);
 
     if(itemName === "HomeNavItem"){
