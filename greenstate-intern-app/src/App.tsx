@@ -18,29 +18,29 @@ import { useEffect, useRef } from 'react';
 
 function App() {
 
-  const [activeNavItem, setActiveNavItem] = useState<string>("HomeNavItem");
-  const hasEffectRun = useRef(false);
+  const [activeNavItem, setActiveNavItem] = useState(() => {
+    const storedActiveNavItem = localStorage.getItem('activeNavItem');
+    return storedActiveNavItem || 'HomeNavItem';
+  });
+  const hasMounted = useRef(false);
 
   useEffect(() => {
-    if (!hasEffectRun.current) {
-      handleNavItemClick(activeNavItem);
-      hasEffectRun.current = true;
+    if (hasMounted.current) {
+      if (activeNavItem === 'HomeNavItem') {
+        alert('Home NavItem clicked');
+      } else if (activeNavItem === 'NewPostNavItem') {
+        alert('NewPost NavItem clicked');
+      } else if (activeNavItem === 'AllNewsNavItem') {
+        alert('AllNews NavItem clicked');
+      }
+      localStorage.setItem('activeNavItem', activeNavItem);
+    } else {
+      hasMounted.current = true;
     }
-  }, [])
+  }, [activeNavItem]);
   
   const handleNavItemClick = (itemName: string) => {
-
     setActiveNavItem(itemName);
-
-    if(itemName === "HomeNavItem"){
-      alert("Home NavItem clicked");
-    }
-    else if(itemName === "NewPostNavItem"){
-      alert("NewPost NavItem clicked");
-    }
-    else if(itemName === "AllNewsNavItem"){
-      alert("AllNews NavItem clicked");
-    }
   };
 
   return (
