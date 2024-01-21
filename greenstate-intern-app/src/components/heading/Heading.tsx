@@ -1,4 +1,3 @@
-import React from "react";
 import { TypographyHeadingType, TypographyFontWeight, TypographyFontFamily } from "../../shared/theme/theme";
 import { StyledHeading } from "./Heading.styles";
 import { Color } from "../../shared/theme/theme";

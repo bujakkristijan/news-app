@@ -7,32 +7,38 @@ import { SuccessIcon } from '../../assets/icons/SuccessIcon';
 import { WarningIcon } from '../../assets/icons/WarningIcon';
 import { ErrorIcon } from '../../assets/icons/ErrorIcon';
 
-interface CirclIconProps {
-    icon: React.ComponentType<IconProps>;
+interface CircleIconProps {
+    icon: "success" | "warning" | "error";
   }
 
-export const CircleIcon = ({ icon: Icon }: CirclIconProps) => {
+export const CircleIcon = ({ icon }: CircleIconProps) => {
 
+    let selectedIcon: React.ComponentType<IconProps>; // It's not neccessary to has type IconProps anymore, because I don't pass color to IconComponent anymore
     let color: Color;
     let bgColor: Color;
   
-    if (Icon === SuccessIcon) {
-      color = 'green';
-      bgColor = 'lightGreen';
-    } else if (Icon === WarningIcon) {
-      color = 'orange';
-      bgColor = 'lightOrange';
-    } else if (Icon === ErrorIcon) {
-      color = 'darkerRed';
-      bgColor = 'lightRed';
+    if (icon === "success") {
+        selectedIcon = SuccessIcon;
+        color = 'green';
+        bgColor = 'lightGreen';
+    } else if (icon === "warning") {
+        selectedIcon = WarningIcon;
+        color = 'orange';
+        bgColor = 'lightOrange';
+    } else if (icon === "error") {
+        selectedIcon = ErrorIcon;
+        color = 'darkerRed';
+        bgColor = 'lightRed';
     } 
     else {
+        selectedIcon = SuccessIcon;
         color = 'black';
         bgColor = 'blue';
       }
+      
   return (
     <StyledCircleIcon color={bgColor} size='sm'>
-        <IconWrapper icon={Icon} size='sm' color={color}/>
+        <IconWrapper icon={selectedIcon} size='sm' color={color}/>
     </StyledCircleIcon>
   )
 }

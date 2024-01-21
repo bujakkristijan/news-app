@@ -1,4 +1,3 @@
-import React from 'react'
 import { StyledChip } from './Chip.styles';
 import { StyledChipCircle } from './ChipCircle.styles';
 import { Text } from '../text/Text';

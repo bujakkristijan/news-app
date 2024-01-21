@@ -12,8 +12,6 @@ import { NavItem } from './components/nav-item/NavItem';
 import { useState } from 'react';
 import { SuccessIcon } from './assets/icons/SuccessIcon';
 import { CircleIcon } from './components/circle-icon/CircleIcon';
-import { WarningIcon } from './assets/icons/WarningIcon';
-import { ErrorIcon } from './assets/icons/ErrorIcon';
 
 function App() {
 
@@ -74,9 +72,11 @@ function App() {
                  All news
         </NavItem>
 
-        <CircleIcon icon={SuccessIcon}></CircleIcon>
-        <CircleIcon icon={WarningIcon}></CircleIcon>
-        <CircleIcon icon={ErrorIcon}></CircleIcon>
+        <CircleIcon icon="success"></CircleIcon>
+        <CircleIcon icon="warning"></CircleIcon>
+        <CircleIcon icon="error"></CircleIcon>
+
+        <IconWrapper icon={HomeIcon} size ="sm" color="red"></IconWrapper>
 
     </ThemeProvider>
     </>
