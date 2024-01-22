@@ -9,14 +9,20 @@ interface CircleIconProps {
   icon: "success" | "warning" | "error";
 }
 
-const getIconDetails = (icon: CircleIconProps['icon']) => {
+interface IconDetails {
+    selectedIcon: React.ComponentType;
+    color: Color;
+    bgColor: Color;
+  }
+
+const getIconDetails = (icon: CircleIconProps['icon']): IconDetails  => {
   switch (icon) {
     case "success":
-      return { selectedIcon: SuccessIcon, color: 'green' as Color, bgColor: 'lightGreen' as Color};
+      return { selectedIcon: SuccessIcon, color: 'green', bgColor: 'lightGreen'};
     case "warning":
-      return { selectedIcon: WarningIcon, color: 'orange' as Color, bgColor: 'lightOrange' as Color};
+      return { selectedIcon: WarningIcon, color: 'orange', bgColor: 'lightOrange'};
     case "error":
-      return { selectedIcon: ErrorIcon, color: 'darkerRed' as Color, bgColor: 'lightRed' as Color};
+      return { selectedIcon: ErrorIcon, color: 'darkerRed', bgColor: 'lightRed'};
     default:
       throw new Error(`Unsupported icon: ${icon}`);
   }
