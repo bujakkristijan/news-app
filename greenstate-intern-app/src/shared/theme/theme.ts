@@ -62,15 +62,15 @@ const defaultTheme: Theme = {
                 borderRadius: "0.5rem",
             },
             md:{
-                padding: "0.5rem 0.875rem", 
+                padding: "0.625rem 0.875rem", 
                 borderRadius: "0.75rem",
             },
             lg: {
-                padding: "0.5rem 1rem", 
+                padding: "0.75rem 1rem", 
                 borderRadius: "0.75rem",
             },
             xlg:{
-                padding: "0.5rem 1.5rem", 
+                padding: "1rem 1.5rem", 
                 borderRadius: "0.75rem",
             }
         }

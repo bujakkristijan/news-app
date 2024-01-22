@@ -7,7 +7,6 @@ export const StyledButton = styled.button<{
 
     padding: ${({theme, size}) => theme.typography.buttonSizes[size].padding};
     border-radius:  ${({theme, size}) => theme.typography.buttonSizes[size].borderRadius};
-    border: none;
     background-color: ${({theme}) => theme.colors.purple};
     cursor: pointer;
 
