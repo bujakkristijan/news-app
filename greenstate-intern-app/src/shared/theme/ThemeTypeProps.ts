@@ -46,11 +46,17 @@ export type Theme = {
     },
     colors: {
         red: string,
+        darkerRed: string,
+        lightRed: string,
         white: string,
         lightGrey: string,
         blue: string,
         grey: string,
-        black: string
+        black: string,
+        green: string,
+        lightGreen: string,
+        orange: string,
+        lightOrange: string
     },
 
 

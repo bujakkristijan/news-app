@@ -57,11 +57,17 @@ const defaultTheme: Theme = {
     },
     colors: {
         red: "#EE2636",
+        darkerRed: "#DA0000",
+        lightRed: "#FAD1D1",
         white: "white",
         lightGrey: "#EFEFEF",
         blue: "#297BD2",
         grey: "#767B83",
-        black: "#111111"
+        black: "#111111",
+        green: "#18B815",
+        lightGreen: "#D1FADF",
+        orange: "#FFA218",
+        lightOrange: "#FAEAD1"
     },
     
   };

@@ -9,29 +9,10 @@ import { HomeIcon } from './assets/icons/HomeIcon';
 import { NewPostIcon } from './assets/icons/NewPostIcon';
 import { AllNewsIcon } from './assets/icons/AllNewsIcon';
 import { NavItem } from './components/nav-item/NavItem';
-import { useState } from 'react';
+import { SuccessIcon } from './assets/icons/SuccessIcon';
+import { CircleIcon } from './components/circle-icon/CircleIcon';
 
 function App() {
-
-  const [activeNavItem, setActiveNavItem] = useState<string | null>(null);
-
-  const handleNavItemClick = (itemName: string) => {
-    
-    if (activeNavItem === itemName) {
-      return;
-    }
-    setActiveNavItem(itemName);
-
-    if(itemName === "HomeNavItem"){
-      alert("Home NavItem clicked");
-    }
-    else if(itemName === "NewPostNavItem"){
-      alert("NewPost NavItem clicked");
-    }
-    else if(itemName === "AllNewsNavItem"){
-      alert("AllNews NavItem clicked");
-    }
-  };
 
   return (
     <>
@@ -51,25 +32,29 @@ function App() {
         <IconWrapper icon={HomeIcon} size ="sm" color="red"></IconWrapper>
         <IconWrapper icon={NewPostIcon} size ="md" color="lightGrey"></IconWrapper>
         <IconWrapper icon={AllNewsIcon} size ="lg" color="blue"></IconWrapper>
+        <IconWrapper icon={SuccessIcon} size ="md" color="blue"></IconWrapper>
         <div style={{width:'250px', height:'250px'}}>
           <IconWrapper icon={AllNewsIcon} size='fill' color="blue"/>
         </div>
 
         <NavItem icon={HomeIcon} 
-                 onClick={() => handleNavItemClick('HomeNavItem')}
-                 isActive={activeNavItem === 'HomeNavItem'}>
+                 isActive={true}>
                  Home
         </NavItem>
         <NavItem icon={NewPostIcon}
-                 onClick={() => handleNavItemClick('NewPostNavItem')}
-                 isActive={activeNavItem === 'NewPostNavItem'}>
+                 isActive={false}>
                  New post
         </NavItem>
         <NavItem icon={AllNewsIcon}
-                 onClick={() => handleNavItemClick('AllNewsNavItem')}
-                 isActive={activeNavItem === 'AllNewsNavItem'}>
+                 isActive={false}>
                  All news
         </NavItem>
+
+        <CircleIcon icon="success"></CircleIcon>
+        <CircleIcon icon="warning"></CircleIcon>
+        <CircleIcon icon="error"></CircleIcon>
+
+        <IconWrapper icon={HomeIcon} size ="sm" color="red"></IconWrapper>
 
     </ThemeProvider>
     </>
