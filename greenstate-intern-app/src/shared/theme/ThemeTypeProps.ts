@@ -5,8 +5,9 @@ export type Theme = {
             inter:string
         },
         fontSize:{
-            sm:string;
-            md:string;
+            xSm: string,
+            sm:string,
+            md:string,
             lg:string
         }
         fontWeight:{
@@ -42,6 +43,24 @@ export type Theme = {
             sm: string,
             md: string,
             lg:string
+        },
+        buttonSizes:{
+            sm:{
+                padding: string, 
+                borderRadius: string,
+            },
+            md:{
+                padding: string, 
+                borderRadius: string,
+            },
+            lg: {
+                padding: string, 
+                borderRadius: string
+            },
+            xlg:{
+                padding: string, 
+                borderRadius: string
+            }
         }
     },
     colors: {
@@ -52,11 +71,16 @@ export type Theme = {
         lightGrey: string,
         blue: string,
         grey: string,
+        darkGrey: string,
+        lighterGrey: string,
         black: string,
         green: string,
         lightGreen: string,
         orange: string,
-        lightOrange: string
+        lightOrange: string,
+        purple: string,
+        lightPurple: string,
+        darkPurple: string
     },
 
 
