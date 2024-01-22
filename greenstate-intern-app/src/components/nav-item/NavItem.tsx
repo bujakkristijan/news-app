@@ -1,10 +1,9 @@
 import { StyledNavItem } from './NavItem.styles';
 import IconWrapper from '../icon/icon-wrapper/IconWrapper';
-import { IconProps } from '../icon/icon-prop/iconProps';
 import { Text } from '../text/Text';
 
 interface NavItemProps {
-  icon: React.ComponentType<IconProps>; // It's not neccessary to has type IconProps anymore, because I don't pass color to IconComponent anymore
+  icon: React.ComponentType;
   children: string;
   onClick?: () => void;
   isActive?: boolean;

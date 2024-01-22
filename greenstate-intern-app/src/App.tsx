@@ -9,29 +9,10 @@ import { HomeIcon } from './assets/icons/HomeIcon';
 import { NewPostIcon } from './assets/icons/NewPostIcon';
 import { AllNewsIcon } from './assets/icons/AllNewsIcon';
 import { NavItem } from './components/nav-item/NavItem';
-import { useState } from 'react';
 import { SuccessIcon } from './assets/icons/SuccessIcon';
 import { CircleIcon } from './components/circle-icon/CircleIcon';
 
 function App() {
-
-  const [activeNavItem, setActiveNavItem] = useState(() => {
-    const storedActiveNavItem = localStorage.getItem('activeNavItem');
-    return storedActiveNavItem || 'HomeNavItem';
-  });
-
-  const handleNavItemClick = (itemName: string) => {
-    
-    if (itemName === 'HomeNavItem') {
-      alert('Home NavItem clicked');
-    } else if (itemName === 'NewPostNavItem') {
-      alert('NewPost NavItem clicked');
-    } else if (itemName === 'AllNewsNavItem') {
-      alert('AllNews NavItem clicked');
-    }
-    setActiveNavItem(itemName);
-    localStorage.setItem('activeNavItem', itemName);
-  };
 
   return (
     <>
@@ -57,18 +38,15 @@ function App() {
         </div>
 
         <NavItem icon={HomeIcon} 
-                 onClick={() => handleNavItemClick('HomeNavItem')}
-                 isActive={activeNavItem === 'HomeNavItem'}>
+                 isActive={true}>
                  Home
         </NavItem>
         <NavItem icon={NewPostIcon}
-                 onClick={() => handleNavItemClick('NewPostNavItem')}
-                 isActive={activeNavItem === 'NewPostNavItem'}>
+                 isActive={false}>
                  New post
         </NavItem>
         <NavItem icon={AllNewsIcon}
-                 onClick={() => handleNavItemClick('AllNewsNavItem')}
-                 isActive={activeNavItem === 'AllNewsNavItem'}>
+                 isActive={false}>
                  All news
         </NavItem>
 

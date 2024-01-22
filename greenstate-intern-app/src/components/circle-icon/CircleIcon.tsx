@@ -1,5 +1,3 @@
-import React from 'react'
-import { IconProps } from '../icon/icon-prop/iconProps';
 import { StyledCircleIcon } from './CircleIcon.styles';
 import IconWrapper from '../icon/icon-wrapper/IconWrapper';
 import { Color } from '../../shared/theme/theme';
@@ -8,37 +6,28 @@ import { WarningIcon } from '../../assets/icons/WarningIcon';
 import { ErrorIcon } from '../../assets/icons/ErrorIcon';
 
 interface CircleIconProps {
-    icon: "success" | "warning" | "error";
+  icon: "success" | "warning" | "error";
+}
+
+const getIconDetails = (icon: CircleIconProps['icon']) => {
+  switch (icon) {
+    case "success":
+      return { selectedIcon: SuccessIcon, color: 'green' as Color, bgColor: 'lightGreen' as Color};
+    case "warning":
+      return { selectedIcon: WarningIcon, color: 'orange' as Color, bgColor: 'lightOrange' as Color};
+    case "error":
+      return { selectedIcon: ErrorIcon, color: 'darkerRed' as Color, bgColor: 'lightRed' as Color};
+    default:
+      throw new Error(`Unsupported icon: ${icon}`);
   }
+};
 
 export const CircleIcon = ({ icon }: CircleIconProps) => {
+  let { selectedIcon, color, bgColor } = getIconDetails(icon);
 
-    let selectedIcon: React.ComponentType<IconProps>; // It's not neccessary to has type IconProps anymore, because I don't pass color to IconComponent anymore
-    let color: Color;
-    let bgColor: Color;
-  
-    if (icon === "success") {
-        selectedIcon = SuccessIcon;
-        color = 'green';
-        bgColor = 'lightGreen';
-    } else if (icon === "warning") {
-        selectedIcon = WarningIcon;
-        color = 'orange';
-        bgColor = 'lightOrange';
-    } else if (icon === "error") {
-        selectedIcon = ErrorIcon;
-        color = 'darkerRed';
-        bgColor = 'lightRed';
-    } 
-    else {
-        selectedIcon = SuccessIcon;
-        color = 'black';
-        bgColor = 'blue';
-      }
-      
   return (
     <StyledCircleIcon color={bgColor} size='sm'>
-        <IconWrapper icon={selectedIcon} size='sm' color={color}/>
+      <IconWrapper icon={selectedIcon} size='sm' color={color}/>
     </StyledCircleIcon>
-  )
-}
+  );
+};
