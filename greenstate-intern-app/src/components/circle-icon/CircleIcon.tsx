@@ -29,7 +29,7 @@ const getIconDetails = (icon: CircleIconProps['icon']): IconDetails  => {
 };
 
 export const CircleIcon = ({ icon }: CircleIconProps) => {
-  let { selectedIcon, color, bgColor } = getIconDetails(icon);
+  const { selectedIcon, color, bgColor } = getIconDetails(icon);
 
   return (
     <StyledCircleIcon color={bgColor} size='sm'>
