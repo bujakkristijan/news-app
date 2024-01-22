@@ -11,6 +11,7 @@ import { AllNewsIcon } from './assets/icons/AllNewsIcon';
 import { NavItem } from './components/nav-item/NavItem';
 import { SuccessIcon } from './assets/icons/SuccessIcon';
 import { CircleIcon } from './components/circle-icon/CircleIcon';
+import { Button } from './components/button/Button';
 
 function App() {
 
@@ -55,6 +56,11 @@ function App() {
         <CircleIcon icon="error"></CircleIcon>
 
         <IconWrapper icon={HomeIcon} size ="sm" color="red"></IconWrapper>
+
+        <Button size="sm" isDisabled={false}>Some text</Button>
+        <Button size="md" isDisabled={false}>Some text</Button>
+        <Button size="lg" isDisabled={true}>Some text</Button>
+        <Button size="xlg" isDisabled={false}>Some text</Button>
 
     </ThemeProvider>
     </>

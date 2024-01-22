@@ -6,6 +6,7 @@ export type TypographyLineHeight = keyof Theme['typography']['lineHeight'];
 export type TypographyHeadingType = keyof Theme['typography']['headingType'];
 export type Color = keyof Theme['colors'];
 export type TypographyIconSize = keyof Theme['typography']['iconSizes'];
+export type TypographyButtonSize = keyof Theme['typography']['buttonSizes'];
 
 
 
@@ -18,7 +19,8 @@ const defaultTheme: Theme = {
         fontSize: {
             lg: "1.25rem",
             md: "1rem",
-            sm: "0.875rem"
+            sm: "0.875rem",
+            xSm: "0.75rem",
         },
         fontWeight: {
             extraBold: "700",
@@ -53,6 +55,24 @@ const defaultTheme: Theme = {
             sm: "1.5rem",
             md: "2rem",
             lg: "2.5rem"
+        },
+        buttonSizes: {
+            sm:{
+                padding: "0.5rem", 
+                borderRadius: "0.5rem",
+            },
+            md:{
+                padding: "0.5rem 0.875rem", 
+                borderRadius: "0.75rem",
+            },
+            lg: {
+                padding: "0.5rem 1rem", 
+                borderRadius: "0.75rem",
+            },
+            xlg:{
+                padding: "0.5rem 1.5rem", 
+                borderRadius: "0.75rem",
+            }
         }
     },
     colors: {
@@ -60,14 +80,19 @@ const defaultTheme: Theme = {
         darkerRed: "#DA0000",
         lightRed: "#FAD1D1",
         white: "white",
-        lightGrey: "#EFEFEF",
         blue: "#297BD2",
         grey: "#767B83",
+        darkGrey: "#7B828A",
+        lightGrey: "#C9D2DE",
+        lighterGrey: "#EFEFEF",
         black: "#111111",
         green: "#18B815",
         lightGreen: "#D1FADF",
         orange: "#FFA218",
-        lightOrange: "#FAEAD1"
+        lightOrange: "#FAEAD1",
+        purple: "#7E44F8",
+        lightPurple: "#9867FF",
+        darkPurple: "#733CE5" 
     },
     
   };
