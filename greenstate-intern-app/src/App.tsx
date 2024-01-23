@@ -13,7 +13,6 @@ import { SuccessIcon } from "./assets/icons/SuccessIcon";
 import { CircleIcon } from "./components/circle-icon/CircleIcon";
 import { Button } from "./components/button/Button";
 import { NewsCard } from "./components/card/news-card/NewsCard";
-import { Card } from "./components/card/Card";
 function App() {
   return (
     <>
@@ -91,6 +90,9 @@ function App() {
           Some text
         </Button>
         <Button size="lg" isDisabled={true}>
+          Some text
+        </Button>
+        <Button size="xlg" isDisabled={false}>
           Some text
         </Button>
         <Button size="xlg" isDisabled={false}>

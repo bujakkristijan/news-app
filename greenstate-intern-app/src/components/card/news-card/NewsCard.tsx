@@ -1,25 +1,32 @@
 import { StyledNewsCard } from "./NewsCard.styles";
 import NewsImage from "../../../assets/images/news-image.png";
 import { Chip } from "../../chip/Chip";
-import { StyledCardImage } from "./NewsCardImage.styles";
 import { Card } from "../Card";
-import { StyledChipContainer } from "./ChipContainer.styles";
-import { StyledNewsCardTitle } from "./NewsCardTitle.styles";
-import { StyledNewsCardDescription } from "./NewsCardDescription";
+import {
+  StyledChipContainer,
+  StyledNewsCardDescription,
+  StyledCardImage,
+  StyledNewsCardTitle,
+} from "./NewsCardProps.styles";
 
-interface NewsCardProps {
+type NewsCardProps = {
   title: string;
   description: string;
-}
+  imageURL?: string;
+};
 
-export const NewsCard = ({ title, description }: NewsCardProps) => {
+export const NewsCard = ({
+  title,
+  description,
+  imageURL = NewsImage,
+}: NewsCardProps) => {
   return (
     <Card>
       <StyledNewsCard>
         <StyledChipContainer>
           <Chip isActive={true}>23/12/2023</Chip>
         </StyledChipContainer>
-        <StyledCardImage src={NewsImage} alt=""></StyledCardImage>
+        <StyledCardImage src={imageURL} alt="" />
         <StyledNewsCardTitle
           $fontSize="lg"
           $fontWeight={"bold"}

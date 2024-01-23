@@ -9,7 +9,6 @@ export type TypographyIconSize = keyof Theme["typography"]["iconSizes"];
 export type TypographyButtonSize = keyof Theme["typography"]["buttonSizes"];
 export type TypographyBorderRadius = keyof Theme["typography"]["borderRadius"];
 export type TypographyBorderWidth = keyof Theme["typography"]["borderWidth"];
-export type TypographyPadding = keyof Theme["typography"]["padding"];
 export type TypographyGap = keyof Theme["typography"]["gap"];
 
 const defaultTheme: Theme = {
@@ -57,9 +56,6 @@ const defaultTheme: Theme = {
       sm: "1px",
       md: "2px",
       lg: "4px",
-    },
-    padding: {
-      sm: "1rem",
     },
     iconSizes: {
       sm: "1.5rem",

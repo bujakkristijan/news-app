@@ -5,14 +5,14 @@ import {
   TypographyBorderRadius,
   Color,
 } from "../../shared/theme/theme";
-interface CardProps {
+type CardProps = {
   children: React.ReactNode;
   $borderwidth?: TypographyBorderWidth;
   $borderRadius?: TypographyBorderRadius;
   $bgColor?: Color;
   $padding?: PaddingValue;
   $borderColor?: Color;
-}
+};
 export const Card = ({
   children,
   $borderwidth = "sm",

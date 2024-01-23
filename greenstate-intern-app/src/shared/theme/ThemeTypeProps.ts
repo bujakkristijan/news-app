@@ -44,9 +44,6 @@ export type Theme = {
       md: string;
       lg: string;
     };
-    padding: {
-      sm: string;
-    };
     gap: {
       sm: string;
     };
