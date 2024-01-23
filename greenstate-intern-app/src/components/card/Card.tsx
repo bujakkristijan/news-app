@@ -1,36 +1,32 @@
 import { StyledCard } from "./Card.styles";
+import { PaddingValue } from "../../shared/theme/padding-value";
 import {
   TypographyBorder,
   TypographyBorderRadius,
   Color,
-  TypographyPadding,
-  TypographyGap,
 } from "../../shared/theme/theme";
 interface CardProps {
   children: React.ReactNode;
-  border?: TypographyBorder;
+  borderWidth?: TypographyBorder;
   borderRadius?: TypographyBorderRadius;
   bgColor?: Color;
-  padding?: TypographyPadding;
-  gap?: TypographyGap;
+  padding?: PaddingValue;
   borderColor?: Color;
 }
 export const Card = ({
   children,
-  border = "sm",
+  borderWidth = "sm",
   borderRadius = "md",
   bgColor = "white",
-  padding = "sm",
-  gap = "sm",
+  padding = "1rem",
   borderColor = "lightestGrey",
 }: CardProps) => {
   return (
     <StyledCard
-      border={border}
+      borderWidth={borderWidth}
       borderRadius={borderRadius}
       bgColor={bgColor}
       padding={padding}
-      gap={gap}
       borderColor={borderColor}
     >
       {children}

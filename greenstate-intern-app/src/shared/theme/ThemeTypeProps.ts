@@ -39,7 +39,7 @@ export type Theme = {
       sm: string;
       md: string;
     };
-    border: {
+    borderWidth: {
       sm: string;
       md: string;
       lg: string;
