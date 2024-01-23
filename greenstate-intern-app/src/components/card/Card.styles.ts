@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import {
   TypographyBorderRadius,
-  TypographyBorder,
+  TypographyBorderWidth,
 } from "../../shared/theme/theme";
 import { PaddingValue } from "../../shared/theme/padding-value";
 import { Color } from "../../shared/theme/theme";
 export const StyledCard = styled.div<{
-  borderWidth: TypographyBorder;
+  borderWidth: TypographyBorderWidth;
   borderRadius: TypographyBorderRadius;
   bgColor: Color;
   padding: PaddingValue;

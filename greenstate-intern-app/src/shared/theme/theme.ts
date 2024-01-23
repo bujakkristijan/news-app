@@ -8,7 +8,7 @@ export type Color = keyof Theme["colors"];
 export type TypographyIconSize = keyof Theme["typography"]["iconSizes"];
 export type TypographyButtonSize = keyof Theme["typography"]["buttonSizes"];
 export type TypographyBorderRadius = keyof Theme["typography"]["borderRadius"];
-export type TypographyBorder = keyof Theme["typography"]["borderWidth"];
+export type TypographyBorderWidth = keyof Theme["typography"]["borderWidth"];
 export type TypographyPadding = keyof Theme["typography"]["padding"];
 export type TypographyGap = keyof Theme["typography"]["gap"];
 

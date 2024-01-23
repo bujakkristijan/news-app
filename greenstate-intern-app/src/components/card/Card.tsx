@@ -1,13 +1,13 @@
 import { StyledCard } from "./Card.styles";
 import { PaddingValue } from "../../shared/theme/padding-value";
 import {
-  TypographyBorder,
+  TypographyBorderWidth,
   TypographyBorderRadius,
   Color,
 } from "../../shared/theme/theme";
 interface CardProps {
   children: React.ReactNode;
-  borderWidth?: TypographyBorder;
+  borderWidth?: TypographyBorderWidth;
   borderRadius?: TypographyBorderRadius;
   bgColor?: Color;
   padding?: PaddingValue;
