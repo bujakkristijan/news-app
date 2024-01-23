@@ -1,7 +1,7 @@
 import { StyledNewsCard } from "./NewsCard.styles";
 import NewsImage from "../../../assets/images/news-image.png";
 import { Chip } from "../../chip/Chip";
-import { StyledCardImage } from "./CardImage.styles";
+import { StyledCardImage } from "./NewsCardImage.styles";
 import { Card } from "../Card";
 import { StyledChipContainer } from "./ChipContainer.styles";
 import { StyledNewsCardTitle } from "./NewsCardTitle.styles";
