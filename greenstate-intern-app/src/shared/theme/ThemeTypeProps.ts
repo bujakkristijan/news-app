@@ -73,6 +73,7 @@ export type Theme = {
     grey: string;
     darkGrey: string;
     lighterGrey: string;
+    lightestGrey: string;
     black: string;
     green: string;
     lightGreen: string;
@@ -81,5 +82,7 @@ export type Theme = {
     purple: string;
     lightPurple: string;
     darkPurple: string;
+    lightBlack: string;
+    greyDesc: string;
   };
 };
