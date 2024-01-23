@@ -3,7 +3,7 @@ import {
   TypographyBorderRadius,
   TypographyBorderWidth,
 } from "../../shared/theme/theme";
-import { PaddingValue } from "../../shared/theme/padding-value";
+import { PaddingValue } from "../../shared/types/padding-value";
 import { Color } from "../../shared/theme/theme";
 export const StyledCard = styled.div<{
   borderWidth: TypographyBorderWidth;

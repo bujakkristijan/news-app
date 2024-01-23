@@ -1,5 +1,5 @@
 import { StyledCard } from "./Card.styles";
-import { PaddingValue } from "../../shared/theme/padding-value";
+import { PaddingValue } from "../../shared/types/padding-value";
 import {
   TypographyBorderWidth,
   TypographyBorderRadius,
