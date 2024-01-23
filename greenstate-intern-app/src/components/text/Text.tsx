@@ -1,19 +1,38 @@
-
-import { TypographyFontSize, TypographyLineHeight, TypographyFontWeight, TypographyFontFamily, Color } from "../../shared/theme/theme"
-import { StyledText } from "./Text.styles"
+import {
+  TypographyFontSize,
+  TypographyLineHeight,
+  TypographyFontWeight,
+  TypographyFontFamily,
+  Color,
+} from "../../shared/theme/theme";
+import { StyledText } from "./Text.styles";
 
 export type TextProps = {
-  fontSize?:TypographyFontSize;
+  fontSize?: TypographyFontSize;
   lineHeight?: TypographyLineHeight;
   fontWeight?: TypographyFontWeight;
   fontFamily?: TypographyFontFamily;
   color?: Color;
-  children: string; 
-}
+  children: string;
+};
 
-export const Text = ({ fontSize = "md", lineHeight = "lg", fontWeight = "regular", fontFamily = "inter", color = "black", children }: TextProps) => {
-
+export const Text = ({
+  fontSize = "md",
+  lineHeight = "lg",
+  fontWeight = "regular",
+  fontFamily = "inter",
+  color = "black",
+  children,
+}: TextProps) => {
   return (
-    <StyledText $fontSize={fontSize} $lineHeight = {lineHeight} $fontWeight = {fontWeight} $fontFamily={fontFamily} $color={color}>{children}</StyledText>
-  )
-}
+    <StyledText
+      $fontSize={fontSize}
+      $lineHeight={lineHeight}
+      $fontWeight={fontWeight}
+      $fontFamily={fontFamily}
+      $color={color}
+    >
+      {children}
+    </StyledText>
+  );
+};
