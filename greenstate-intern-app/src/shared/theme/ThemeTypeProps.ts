@@ -39,6 +39,17 @@ export type Theme = {
       sm: string;
       md: string;
     };
+    border: {
+      sm: string;
+      md: string;
+      lg: string;
+    };
+    padding: {
+      sm: string;
+    };
+    gap: {
+      sm: string;
+    };
     iconSizes: {
       sm: string;
       md: string;

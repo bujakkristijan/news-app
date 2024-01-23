@@ -1,14 +1,28 @@
 import styled from "styled-components";
-
-export const StyledCard = styled.div`
+import {
+  TypographyBorderRadius,
+  TypographyBorder,
+  TypographyPadding,
+  TypographyGap,
+} from "../../shared/theme/theme";
+import { Color } from "../../shared/theme/theme";
+export const StyledCard = styled.div<{
+  border: TypographyBorder;
+  borderRadius: TypographyBorderRadius;
+  bgColor: Color;
+  padding: TypographyPadding;
+  gap: TypographyGap;
+  borderColor: Color;
+}>`
   display: flex;
   width: 300px;
-  padding: 1rem;
+  padding: ${({ theme, padding }) => theme.typography.padding[padding]};
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.5rem;
-  background-color: antiquewhite;
-  border-radius: 1rem;
-  border: 1px solid ${(props) => props.theme.colors.lightestGrey};
-  background: ${(props) => props.theme.colors.white};
+  gap: ${({ theme, gap }) => theme.typography.gap[gap]};
+  border-radius: ${({ theme, borderRadius }) =>
+    theme.typography.borderRadius[borderRadius]};
+  border: ${({ theme, border }) => theme.typography.border[border]} solid
+    ${({ theme, borderColor }) => theme.colors[borderColor]};
+  background-color: ${({ theme, bgColor }) => theme.colors[bgColor]};
 `;
