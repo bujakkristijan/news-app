@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledNewsCard = styled.div`
+  max-width: 18.75rem;
   position: relative;
   display: flex;
   flex-direction: column;
