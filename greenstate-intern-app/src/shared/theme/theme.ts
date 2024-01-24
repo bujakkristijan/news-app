@@ -82,6 +82,7 @@ const defaultTheme: Theme = {
   },
   colors: {
     red: "#EE2636",
+    darkRed: "#FF4242",
     darkerRed: "#DA0000",
     lightRed: "#FAD1D1",
     white: "white",
@@ -100,7 +101,7 @@ const defaultTheme: Theme = {
     lightOrange: "#FAEAD1",
     purple: "#7E44F8",
     lightPurple: "#9867FF",
-    darkPurple: "#733CE5",
+    darkPurple: "#733CE5"
   },
 };
 

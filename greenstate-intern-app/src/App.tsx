@@ -15,7 +15,11 @@ import { Button } from "./components/button/Button";
 import { NewsCard } from "./components/card/news-card/NewsCard";
 import NewsImage from "./assets/images/news-image.png";
 import NewsImage2 from "./assets/images/news-image-2.png";
+import { TextInput } from "./components/text-input/TextInput";
 function App() {
+  const testOnChange = () => {
+    alert("Nesto");
+  };
   return (
     <>
       <ThemeProvider>
@@ -122,6 +126,45 @@ function App() {
           isActive={false}
           date="23/12/2023"
         />
+
+        <TextInput
+          label="Username"
+          type="text"
+          isDisabled={false}
+          placeholder="Username"
+          value="Some value"
+          error="Error"
+        ></TextInput>
+
+        <TextInput
+          label="Username"
+          type="text"
+          isDisabled={false}
+          placeholder="Username"
+          value="Some value"
+        ></TextInput>
+
+        <TextInput
+          label="Username"
+          type="text"
+          isDisabled={true}
+          placeholder="Username"
+          value="Some value"
+        ></TextInput>
+        <TextInput
+          label="Username"
+          type="text"
+          isDisabled={false}
+          placeholder="Username"
+          value=""
+        ></TextInput>
+        <TextInput
+          label="Username"
+          type="text"
+          isDisabled={true}
+          placeholder="Username"
+          value=""
+        ></TextInput>
       </ThemeProvider>
     </>
   );
