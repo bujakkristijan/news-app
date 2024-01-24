@@ -51,7 +51,7 @@ export const StyledInput = styled.input<{
   background-color: ${(props) =>
     props.$isDisabled ? props.theme.colors.greyDisabled : "transparent"};
   border: 1px solid
-    ${(props) => (props.$hasError ? "red" : props.$isFocused ? "purple" : "#ccc")};
+    ${(props) => (props.$hasError ? props.theme.colors.darkRed : props.$isFocused ? props.theme.colors.purple : props.theme.colors.lightGrey)};
   padding: 0.625rem 1.25rem;
   /* border-radius: ${(props) => props.theme.typography.borderRadius.sm}; */
   border-radius: 0.75rem;
