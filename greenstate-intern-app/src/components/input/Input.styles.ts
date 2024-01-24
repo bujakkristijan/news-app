@@ -58,6 +58,8 @@ export const StyledInput = styled.input<{
           ? theme.colors.purple
           : theme.colors.lightGrey};
   padding: 0.625rem 1.25rem;
+  color: ${({ $isDisabled, theme }) =>
+    $isDisabled ? theme.colors.lightGrey : theme.colors.lightBlack};;
   border-radius: 0.75rem;
   &:focus {
     font-weight: ${({ theme }) => theme.typography.fontWeight.semiBold};
