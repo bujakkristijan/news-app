@@ -1,5 +1,4 @@
 import { StyledNewsCard } from "./NewsCard.styles";
-import NewsImage from "../../../assets/images/news-image.png";
 import { Chip } from "../../chip/Chip";
 import { Card } from "../Card";
 import {
@@ -12,21 +11,17 @@ import {
 type NewsCardProps = {
   title: string;
   description: string;
-  imageURL?: string;
+  imageURL: string;
 };
 
-export const NewsCard = ({
-  title,
-  description,
-  imageURL = NewsImage,
-}: NewsCardProps) => {
+export const NewsCard = ({ title, description, imageURL }: NewsCardProps) => {
   return (
     <Card>
       <StyledNewsCard>
         <StyledChipContainer>
           <Chip isActive={true}>23/12/2023</Chip>
         </StyledChipContainer>
-        <StyledCardImage src={imageURL} alt="" />
+        <StyledCardImage src={imageURL} />
         <StyledNewsCardTitle
           $fontSize="lg"
           $fontWeight={"bold"}
