@@ -16,10 +16,10 @@ import { NewsCard } from "./components/card/news-card/NewsCard";
 import NewsImage from "./assets/images/news-image.png";
 import NewsImage2 from "./assets/images/news-image-2.png";
 import { TextInput } from "./components/text-input/TextInput";
+import { useState } from "react";
+
 function App() {
-  const testOnChange = () => {
-    alert("Nesto");
-  };
+  const [username, setUsername] = useState("Username pera 123");
   return (
     <>
       <ThemeProvider>
@@ -156,7 +156,8 @@ function App() {
           type="text"
           isDisabled={false}
           placeholder="Username"
-          value=""
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         ></TextInput>
         <TextInput
           label="Username"

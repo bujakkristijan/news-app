@@ -14,8 +14,8 @@ export const ErrorWrapper = styled.div`
 `;
 
 export const Label = styled.label<{
-  hasError: boolean;
-  isFocused: boolean;
+  $hasError: boolean;
+  $isFocused: boolean;
 }>`
   display: block;
   margin-bottom: 0.5rem;
@@ -23,9 +23,9 @@ export const Label = styled.label<{
   font-weight: ${(props) => props.theme.typography.fontWeight.regular};
   font-size: ${(props) => props.theme.typography.fontSize.xSm};
   color: ${(props) =>
-    props.hasError
+    props.$hasError
       ? props.theme.colors.darkRed
-      : props.isFocused
+      : props.$isFocused
         ? props.theme.colors.purple
         : props.theme.colors.darkGrey};
 `;
@@ -39,9 +39,9 @@ export const ErrorMessage = styled.div`
 `;
 
 export const StyledInput = styled.input<{
-  hasError: boolean;
-  isFocused: boolean;
-  isDisabled?: boolean;
+  $hasError: boolean;
+  $isFocused: boolean;
+  $isDisabled?: boolean;
 }>`
   width: 100%;
   padding: 0.5rem;
@@ -51,7 +51,7 @@ export const StyledInput = styled.input<{
   background-color: ${(props) =>
     props.disabled ? "lightGrey" : "transparent"};
   border: 1px solid
-    ${(props) => (props.hasError ? "red" : props.isFocused ? "purple" : "#ccc")};
+    ${(props) => (props.$hasError ? "red" : props.$isFocused ? "purple" : "#ccc")};
   padding: 0.625rem 1.25rem;
   /* border-radius: ${(props) => props.theme.typography.borderRadius.sm}; */
   border-radius: 0.75rem;

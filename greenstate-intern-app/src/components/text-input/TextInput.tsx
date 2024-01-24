@@ -14,7 +14,7 @@ interface InputProps {
   isDisabled?: boolean;
   placeholder?: string;
   value: string;
-  onChange?: () => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string | undefined;
   children?: ReactNode;
 }
@@ -41,29 +41,25 @@ export const TextInput = ({
     setFocused(false);
   };
 
-  //   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-  //     onChange(event.target.value);
-  //   };
-
   return (
     <InputWrapper>
       <LabelWrapper>
         {(isFocused || (isFilled && !error)) && !isDisabled && (
-          <Label isFocused={isFocused} hasError={!!error}>
+          <Label $isFocused={isFocused} $hasError={!!error}>
             {label}
           </Label>
         )}
       </LabelWrapper>
 
       <StyledInput
-        isDisabled={isDisabled}
-        isFocused={isFocused}
-        hasError={!!error}
+        $isDisabled={isDisabled}
+        $isFocused={isFocused}
+        $hasError={!!error}
         type={type}
         disabled={isDisabled}
         placeholder={placeholder}
         value={value}
-        // onChange={handleChange}
+        onChange={onChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
         {...restProps}
