@@ -93,6 +93,7 @@ const defaultTheme: Theme = {
     lighterGrey: "#EFEFEF",
     lightestGrey: "#E6E6E6",
     greyDesc: "#5D5D63",
+    greyDisabled: "#F3F4F8",
     black: "#111111",
     lightBlack: "#181E25",
     green: "#18B815",
@@ -101,7 +102,7 @@ const defaultTheme: Theme = {
     lightOrange: "#FAEAD1",
     purple: "#7E44F8",
     lightPurple: "#9867FF",
-    darkPurple: "#733CE5"
+    darkPurple: "#733CE5",
   },
 };
 

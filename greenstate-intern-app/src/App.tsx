@@ -15,7 +15,7 @@ import { Button } from "./components/button/Button";
 import { NewsCard } from "./components/card/news-card/NewsCard";
 import NewsImage from "./assets/images/news-image.png";
 import NewsImage2 from "./assets/images/news-image-2.png";
-import { TextInput } from "./components/text-input/TextInput";
+import { Input } from "./components/text-input/Input";
 import { useState } from "react";
 
 function App() {
@@ -127,45 +127,53 @@ function App() {
           date="23/12/2023"
         />
 
-        <TextInput
+        <Input
           label="Username"
           type="text"
           isDisabled={false}
           placeholder="Username"
           value="Some value"
-          error="Error"
-        ></TextInput>
+          error="Some error message"
+        ></Input>
 
-        <TextInput
+        <Input
           label="Username"
           type="text"
           isDisabled={false}
           placeholder="Username"
           value="Some value"
-        ></TextInput>
+        ></Input>
 
-        <TextInput
+        <Input
           label="Username"
           type="text"
           isDisabled={true}
           placeholder="Username"
           value="Some value"
-        ></TextInput>
-        <TextInput
+        ></Input>
+        <Input
           label="Username"
           type="text"
           isDisabled={false}
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-        ></TextInput>
-        <TextInput
+        ></Input>
+
+        <Input
           label="Username"
           type="text"
           isDisabled={true}
           placeholder="Username"
           value=""
-        ></TextInput>
+        ></Input>
+        <Input
+          label="Username"
+          type="text"
+          isDisabled={false}
+          placeholder="Username"
+          value=""
+        ></Input>
       </ThemeProvider>
     </>
   );

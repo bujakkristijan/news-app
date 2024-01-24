@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import {
   ErrorWrapper,
   LabelWrapper,
@@ -6,28 +6,23 @@ import {
   InputWrapper,
   StyledInput,
   Label,
-} from "./TextInput.styles";
+} from "./Input.styles";
 
-interface InputProps {
+type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
-  type: string;
   isDisabled?: boolean;
-  placeholder?: string;
-  value: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string | undefined;
-  children?: ReactNode;
-}
+  value?: string;
+};
 
-export const TextInput = ({
+export const Input = ({
   label,
   type,
   isDisabled,
   placeholder,
-  value,
+  value = "",
   onChange,
   error,
-  children,
   ...restProps
 }: InputProps) => {
   const [isFocused, setFocused] = React.useState(false);
@@ -67,8 +62,6 @@ export const TextInput = ({
       <ErrorWrapper>
         {(error || isFocused) && <ErrorMessage>{error}</ErrorMessage>}
       </ErrorWrapper>
-
-      {children}
     </InputWrapper>
   );
 };

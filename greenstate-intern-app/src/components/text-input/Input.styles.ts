@@ -49,7 +49,7 @@ export const StyledInput = styled.input<{
   outline: none;
   font-family: ${(props) => props.theme.typography.fontFamily.inter};
   background-color: ${(props) =>
-    props.disabled ? "lightGrey" : "transparent"};
+    props.$isDisabled ? props.theme.colors.greyDisabled : "transparent"};
   border: 1px solid
     ${(props) => (props.$hasError ? "red" : props.$isFocused ? "purple" : "#ccc")};
   padding: 0.625rem 1.25rem;
