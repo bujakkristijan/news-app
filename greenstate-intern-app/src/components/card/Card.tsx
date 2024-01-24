@@ -1,4 +1,5 @@
 import { StyledCard } from "./Card.styles";
+import styled from "styled-components";
 import { PaddingValue } from "../../shared/types/padding-value";
 import {
   TypographyBorderWidth,
@@ -13,6 +14,9 @@ type CardProps = {
   $padding?: PaddingValue;
   $borderColor?: Color;
 };
+const CardContainer = styled.div<{ $padding: PaddingValue }>`
+  padding: ${({ $padding }) => $padding};
+`;
 export const Card = ({
   children,
   $borderwidth = "sm",
@@ -26,10 +30,9 @@ export const Card = ({
       $borderWidth={$borderwidth}
       $borderRadius={$borderRadius}
       $bgColor={$bgColor}
-      $padding={$padding}
       $borderColor={$borderColor}
     >
-      {children}
+      <CardContainer $padding={$padding}>{children}</CardContainer>
     </StyledCard>
   );
 };

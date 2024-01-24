@@ -3,17 +3,15 @@ import {
   TypographyBorderRadius,
   TypographyBorderWidth,
 } from "../../shared/theme/theme";
-import { PaddingValue } from "../../shared/types/padding-value";
 import { Color } from "../../shared/theme/theme";
 export const StyledCard = styled.div<{
   $borderWidth: TypographyBorderWidth;
   $borderRadius: TypographyBorderRadius;
   $bgColor: Color;
-  $padding: PaddingValue;
+  // $padding: PaddingValue;
   $borderColor: Color;
 }>`
   width: fit-content;
-  padding: ${({ $padding }) => $padding};
   border-radius: ${({ theme, $borderRadius }) =>
     theme.typography.borderRadius[$borderRadius]};
   border: ${({ theme, $borderWidth }) =>

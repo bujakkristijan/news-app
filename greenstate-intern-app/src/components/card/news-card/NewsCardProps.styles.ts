@@ -8,6 +8,7 @@ export const StyledNewsCardDescription = styled(StyledText)`
 `;
 
 export const StyledCardImage = styled.img`
+  height: 11.25rem;
   object-fit: cover;
   width: 100%;
   border-radius: 0.5rem;
