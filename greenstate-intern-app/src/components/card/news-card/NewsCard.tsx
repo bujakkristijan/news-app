@@ -6,20 +6,26 @@ import {
   StyledNewsCardDescription,
   StyledCardImage,
   StyledNewsCardTitle,
-} from "./NewsCardProps.styles";
+} from "./NewsCard.styles";
 
 type NewsCardProps = {
   title: string;
   description: string;
   imageURL: string;
+  isActive?: boolean;
 };
 
-export const NewsCard = ({ title, description, imageURL }: NewsCardProps) => {
+export const NewsCard = ({
+  title,
+  description,
+  imageURL,
+  isActive,
+}: NewsCardProps) => {
   return (
     <Card>
       <StyledNewsCard>
         <StyledChipContainer>
-          <Chip isActive={true}>23/12/2023</Chip>
+          <Chip isActive={isActive}>23/12/2023</Chip>
         </StyledChipContainer>
         <StyledCardImage src={imageURL} />
         <StyledNewsCardTitle

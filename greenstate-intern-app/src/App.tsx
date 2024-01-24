@@ -105,12 +105,19 @@ function App() {
           title="Denmark’s King Frederik X takes throne after Margrethe abdicates asd"
           description="Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication, ending her 52-year reign as the country’s lorem ipsum"
           imageURL={NewsImage}
+          isActive={true}
         />
 
         <NewsCard
           title="Denmark’s King Frederik X takes throne after Margrethe abdicates asd"
           description="Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication, ending her 52-year reign as the country’s lorem ipsum"
           imageURL={NewsImage2}
+        />
+        <NewsCard
+          title="Denmark’s King Frederik X takes throne after Margrethe abdicates asd"
+          description="Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication, ending her 52-year reign as the country’s lorem ipsum"
+          imageURL={NewsImage2}
+          isActive={false}
         />
       </ThemeProvider>
     </>

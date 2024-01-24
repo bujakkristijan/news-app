@@ -44,9 +44,6 @@ export type Theme = {
       md: string;
       lg: string;
     };
-    gap: {
-      sm: string;
-    };
     iconSizes: {
       sm: string;
       md: string;
