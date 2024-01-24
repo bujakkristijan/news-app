@@ -130,7 +130,7 @@ function App() {
         <Input
           label="Username"
           type="text"
-          isDisabled={false}
+          disabled={false}
           placeholder="Username"
           value="Some value"
           error="Some error message"
@@ -139,7 +139,7 @@ function App() {
         <Input
           label="Username"
           type="text"
-          isDisabled={false}
+          disabled={false}
           placeholder="Username"
           value="Some value"
         ></Input>
@@ -147,14 +147,14 @@ function App() {
         <Input
           label="Username"
           type="text"
-          isDisabled={true}
+          disabled={true}
           placeholder="Username"
           value="Some value"
         ></Input>
         <Input
           label="Username"
           type="text"
-          isDisabled={false}
+          disabled={false}
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
@@ -163,14 +163,14 @@ function App() {
         <Input
           label="Username"
           type="text"
-          isDisabled={true}
+          disabled={true}
           placeholder="Username"
           value=""
         ></Input>
         <Input
           label="Username"
           type="text"
-          isDisabled={false}
+          disabled={false}
           placeholder="Username"
           value=""
         ></Input>

@@ -41,15 +41,11 @@ export const ErrorMessage = styled.div`
 export const StyledInput = styled.input<{
   $hasError: boolean;
   $isFocused: boolean;
-  $isDisabled?: boolean;
 }>`
   width: 100%;
   padding: 0.5rem;
-  font-size: ${({ theme }) => theme.typography.fontSize.md};
   outline: none;
   font-family: ${({ theme }) => theme.typography.fontFamily.inter};
-  background-color: ${({ $isDisabled, theme }) =>
-    $isDisabled ? theme.colors.greyDisabled : "transparent"};
   border: 1px solid
     ${({ $hasError, $isFocused, theme }) =>
       $hasError
@@ -58,9 +54,12 @@ export const StyledInput = styled.input<{
           ? theme.colors.purple
           : theme.colors.lightGrey};
   padding: 0.625rem 1.25rem;
-  color: ${({ $isDisabled, theme }) =>
-    $isDisabled ? theme.colors.lightGrey : theme.colors.lightBlack};;
+  color: ${({  theme }) => theme.colors.lightBlack};
   border-radius: 0.75rem;
+  &:disabled{
+    color: ${({ theme }) => theme.colors.lightGrey};
+    background-color: ${({ theme }) => theme.colors.greyDisabled};
+  }
   &:focus {
     font-weight: ${({ theme }) => theme.typography.fontWeight.semiBold};
     color: ${({ theme }) => theme.colors.lightBlack};

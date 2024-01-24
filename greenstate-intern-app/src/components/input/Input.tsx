@@ -10,15 +10,13 @@ import {
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
-  isDisabled?: boolean;
   error?: string | undefined;
-  value?: string;
 };
 
 export const Input = ({
   label,
   type,
-  isDisabled,
+  disabled,
   placeholder,
   value = "",
   onChange,
@@ -26,7 +24,7 @@ export const Input = ({
   ...restProps
 }: InputProps) => {
   const [isFocused, setFocused] = React.useState(false);
-  const isFilled = value.trim() !== "";
+  const isFilled = String(value).trim() !== "";
 
   const handleFocus = () => {
     setFocused(true);
@@ -39,7 +37,7 @@ export const Input = ({
   return (
     <InputWrapper>
       <LabelWrapper>
-        {(isFocused || (isFilled && !error)) && !isDisabled && (
+        {(isFocused || (isFilled && !error)) && !disabled && (
           <Label $isFocused={isFocused} $hasError={!!error}>
             {label}
           </Label>
@@ -47,11 +45,10 @@ export const Input = ({
       </LabelWrapper>
 
       <StyledInput
-        $isDisabled={isDisabled}
         $isFocused={isFocused}
         $hasError={!!error}
         type={type}
-        disabled={isDisabled}
+        disabled={disabled}
         placeholder={placeholder}
         value={value}
         onChange={onChange}

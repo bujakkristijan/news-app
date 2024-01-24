@@ -10,6 +10,9 @@ const GlobalStyles = createGlobalStyle`
     body {
         font-family: 'Inter';
     }
+    input{
+        font-size: 1rem;
+    }
 `;
 
 export default GlobalStyles;
