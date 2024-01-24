@@ -15,7 +15,7 @@ import { Button } from "./components/button/Button";
 import { NewsCard } from "./components/card/news-card/NewsCard";
 import NewsImage from "./assets/images/news-image.png";
 import NewsImage2 from "./assets/images/news-image-2.png";
-import { Input } from "./components/text-input/Input";
+import { Input } from "./components/input/Input";
 import { useState } from "react";
 
 function App() {
