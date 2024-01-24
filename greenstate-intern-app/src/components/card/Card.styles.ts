@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PaddingValue } from "../../shared/types/padding-value";
 import {
   TypographyBorderRadius,
   TypographyBorderWidth,
@@ -8,7 +9,6 @@ export const StyledCard = styled.div<{
   $borderWidth: TypographyBorderWidth;
   $borderRadius: TypographyBorderRadius;
   $bgColor: Color;
-  // $padding: PaddingValue;
   $borderColor: Color;
 }>`
   width: fit-content;
@@ -18,4 +18,7 @@ export const StyledCard = styled.div<{
       theme.typography.borderWidth[$borderWidth]}
     solid ${({ theme, $borderColor }) => theme.colors[$borderColor]};
   background-color: ${({ theme, $bgColor }) => theme.colors[$bgColor]};
+`;
+export const CardContainer = styled.div<{ $padding: PaddingValue }>`
+  padding: ${({ $padding }) => $padding};
 `;
