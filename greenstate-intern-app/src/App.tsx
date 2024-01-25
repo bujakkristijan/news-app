@@ -8,7 +8,6 @@ import { IconWrapper } from "./components/icon/icon-wrapper/IconWrapper";
 import { HomeIcon } from "./assets/icons/HomeIcon";
 import { NewPostIcon } from "./assets/icons/NewPostIcon";
 import { AllNewsIcon } from "./assets/icons/AllNewsIcon";
-import { NavItem } from "./components/nav-item/NavItem";
 import { SuccessIcon } from "./assets/icons/SuccessIcon";
 import { CircleIcon } from "./components/circle-icon/CircleIcon";
 import { Button } from "./components/button/Button";
@@ -17,10 +16,52 @@ import NewsImage from "./assets/images/news-image.png";
 import NewsImage2 from "./assets/images/news-image-2.png";
 import { Input } from "./components/input/Input";
 import { useState } from "react";
+import { Navigation } from "./components/navigation/Navigation";
 import { Headline } from "./components/headline/Headline";
 
 function App() {
   const [username, setUsername] = useState("Username pera 123");
+  const items = [
+    {
+      title: "Home",
+      icon: HomeIcon,
+      value: "HomeNavItem",
+      route: "/home",
+      onClick: () => {
+        console.log({ route: "/home", value: "HomeNavItem" });
+        setActiveNavItem("HomeNavItem");
+        localStorage.setItem("activeNavItem", "HomeNavItem");
+      },
+    },
+    {
+      title: "New Post",
+      icon: NewPostIcon,
+      value: "NewPostNavItem",
+      route: "/new-post",
+      onClick: () => {
+        console.log({ route: "/new-post", value: "NewPostNavItem" });
+        setActiveNavItem("NewPostNavItem");
+        localStorage.setItem("activeNavItem", "NewPostNavItem");
+      },
+    },
+    {
+      title: "All News",
+      icon: AllNewsIcon,
+      value: "AllNewsNavItem",
+      route: "/all-news",
+      onClick: () => {
+        console.log({ route: "/all-news", value: "AllNewsNavItem" });
+        setActiveNavItem("AllNewsNavItem");
+        localStorage.setItem("activeNavItem", "AllNewsNavItem");
+      },
+    },
+  ];
+
+  const [activeNavItem, setActiveNavItem] = useState(() => {
+    const storedActiveNavItem = localStorage.getItem("activeNavItem");
+    return storedActiveNavItem || items[0].value || undefined;
+  });
+
   return (
     <>
       <ThemeProvider>
@@ -74,15 +115,9 @@ function App() {
           <IconWrapper icon={AllNewsIcon} size="fill" color="blue" />
         </div>
 
-        <NavItem icon={HomeIcon} isActive={true}>
-          Home
-        </NavItem>
-        <NavItem icon={NewPostIcon} isActive={false}>
-          New post
-        </NavItem>
-        <NavItem icon={AllNewsIcon} isActive={false}>
-          All news
-        </NavItem>
+        {/* <NavItem icon={HomeIcon} isActive={true} title="Home"></NavItem>
+        <NavItem icon={NewPostIcon} isActive={false} title="New post"></NavItem>
+        <NavItem icon={AllNewsIcon} isActive={false} title="All news"></NavItem> */}
 
         <CircleIcon icon="success"></CircleIcon>
         <CircleIcon icon="warning"></CircleIcon>
@@ -139,6 +174,8 @@ function App() {
         <Headline title="Latest news" isActive={false} />
         <Headline title="Latest news" isActive={true} />
         <Headline title="Latest news" />
+
+        <Navigation items={items} selectedItem={activeNavItem} />
       </ThemeProvider>
     </>
   );

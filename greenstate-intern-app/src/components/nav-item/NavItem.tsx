@@ -2,16 +2,18 @@ import { StyledNavItem } from "./NavItem.styles";
 import IconWrapper from "../icon/icon-wrapper/IconWrapper";
 import { Text } from "../text/Text";
 
-interface NavItemProps {
+export type NavItemProps = {
   icon: React.ComponentType;
-  children: string;
+  title: string;
   onClick?: () => void;
   isActive?: boolean;
-}
+  value?: string | undefined;
+  route?: string | undefined;
+};
 
 export const NavItem = ({
   icon: Icon,
-  children,
+  title,
   onClick,
   isActive,
 }: NavItemProps) => {
@@ -25,7 +27,7 @@ export const NavItem = ({
         fontFamily="inter"
         color={isActive ? "blue" : "grey"}
       >
-        {children}
+        {title}
       </Text>
     </StyledNavItem>
   );
