@@ -1,8 +1,6 @@
 import styled from "styled-components";
 export const InputWrapper = styled.div`
-  height: 6rem;
   border-radius: 0.25rem;
-  padding: 0.5rem;
 `;
 
 export const LabelWrapper = styled.div`
@@ -18,7 +16,9 @@ export const Label = styled.label<{
   $isFocused: boolean;
 }>`
   display: block;
-  margin-bottom: 0.5rem;
+  line-height: 1rem;
+  margin-bottom: 0.25rem;
+  margin-left: 0.5rem;
   font-family: ${({ theme }) => theme.typography.fontFamily.montserrat};
   font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
   font-size: ${({ theme }) => theme.typography.fontSize.xSm};
@@ -34,7 +34,9 @@ export const ErrorMessage = styled.div`
   color: ${({ theme }) => theme.colors.darkRed};
   font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
   font-size: ${({ theme }) => theme.typography.fontSize.xSm};
+  line-height: 1rem;
   margin-top: 0.25rem;
+  margin-left: 0.5rem;
   font-family: ${({ theme }) => theme.typography.fontFamily.montserrat};
 `;
 
@@ -43,9 +45,10 @@ export const StyledInput = styled.input<{
   $isFocused: boolean;
 }>`
   width: 100%;
-  /* height: 3.5rem; */
+  height: 3.5rem;
   line-height: ${({ theme }) => theme.typography.lineHeight.lg};
   padding: 0.625rem 1.25rem;
+  outline: none;
   font-family: ${({ theme }) => theme.typography.fontFamily.inter};
   border: 1px solid
     ${({ $hasError, $isFocused, theme }) =>
