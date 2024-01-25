@@ -57,7 +57,7 @@ export const Input = ({
         {...restProps}
       />
       <ErrorWrapper>
-        {(error || isFocused) && <ErrorMessage>{error}</ErrorMessage>}
+        {error && <ErrorMessage>{error}</ErrorMessage>}
       </ErrorWrapper>
     </InputWrapper>
   );
