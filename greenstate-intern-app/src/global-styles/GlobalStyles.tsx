@@ -10,6 +10,10 @@ const GlobalStyles = createGlobalStyle`
     body {
         font-family: 'Inter';
     }
+    input{
+        font-size: 1rem;
+        padding: 1rem 1.25rem;
+    }
 `;
 
 export default GlobalStyles;

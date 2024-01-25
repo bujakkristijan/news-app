@@ -70,12 +70,14 @@ export type Theme = {
   };
   colors: {
     red: string;
+    darkRed: string;
     darkerRed: string;
     lightRed: string;
     white: string;
     lightGrey: string;
     blue: string;
     grey: string;
+    greyDisabled: string;
     darkGrey: string;
     lighterGrey: string;
     lightestGrey: string;
