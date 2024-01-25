@@ -1,6 +1,5 @@
 import styled from "styled-components";
 export const InputWrapper = styled.div`
-  border-radius: 0.25rem;
 `;
 
 export const LabelWrapper = styled.div`
