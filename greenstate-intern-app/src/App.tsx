@@ -18,49 +18,21 @@ import { Input } from "./components/input/Input";
 import { useState } from "react";
 import { Navigation } from "./components/navigation/Navigation";
 import { Headline } from "./components/headline/Headline";
+import { navigationItems } from "./shared/data/navigation/items/items";
+import { NavItemProps } from "./components/nav-item/NavItem";
 
 function App() {
   const [username, setUsername] = useState("Username pera 123");
-  const items = [
-    {
-      title: "Home",
-      icon: HomeIcon,
-      value: "HomeNavItem",
-      route: "/home",
-      onClick: () => {
-        console.log({ route: "/home", value: "HomeNavItem" });
-        setActiveNavItem("HomeNavItem");
-        localStorage.setItem("activeNavItem", "HomeNavItem");
-      },
-    },
-    {
-      title: "New Post",
-      icon: NewPostIcon,
-      value: "NewPostNavItem",
-      route: "/new-post",
-      onClick: () => {
-        console.log({ route: "/new-post", value: "NewPostNavItem" });
-        setActiveNavItem("NewPostNavItem");
-        localStorage.setItem("activeNavItem", "NewPostNavItem");
-      },
-    },
-    {
-      title: "All News",
-      icon: AllNewsIcon,
-      value: "AllNewsNavItem",
-      route: "/all-news",
-      onClick: () => {
-        console.log({ route: "/all-news", value: "AllNewsNavItem" });
-        setActiveNavItem("AllNewsNavItem");
-        localStorage.setItem("activeNavItem", "AllNewsNavItem");
-      },
-    },
-  ];
-
   const [activeNavItem, setActiveNavItem] = useState(() => {
     const storedActiveNavItem = localStorage.getItem("activeNavItem");
-    return storedActiveNavItem || items[0].value || undefined;
+    return storedActiveNavItem || navigationItems[0].value || undefined;
   });
+
+  const handleItemClick = (item: NavItemProps) => {
+    console.log("Route: " + item.route);
+    setActiveNavItem(item.value);
+    localStorage.setItem("activeNavItem", String(item.value));
+  };
 
   return (
     <>
@@ -98,11 +70,9 @@ function App() {
         <Heading headingType="h1" fontFamily="montserrat">
           TEST HEADING1
         </Heading>
-
         <Chip isActive={true}>23/12/2023</Chip>
         <Chip isActive={false}>23/12/2023</Chip>
         <Chip>23/12/2023</Chip>
-
         <IconWrapper icon={HomeIcon} size="sm" color="red"></IconWrapper>
         <IconWrapper
           icon={NewPostIcon}
@@ -115,16 +85,10 @@ function App() {
           <IconWrapper icon={AllNewsIcon} size="fill" color="blue" />
         </div>
 
-        {/* <NavItem icon={HomeIcon} isActive={true} title="Home"></NavItem>
-        <NavItem icon={NewPostIcon} isActive={false} title="New post"></NavItem>
-        <NavItem icon={AllNewsIcon} isActive={false} title="All news"></NavItem> */}
-
         <CircleIcon icon="success"></CircleIcon>
         <CircleIcon icon="warning"></CircleIcon>
         <CircleIcon icon="error"></CircleIcon>
-
         <IconWrapper icon={HomeIcon} size="sm" color="red"></IconWrapper>
-
         <Button size="sm" isDisabled={false}>
           Some text
         </Button>
@@ -140,7 +104,6 @@ function App() {
         <Button size="xlg" isDisabled={false}>
           Some text
         </Button>
-
         <NewsCard
           title="Denmark’s King Frederik X takes throne after Margrethe abdicates asd"
           description="Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication, ending her 52-year reign as the country’s lorem ipsum"
@@ -148,13 +111,13 @@ function App() {
           isActive={true}
           date="23/12/2023"
         />
-
         <NewsCard
           title="Denmark’s King Frederik X takes throne after Margrethe abdicates asd"
           description="Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication, ending her 52-year reign as the country’s lorem ipsum"
           imageURL={NewsImage2}
           date="23/12/2023"
         />
+
         <NewsCard
           title="Denmark’s King Frederik X takes throne after Margrethe abdicates asd"
           description="Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication, ending her 52-year reign as the country’s lorem ipsum"
@@ -175,10 +138,13 @@ function App() {
         <Headline title="Latest news" isActive={true} />
         <Headline title="Latest news" />
 
-        <Navigation items={items} selectedItem={activeNavItem} />
+        <Navigation
+          items={navigationItems}
+          selectedItem={activeNavItem}
+          onItemClick={handleItemClick}
+        />
       </ThemeProvider>
     </>
   );
 }
-
 export default App;

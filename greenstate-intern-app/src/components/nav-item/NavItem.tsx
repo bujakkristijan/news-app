@@ -7,8 +7,8 @@ export type NavItemProps = {
   title: string;
   onClick?: () => void;
   isActive?: boolean;
-  value?: string | undefined;
-  route?: string | undefined;
+  value?: string;
+  route?: string;
 };
 
 export const NavItem = ({

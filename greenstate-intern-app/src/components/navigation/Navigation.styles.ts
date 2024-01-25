@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const StyledNavigation = styled.div`
   display: flex;
-  padding: 24px 64px;
+  padding: 1.5rem 4rem;
   justify-content: center;
   align-items: center;
-  gap: 120px;
-  background: #fff;
-  box-shadow: 0px 4px 20px 0px rgba(16, 24, 40, 0.1);
+  gap: 7.5rem;
+  background: ${({ theme}) => theme.colors.white};
+  box-shadow: 0 0.25rem 1.25rem 0 rgba(16, 24, 40, 0.1);
 `;
