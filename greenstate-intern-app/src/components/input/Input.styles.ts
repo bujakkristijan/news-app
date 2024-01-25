@@ -3,40 +3,15 @@ export const InputWrapper = styled.div`
 `;
 
 export const LabelWrapper = styled.div`
-  height: 1.25rem;
+  height: 1rem;
+  margin-bottom: 0.25rem;
+  margin-left: 0.5rem;
 `;
 
 export const ErrorWrapper = styled.div`
-  height: 1.25rem;
-`;
-
-export const Label = styled.label<{
-  $hasError: boolean;
-  $isFocused: boolean;
-}>`
-  display: block;
-  line-height: 1rem;
-  margin-bottom: 0.25rem;
-  margin-left: 0.5rem;
-  font-family: ${({ theme }) => theme.typography.fontFamily.montserrat};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
-  font-size: ${({ theme }) => theme.typography.fontSize.xSm};
-  color: ${({ theme, $hasError, $isFocused }) =>
-    $hasError
-      ? theme.colors.darkRed
-      : $isFocused
-        ? theme.colors.purple
-        : theme.colors.darkGrey};
-`;
-
-export const ErrorMessage = styled.div`
-  color: ${({ theme }) => theme.colors.darkRed};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
-  font-size: ${({ theme }) => theme.typography.fontSize.xSm};
-  line-height: 1rem;
+  height: 1rem;
   margin-top: 0.25rem;
   margin-left: 0.5rem;
-  font-family: ${({ theme }) => theme.typography.fontFamily.montserrat};
 `;
 
 export const StyledInput = styled.input<{

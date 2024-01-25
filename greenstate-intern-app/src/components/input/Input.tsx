@@ -1,11 +1,10 @@
 import React, { useState } from "react";
+import { Text } from "../text/Text";
 import {
   ErrorWrapper,
   LabelWrapper,
-  ErrorMessage,
   InputWrapper,
   StyledInput,
-  Label,
 } from "./Input.styles";
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
@@ -38,9 +37,14 @@ export const Input = ({
     <InputWrapper>
       <LabelWrapper>
         {(isFocused || (isFilled && !error)) && !disabled && (
-          <Label $isFocused={isFocused} $hasError={!!error}>
+          <Text
+            fontSize="xSm"
+            color={error ? "darkRed" : isFocused ? "purple" : "darkGrey"}
+            fontFamily="montserrat"
+            lineHeight="sm"
+          >
             {label}
-          </Label>
+          </Text>
         )}
       </LabelWrapper>
 
@@ -57,7 +61,16 @@ export const Input = ({
         {...restProps}
       />
       <ErrorWrapper>
-        {error && <ErrorMessage>{error}</ErrorMessage>}
+        {error && (
+          <Text
+            fontSize="xSm"
+            color="darkRed"
+            fontFamily="montserrat"
+            lineHeight="sm"
+          >
+            {error}
+          </Text>
+        )}
       </ErrorWrapper>
     </InputWrapper>
   );
