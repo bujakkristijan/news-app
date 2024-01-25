@@ -132,47 +132,8 @@ function App() {
           type="text"
           disabled={false}
           placeholder="Username"
-          value="Some value"
-          error="Some error message"
-        ></Input>
-
-        <Input
-          label="Username"
-          type="text"
-          disabled={false}
-          placeholder="Username"
-          value="Some value"
-        ></Input>
-
-        <Input
-          label="Username"
-          type="text"
-          disabled={true}
-          placeholder="Username"
-          value="Some value"
-        ></Input>
-        <Input
-          label="Username"
-          type="text"
-          disabled={false}
-          placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-        ></Input>
-
-        <Input
-          label="Username"
-          type="text"
-          disabled={true}
-          placeholder="Username"
-          value=""
-        ></Input>
-        <Input
-          label="Username"
-          type="text"
-          disabled={false}
-          placeholder="Username"
-          value=""
         ></Input>
       </ThemeProvider>
     </>

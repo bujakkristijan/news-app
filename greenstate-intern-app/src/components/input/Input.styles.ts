@@ -1,6 +1,4 @@
 import styled from "styled-components";
-export const InputWrapper = styled.div`
-`;
 
 export const LabelWrapper = styled.div`
   height: 1rem;

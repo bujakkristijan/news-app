@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { Text } from "../text/Text";
-import {
-  ErrorWrapper,
-  LabelWrapper,
-  InputWrapper,
-  StyledInput,
-} from "./Input.styles";
+import { ErrorWrapper, LabelWrapper, StyledInput } from "./Input.styles";
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
@@ -34,7 +29,7 @@ export const Input = ({
   };
 
   return (
-    <InputWrapper>
+    <div>
       <LabelWrapper>
         {(isFocused || (isFilled && !error)) && !disabled && (
           <Text
@@ -72,6 +67,6 @@ export const Input = ({
           </Text>
         )}
       </ErrorWrapper>
-    </InputWrapper>
+    </div>
   );
 };
