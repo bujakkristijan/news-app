@@ -39,6 +39,11 @@ export type Theme = {
       sm: string;
       md: string;
     };
+    borderWidth: {
+      sm: string;
+      md: string;
+      lg: string;
+    };
     iconSizes: {
       sm: string;
       md: string;
@@ -73,6 +78,7 @@ export type Theme = {
     grey: string;
     darkGrey: string;
     lighterGrey: string;
+    lightestGrey: string;
     black: string;
     green: string;
     lightGreen: string;
@@ -81,5 +87,7 @@ export type Theme = {
     purple: string;
     lightPurple: string;
     darkPurple: string;
+    lightBlack: string;
+    greyDesc: string;
   };
 };

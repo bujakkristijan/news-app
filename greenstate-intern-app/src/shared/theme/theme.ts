@@ -7,6 +7,8 @@ export type TypographyHeadingType = keyof Theme["typography"]["headingType"];
 export type Color = keyof Theme["colors"];
 export type TypographyIconSize = keyof Theme["typography"]["iconSizes"];
 export type TypographyButtonSize = keyof Theme["typography"]["buttonSizes"];
+export type TypographyBorderRadius = keyof Theme["typography"]["borderRadius"];
+export type TypographyBorderWidth = keyof Theme["typography"]["borderWidth"];
 
 const defaultTheme: Theme = {
   typography: {
@@ -49,6 +51,11 @@ const defaultTheme: Theme = {
       sm: "0.5rem",
       md: "1rem",
     },
+    borderWidth: {
+      sm: "1px",
+      md: "2px",
+      lg: "4px",
+    },
     iconSizes: {
       sm: "1.5rem",
       md: "2rem",
@@ -83,7 +90,10 @@ const defaultTheme: Theme = {
     darkGrey: "#7B828A",
     lightGrey: "#C9D2DE",
     lighterGrey: "#EFEFEF",
+    lightestGrey: "#E6E6E6",
+    greyDesc: "#5D5D63",
     black: "#111111",
+    lightBlack: "#181E25",
     green: "#18B815",
     lightGreen: "#D1FADF",
     orange: "#FFA218",
