@@ -59,6 +59,9 @@ export const StyledInput = styled.input<{
   &:disabled{
     color: ${({ theme }) => theme.colors.lightGrey};
     background-color: ${({ theme }) => theme.colors.greyDisabled};
+    &::placeholder{
+      color: ${({ theme }) => theme.colors.lightGrey};
+    }
   }
   &:focus {
     font-weight: ${({ theme }) => theme.typography.fontWeight.semiBold};
