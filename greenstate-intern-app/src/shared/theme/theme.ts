@@ -105,7 +105,7 @@ const defaultTheme: Theme = {
     lightPurple: "#9867FF",
     darkPurple: "#733CE5",
     lightBlue: "#2D99E7",
-    darkBlue: "#2249AF"
+    darkBlue: "#2249AF",
   },
 };
 
