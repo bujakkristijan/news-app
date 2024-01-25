@@ -43,8 +43,9 @@ export const StyledInput = styled.input<{
   $isFocused: boolean;
 }>`
   width: 100%;
-  padding: 0.5rem;
-  outline: none;
+  /* height: 3.5rem; */
+  line-height: ${({ theme }) => theme.typography.lineHeight.lg};
+  padding: 0.625rem 1.25rem;
   font-family: ${({ theme }) => theme.typography.fontFamily.inter};
   border: 1px solid
     ${({ $hasError, $isFocused, theme }) =>
