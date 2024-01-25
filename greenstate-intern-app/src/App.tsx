@@ -17,6 +17,7 @@ import NewsImage from "./assets/images/news-image.png";
 import NewsImage2 from "./assets/images/news-image-2.png";
 import { Input } from "./components/input/Input";
 import { useState } from "react";
+import { Headline } from "./components/headline/Headline";
 
 function App() {
   const [username, setUsername] = useState("Username pera 123");
@@ -135,6 +136,8 @@ function App() {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         ></Input>
+        <Headline title="Latest news" isActive={false} />
+        <Headline title="Latest news" isActive={true} />
       </ThemeProvider>
     </>
   );
