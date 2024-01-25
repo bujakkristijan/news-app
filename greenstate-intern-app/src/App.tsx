@@ -19,19 +19,18 @@ import { useState } from "react";
 import { Navigation } from "./components/navigation/Navigation";
 import { Headline } from "./components/headline/Headline";
 import { navigationItems } from "./shared/data/navigation/items/items";
-import { NavItemProps } from "./components/nav-item/NavItem";
 
 function App() {
   const [username, setUsername] = useState("Username pera 123");
-  const [activeNavItem, setActiveNavItem] = useState(() => {
-    const storedActiveNavItem = localStorage.getItem("activeNavItem");
-    return storedActiveNavItem || navigationItems[0].value || undefined;
-  });
+  const [selectedNavItem, setSelectedNavItem] = useState(
+    navigationItems[0].value || undefined
+  );
 
-  const handleItemClick = (item: NavItemProps) => {
-    console.log("Route: " + item.route);
-    setActiveNavItem(item.value);
-    localStorage.setItem("activeNavItem", String(item.value));
+  const handleItemClick = (route?: string, value?: string) => {
+    if (route && value) {
+      console.log("Route: " + route);
+      setSelectedNavItem(value);
+    }
   };
 
   return (
@@ -140,7 +139,7 @@ function App() {
 
         <Navigation
           items={navigationItems}
-          selectedItem={activeNavItem}
+          selectedItem={selectedNavItem}
           onItemClick={handleItemClick}
         />
       </ThemeProvider>
