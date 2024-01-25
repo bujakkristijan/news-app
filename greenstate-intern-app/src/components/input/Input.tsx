@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ErrorWrapper,
   LabelWrapper,
@@ -23,7 +23,7 @@ export const Input = ({
   error,
   ...restProps
 }: InputProps) => {
-  const [isFocused, setFocused] = React.useState(false);
+  const [isFocused, setFocused] = useState(false);
   const isFilled = String(value).trim() !== "";
 
   const handleFocus = () => {
