@@ -13,6 +13,7 @@ type NewsCardProps = {
   description: string;
   imageURL: string;
   isActive?: boolean;
+  date: string;
 };
 
 export const NewsCard = ({
@@ -20,12 +21,13 @@ export const NewsCard = ({
   description,
   imageURL,
   isActive,
+  date,
 }: NewsCardProps) => {
   return (
     <Card>
       <StyledNewsCard>
         <StyledChipContainer>
-          <Chip isActive={isActive}>23/12/2023</Chip>
+          <Chip isActive={isActive}>{date}</Chip>
         </StyledChipContainer>
         <StyledCardImage src={imageURL} />
         <StyledNewsCardTitle
