@@ -1,4 +1,4 @@
-export type PaddingValue =
+export type Padding =
   | `${number}rem`
   | `${number}rem ${number}rem`
   | `${number}rem ${number}rem ${number}rem`

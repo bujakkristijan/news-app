@@ -1,5 +1,5 @@
 import { StyledCard } from "./Card.styles";
-import { PaddingValue } from "../../shared/types/padding-value";
+import { Padding } from "../../shared/types/padding";
 import {
   TypographyBorderWidth,
   TypographyBorderRadius,
@@ -10,7 +10,7 @@ type CardProps = {
   $borderwidth?: TypographyBorderWidth;
   $borderRadius?: TypographyBorderRadius;
   $bgColor?: Color;
-  $padding?: PaddingValue;
+  $padding?: Padding;
   $borderColor?: Color;
 };
 
