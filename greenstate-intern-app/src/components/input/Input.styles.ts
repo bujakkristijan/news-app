@@ -46,7 +46,7 @@ export const StyledInput = styled.input<{
   width: 100%;
   height: 3.5rem;
   line-height: ${({ theme }) => theme.typography.lineHeight.lg};
-  padding: 0.625rem 1.25rem;
+  padding: 1rem 1.25rem;
   outline: none;
   font-family: ${({ theme }) => theme.typography.fontFamily.inter};
   border: 1px solid
@@ -56,7 +56,6 @@ export const StyledInput = styled.input<{
         : $isFocused
           ? theme.colors.purple
           : theme.colors.lightGrey};
-  padding: 0.625rem 1.25rem;
   color: ${({  theme }) => theme.colors.lightBlack};
   border-radius: 0.75rem;
   &:disabled{
