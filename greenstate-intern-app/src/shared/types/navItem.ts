@@ -1,4 +1,4 @@
-export type NavItemProps = {
+export type NavItem = {
     icon: React.ComponentType;
     title: string;
     onClick?: () => void;

@@ -1,9 +1,9 @@
 import { HomeIcon } from "../../../../assets/icons/HomeIcon";
 import { NewPostIcon } from "../../../../assets/icons/NewPostIcon";
 import { AllNewsIcon } from "../../../../assets/icons/AllNewsIcon";
-import { NavItemProps } from "../../../types/navItemProps";
+import { NavItem } from "../../../types/navItem";
 
-export const navigationItems:NavItemProps[] = [
+export const navigationItems:NavItem[] = [
     {
       title: "Home",
       icon: HomeIcon,

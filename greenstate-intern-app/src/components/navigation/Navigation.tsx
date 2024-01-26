@@ -1,11 +1,11 @@
-import { NavItemProps } from "../../shared/types/navItemProps";
-import { NavItem } from "../nav-item/NavItem";
+import { NavItem } from "../../shared/types/navItem";
+import { NavItem as NavItemComponent } from "../nav-item/NavItem";
 import { StyledNavigation } from "./Navigation.styles";
 
 type NavigationProps = {
-  items: NavItemProps[];
+  items: NavItem[];
   selectedItem?: string;
-  onItemClick: (item: NavItemProps) => void;
+  onItemClick: (item: NavItem) => void;
 };
 
 export const Navigation = ({
@@ -16,13 +16,13 @@ export const Navigation = ({
   return (
     <StyledNavigation>
       {items.map((item) => (
-        <NavItem
+        <NavItemComponent
           key={item.value}
           icon={item.icon}
           onClick={() => onItemClick(item)}
           title={item.title}
           isActive={selectedItem === item.value}
-        ></NavItem>
+        ></NavItemComponent>
       ))}
     </StyledNavigation>
   );
