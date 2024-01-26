@@ -21,11 +21,7 @@ import { Headline } from "./components/headline/Headline";
 import { navigationItems } from "./shared/data/navigation/items/items";
 import { NavItem } from "./shared/types/ui-model/navItem";
 import { TrustCard } from "./components/card/trust-card/TrustCard";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home } from "./pages/home/Home";
-import { AllNews } from "./pages/all-news/AllNews";
-import { NewPost } from "./pages/new-post/NewPost";
-import { routes } from "./router/routes/routes";
+import { RouterComponent } from "./router/Router";
 
 function App() {
   const [username, setUsername] = useState("Username pera 123");
@@ -41,126 +37,119 @@ function App() {
   return (
     <>
       <ThemeProvider>
-        <Router>
-          <GlobalStyles />
-          <Text
-            fontSize="lg"
-            fontWeight="bold"
-            lineHeight="lg"
-            fontFamily="inter"
-            color="grey"
-          >
-            Neki tekst test
-          </Text>
-          <Text
-            fontSize="lg"
-            fontWeight="bold"
-            lineHeight="lg"
-            fontFamily="inter"
-          >
-            Neki tekst test
-          </Text>
-          <Text>Neki tekst test</Text>
-          <Heading
-            headingType="h1"
-            fontWeight="bold"
-            fontFamily="montserrat"
-            color="blue"
-          >
-            TEST HEADING1
-          </Heading>
-          <Heading headingType="h1" fontWeight="bold" fontFamily="montserrat">
-            TEST HEADING1
-          </Heading>
-          <Heading headingType="h1" fontFamily="montserrat">
-            TEST HEADING1
-          </Heading>
-          <Chip isActive={true}>23/12/2023</Chip>
-          <Chip isActive={false}>23/12/2023</Chip>
-          <Chip>23/12/2023</Chip>
-          <IconWrapper icon={HomeIcon} size="sm" color="red"></IconWrapper>
-          <IconWrapper
-            icon={NewPostIcon}
-            size="md"
-            color="lightGrey"
-          ></IconWrapper>
-          <IconWrapper icon={AllNewsIcon} size="lg" color="blue"></IconWrapper>
-          <IconWrapper icon={SuccessIcon} size="md" color="blue"></IconWrapper>
-          <div style={{ width: "250px", height: "250px" }}>
-            <IconWrapper icon={AllNewsIcon} size="fill" color="blue" />
-          </div>
+        <GlobalStyles />
+        <Text
+          fontSize="lg"
+          fontWeight="bold"
+          lineHeight="lg"
+          fontFamily="inter"
+          color="grey"
+        >
+          Neki tekst test
+        </Text>
+        <Text
+          fontSize="lg"
+          fontWeight="bold"
+          lineHeight="lg"
+          fontFamily="inter"
+        >
+          Neki tekst test
+        </Text>
+        <Text>Neki tekst test</Text>
+        <Heading
+          headingType="h1"
+          fontWeight="bold"
+          fontFamily="montserrat"
+          color="blue"
+        >
+          TEST HEADING1
+        </Heading>
+        <Heading headingType="h1" fontWeight="bold" fontFamily="montserrat">
+          TEST HEADING1
+        </Heading>
+        <Heading headingType="h1" fontFamily="montserrat">
+          TEST HEADING1
+        </Heading>
+        <Chip isActive={true}>23/12/2023</Chip>
+        <Chip isActive={false}>23/12/2023</Chip>
+        <Chip>23/12/2023</Chip>
+        <IconWrapper icon={HomeIcon} size="sm" color="red"></IconWrapper>
+        <IconWrapper
+          icon={NewPostIcon}
+          size="md"
+          color="lightGrey"
+        ></IconWrapper>
+        <IconWrapper icon={AllNewsIcon} size="lg" color="blue"></IconWrapper>
+        <IconWrapper icon={SuccessIcon} size="md" color="blue"></IconWrapper>
+        <div style={{ width: "250px", height: "250px" }}>
+          <IconWrapper icon={AllNewsIcon} size="fill" color="blue" />
+        </div>
 
-          <CircleIcon status="success"></CircleIcon>
-          <CircleIcon status="warning"></CircleIcon>
-          <CircleIcon status="error"></CircleIcon>
-          <IconWrapper icon={HomeIcon} size="sm" color="red"></IconWrapper>
-          <Button size="sm" isDisabled={false}>
-            Some text
-          </Button>
-          <Button size="md" isDisabled={false}>
-            Some text
-          </Button>
-          <Button size="lg" isDisabled={true}>
-            Some text
-          </Button>
-          <Button size="xlg" isDisabled={false}>
-            Some text
-          </Button>
-          <Button size="xlg" isDisabled={false}>
-            Some text
-          </Button>
-          <NewsCard
-            title="Denmark’s King Frederik X takes throne after Margrethe abdicates asd"
-            description="Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication, ending her 52-year reign as the country’s lorem ipsum"
-            imageURL={NewsImage}
-            isActive={true}
-            date="23/12/2023"
-          />
-          <NewsCard
-            title="Denmark’s King Frederik X takes throne after Margrethe abdicates asd"
-            description="Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication, ending her 52-year reign as the country’s lorem ipsum"
-            imageURL={NewsImage2}
-            date="23/12/2023"
-          />
+        <CircleIcon status="success"></CircleIcon>
+        <CircleIcon status="warning"></CircleIcon>
+        <CircleIcon status="error"></CircleIcon>
+        <IconWrapper icon={HomeIcon} size="sm" color="red"></IconWrapper>
+        <Button size="sm" isDisabled={false}>
+          Some text
+        </Button>
+        <Button size="md" isDisabled={false}>
+          Some text
+        </Button>
+        <Button size="lg" isDisabled={true}>
+          Some text
+        </Button>
+        <Button size="xlg" isDisabled={false}>
+          Some text
+        </Button>
+        <Button size="xlg" isDisabled={false}>
+          Some text
+        </Button>
+        <NewsCard
+          title="Denmark’s King Frederik X takes throne after Margrethe abdicates asd"
+          description="Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication, ending her 52-year reign as the country’s lorem ipsum"
+          imageURL={NewsImage}
+          isActive={true}
+          date="23/12/2023"
+        />
+        <NewsCard
+          title="Denmark’s King Frederik X takes throne after Margrethe abdicates asd"
+          description="Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication, ending her 52-year reign as the country’s lorem ipsum"
+          imageURL={NewsImage2}
+          date="23/12/2023"
+        />
 
-          <NewsCard
-            title="Denmark’s King Frederik X takes throne after Margrethe abdicates asd"
-            description="Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication, ending her 52-year reign as the country’s lorem ipsum"
-            imageURL={NewsImage2}
-            isActive={false}
-            date="23/12/2023"
-          />
+        <NewsCard
+          title="Denmark’s King Frederik X takes throne after Margrethe abdicates asd"
+          description="Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication, ending her 52-year reign as the country’s lorem ipsum"
+          imageURL={NewsImage2}
+          isActive={false}
+          date="23/12/2023"
+        />
 
-          <Input
-            label="Username"
-            type="text"
-            disabled={false}
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          ></Input>
-          <Headline title="Latest news" isActive={false} />
-          <Headline title="Latest news" isActive={true} />
-          <Headline title="Latest news" />
+        <Input
+          label="Username"
+          type="text"
+          disabled={false}
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        ></Input>
+        <Headline title="Latest news" isActive={false} />
+        <Headline title="Latest news" isActive={true} />
+        <Headline title="Latest news" />
 
-          <Navigation
-            items={navigationItems}
-            selectedItem={selectedNavItem}
-            onItemClick={handleItemClick}
-          />
+        <Navigation
+          items={navigationItems}
+          selectedItem={selectedNavItem}
+          onItemClick={handleItemClick}
+        />
 
-          <TrustCard
-            title="News Recognized for Unparalleled Objectivity"
-            description="Our News has been acknowledged for its unparalleled commitment to objectivity, standing out in an era where unbiased reporting is increasingly valued"
-          ></TrustCard>
+        <TrustCard
+          title="News Recognized for Unparalleled Objectivity"
+          description="Our News has been acknowledged for its unparalleled commitment to objectivity, standing out in an era where unbiased reporting is increasingly valued"
+        ></TrustCard>
 
-          <Routes>
-            <Route path={routes.default} element={<Home />}></Route>
-            <Route path={routes.home} element={<Home />}></Route>
-            <Route path={routes.newPost} element={<NewPost />}></Route>
-            <Route path={routes.allNews} element={<AllNews />}></Route>
-          </Routes>
-        </Router>
+        <RouterComponent />
       </ThemeProvider>
     </>
   );
