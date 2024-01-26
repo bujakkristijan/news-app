@@ -138,6 +138,7 @@ function App() {
         ></Input>
         <Headline title="Latest news" isActive={false} />
         <Headline title="Latest news" isActive={true} />
+        <Headline title="Latest news" />
       </ThemeProvider>
     </>
   );

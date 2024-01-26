@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const StyledHeadline = styled.div`
-  margin-bottom: 1.5rem;
+  width: fit-content;
 `;
 
 export const StyledLine = styled.div`
   margin-top: 0.5rem;
   height: 0.25rem;
-  width: 7.5rem;
+  width: 100%;
   background: linear-gradient(
     271deg,
     ${({ theme }) => theme.colors.darkBlue} -8.54%,

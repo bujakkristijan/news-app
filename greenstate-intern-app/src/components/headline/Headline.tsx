@@ -5,7 +5,7 @@ type HeadlineProps = {
   isActive?: boolean;
 };
 
-export const Headline = ({ title, isActive }: HeadlineProps) => {
+export const Headline = ({ title, isActive = false }: HeadlineProps) => {
   return (
     <StyledHeadline>
       <Text
