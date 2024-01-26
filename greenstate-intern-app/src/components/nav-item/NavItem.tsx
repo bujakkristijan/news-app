@@ -24,6 +24,7 @@ export const NavItem = ({
         lineHeight="lg"
         fontFamily="inter"
         color={isActive ? "blue" : "grey"}
+        noWrap={true}
       >
         {title}
       </Text>

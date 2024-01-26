@@ -7,5 +7,5 @@ export const StyledNavItem = styled.div`
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
-  max-width: 5rem;
+  width: 6rem;
 `;
