@@ -155,7 +155,7 @@ function App() {
           ></TrustCard>
 
           <Routes>
-            <Route path="/" element={<Home />}></Route>
+            <Route path={routes.default} element={<Home />}></Route>
             <Route path={routes.home} element={<Home />}></Route>
             <Route path={routes.newPost} element={<NewPost />}></Route>
             <Route path={routes.allNews} element={<AllNews />}></Route>
