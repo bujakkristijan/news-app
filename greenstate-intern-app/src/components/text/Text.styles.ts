@@ -24,5 +24,5 @@ export const StyledText = styled.p<{
   font-family: ${({ theme, $fontFamily }) =>
     theme.typography.fontFamily[$fontFamily]};
   color: ${({ theme, $color }) => theme.colors[$color]};
-  white-space: ${({$noWrap}) => $noWrap? "nowrap": "wrap"};
+  white-space: ${({$noWrap}) => $noWrap ? "nowrap": "wrap"};
 `;
