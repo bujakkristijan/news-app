@@ -9,3 +9,10 @@ export const StyledNavItem = styled.div`
   cursor: pointer;
   width: 6rem;
 `;
+
+export const StyledTextWrapper = styled.div`
+  max-width: 10rem;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+`
