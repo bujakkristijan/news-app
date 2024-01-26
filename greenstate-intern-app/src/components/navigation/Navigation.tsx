@@ -5,7 +5,7 @@ import { StyledNavigation } from "./Navigation.styles";
 type NavigationProps = {
   items: NavItemProps[];
   selectedItem?: string;
-  onItemClick: (route?: string, value?: string) => void;
+  onItemClick: (item: NavItemProps) => void;
 };
 
 export const Navigation = ({
@@ -19,7 +19,7 @@ export const Navigation = ({
         <NavItem
           key={item.value}
           icon={item.icon}
-          onClick={() => onItemClick(item.route, item.value)}
+          onClick={() => onItemClick(item)}
           title={item.title}
           isActive={selectedItem === item.value}
         ></NavItem>
