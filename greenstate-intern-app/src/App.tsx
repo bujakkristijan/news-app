@@ -8,7 +8,6 @@ import { IconWrapper } from "./components/icon/icon-wrapper/IconWrapper";
 import { HomeIcon } from "./assets/icons/HomeIcon";
 import { NewPostIcon } from "./assets/icons/NewPostIcon";
 import { AllNewsIcon } from "./assets/icons/AllNewsIcon";
-import { NavItem } from "./components/nav-item/NavItem";
 import { SuccessIcon } from "./assets/icons/SuccessIcon";
 import { CircleIcon } from "./components/circle-icon/CircleIcon";
 import { Button } from "./components/button/Button";
@@ -17,10 +16,22 @@ import NewsImage from "./assets/images/news-image.png";
 import NewsImage2 from "./assets/images/news-image-2.png";
 import { Input } from "./components/input/Input";
 import { useState } from "react";
+import { Navigation } from "./components/navigation/Navigation";
 import { Headline } from "./components/headline/Headline";
+import { navigationItems } from "./shared/data/navigation/items/items";
+import { NavItem } from "./shared/types/ui-model/navItem";
 
 function App() {
   const [username, setUsername] = useState("Username pera 123");
+  const [selectedNavItem, setSelectedNavItem] = useState(
+    navigationItems[0].value
+  );
+
+  const handleItemClick = (item: NavItem) => {
+    console.log("Route: " + item.route);
+    setSelectedNavItem(item.value);
+  };
+
   return (
     <>
       <ThemeProvider>
@@ -57,11 +68,9 @@ function App() {
         <Heading headingType="h1" fontFamily="montserrat">
           TEST HEADING1
         </Heading>
-
         <Chip isActive={true}>23/12/2023</Chip>
         <Chip isActive={false}>23/12/2023</Chip>
         <Chip>23/12/2023</Chip>
-
         <IconWrapper icon={HomeIcon} size="sm" color="red"></IconWrapper>
         <IconWrapper
           icon={NewPostIcon}
@@ -74,22 +83,10 @@ function App() {
           <IconWrapper icon={AllNewsIcon} size="fill" color="blue" />
         </div>
 
-        <NavItem icon={HomeIcon} isActive={true}>
-          Home
-        </NavItem>
-        <NavItem icon={NewPostIcon} isActive={false}>
-          New post
-        </NavItem>
-        <NavItem icon={AllNewsIcon} isActive={false}>
-          All news
-        </NavItem>
-
         <CircleIcon icon="success"></CircleIcon>
         <CircleIcon icon="warning"></CircleIcon>
         <CircleIcon icon="error"></CircleIcon>
-
         <IconWrapper icon={HomeIcon} size="sm" color="red"></IconWrapper>
-
         <Button size="sm" isDisabled={false}>
           Some text
         </Button>
@@ -105,7 +102,6 @@ function App() {
         <Button size="xlg" isDisabled={false}>
           Some text
         </Button>
-
         <NewsCard
           title="Denmark’s King Frederik X takes throne after Margrethe abdicates asd"
           description="Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication, ending her 52-year reign as the country’s lorem ipsum"
@@ -113,13 +109,13 @@ function App() {
           isActive={true}
           date="23/12/2023"
         />
-
         <NewsCard
           title="Denmark’s King Frederik X takes throne after Margrethe abdicates asd"
           description="Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication, ending her 52-year reign as the country’s lorem ipsum"
           imageURL={NewsImage2}
           date="23/12/2023"
         />
+
         <NewsCard
           title="Denmark’s King Frederik X takes throne after Margrethe abdicates asd"
           description="Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication, ending her 52-year reign as the country’s lorem ipsum"
@@ -139,9 +135,14 @@ function App() {
         <Headline title="Latest news" isActive={false} />
         <Headline title="Latest news" isActive={true} />
         <Headline title="Latest news" />
+
+        <Navigation
+          items={navigationItems}
+          selectedItem={selectedNavItem}
+          onItemClick={handleItemClick}
+        />
       </ThemeProvider>
     </>
   );
 }
-
 export default App;

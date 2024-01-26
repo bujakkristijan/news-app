@@ -1,32 +1,35 @@
-import { StyledNavItem } from "./NavItem.styles";
+import { StyledNavItem, StyledTextWrapper } from "./NavItem.styles";
 import IconWrapper from "../icon/icon-wrapper/IconWrapper";
 import { Text } from "../text/Text";
 
-interface NavItemProps {
+export type NavItemProps = {
   icon: React.ComponentType;
-  children: string;
+  title: string;
   onClick?: () => void;
   isActive?: boolean;
-}
+};
 
 export const NavItem = ({
   icon: Icon,
-  children,
+  title,
   onClick,
   isActive,
 }: NavItemProps) => {
   return (
     <StyledNavItem onClick={onClick}>
       <IconWrapper icon={Icon} size="sm" color={isActive ? "blue" : "grey"} />
-      <Text
-        fontSize="md"
-        fontWeight={isActive ? "extraBold" : "regular"}
-        lineHeight="lg"
-        fontFamily="inter"
-        color={isActive ? "blue" : "grey"}
-      >
-        {children}
-      </Text>
+      <StyledTextWrapper>
+        <Text
+          fontSize="md"
+          fontWeight={isActive ? "extraBold" : "regular"}
+          lineHeight="lg"
+          fontFamily="inter"
+          color={isActive ? "blue" : "grey"}
+          noWrap={true}
+        >
+          {title}
+        </Text>
+      </StyledTextWrapper>
     </StyledNavItem>
   );
 };

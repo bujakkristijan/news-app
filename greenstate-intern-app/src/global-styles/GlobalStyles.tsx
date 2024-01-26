@@ -11,8 +11,7 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Inter';
     }
     input{
-        font-size: 1rem;
-        padding: 1rem 1.25rem;
+        font-family: 'Inter';
     }
 `;
 
