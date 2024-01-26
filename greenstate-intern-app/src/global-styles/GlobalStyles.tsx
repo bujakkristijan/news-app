@@ -12,6 +12,7 @@ const GlobalStyles = createGlobalStyle`
     }
     input{
         font-size: 1rem;
+        font-family: 'Inter';
         padding: 1rem 1.25rem;
     }
 `;
