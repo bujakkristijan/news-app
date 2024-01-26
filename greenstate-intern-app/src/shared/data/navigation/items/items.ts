@@ -5,19 +5,19 @@ import { NavItem } from "../../../types/ui-model/navItem";
 
 export const navigationItems:NavItem[] = [
     {
-      title: "Home sadas das sadasdd",
+      title: "Home",
       icon: HomeIcon,
       value: "HomeNavItem",
       route: "/home",
     },
     {
-      title: "New Post sadas sadas asd ads ",
+      title: "New Post",
       icon: NewPostIcon,
       value: "NewPostNavItem",
       route: "/new-post",
     },
     {
-      title: "All News sdadsa dasadsads ",
+      title: "All News",
       icon: AllNewsIcon,
       value: "AllNewsNavItem",
       route: "/all-news",
