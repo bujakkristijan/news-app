@@ -19,6 +19,8 @@ export const StyledInput = styled.input<{
   width: 100%;
   height: 3.5rem;
   line-height: ${({ theme }) => theme.typography.lineHeight.lg};
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
   outline: none;
   border: 1px solid
     ${({ $hasError, $isFocused, theme }) =>
