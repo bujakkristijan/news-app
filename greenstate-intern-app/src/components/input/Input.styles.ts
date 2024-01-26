@@ -28,12 +28,12 @@ export const StyledInput = styled.input<{
         : $isFocused
           ? theme.colors.purple
           : theme.colors.lightGrey};
-  color: ${({  theme }) => theme.colors.lightBlack};
+  color: ${({ theme }) => theme.colors.lightBlack};
   border-radius: 0.75rem;
-  &:disabled{
+  &:disabled {
     color: ${({ theme }) => theme.colors.lightGrey};
     background-color: ${({ theme }) => theme.colors.greyDisabled};
-    &::placeholder{
+    &::placeholder {
       color: ${({ theme }) => theme.colors.lightGrey};
     }
   }
