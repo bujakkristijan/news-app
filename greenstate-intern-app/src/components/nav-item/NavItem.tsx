@@ -16,7 +16,7 @@ export const NavItem = ({
   isActive,
 }: NavItemProps) => {
   return (
-    <StyledNavItem className={isActive ? "active" : ""} onClick={onClick}>
+    <StyledNavItem onClick={onClick}>
       <IconWrapper icon={Icon} size="sm" color={isActive ? "blue" : "grey"} />
       <StyledTextWrapper>
         <Text
@@ -25,7 +25,6 @@ export const NavItem = ({
           lineHeight="lg"
           fontFamily="inter"
           color={isActive ? "blue" : "grey"}
-          noWrap={true}
         >
           {title}
         </Text>
