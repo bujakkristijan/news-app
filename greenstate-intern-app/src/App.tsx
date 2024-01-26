@@ -19,7 +19,7 @@ import { useState } from "react";
 import { Navigation } from "./components/navigation/Navigation";
 import { Headline } from "./components/headline/Headline";
 import { navigationItems } from "./shared/data/navigation/items/items";
-import { NavItem } from "./shared/types/navItem";
+import { NavItem } from "./shared/types/ui-model/navItem";
 
 function App() {
   const [username, setUsername] = useState("Username pera 123");

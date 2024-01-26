@@ -1,4 +1,4 @@
-import { NavItem } from "../../shared/types/navItem";
+import { NavItem } from "../../shared/types/ui-model/navItem";
 import { NavItem as NavItemComponent } from "../nav-item/NavItem";
 import { StyledNavigation } from "./Navigation.styles";
 
