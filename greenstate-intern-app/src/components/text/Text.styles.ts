@@ -14,6 +14,7 @@ export const StyledText = styled.p<{
   $fontFamily: TypographyFontFamily;
   $color: Color;
 }>`
+
   font-size: ${({ theme, $fontSize }) => theme.typography.fontSize[$fontSize]};
   font-weight: ${({ theme, $fontWeight }) =>
     theme.typography.fontWeight[$fontWeight]};

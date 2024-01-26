@@ -19,19 +19,17 @@ import { useState } from "react";
 import { Navigation } from "./components/navigation/Navigation";
 import { Headline } from "./components/headline/Headline";
 import { navigationItems } from "./shared/data/navigation/items/items";
-import { NavItemProps } from "./components/nav-item/NavItem";
+import { NavItemProps } from "./shared/types/navItemProps";
 
 function App() {
   const [username, setUsername] = useState("Username pera 123");
   const [selectedNavItem, setSelectedNavItem] = useState(
-    navigationItems[0].value || undefined
+    navigationItems[0].value
   );
 
   const handleItemClick = (item: NavItemProps) => {
-    if (item.route && item.value) {
-      console.log("Route: " + item.route);
-      setSelectedNavItem(item.value);
-    }
+    console.log("Route: " + item.route);
+    setSelectedNavItem(item.value);
   };
 
   return (

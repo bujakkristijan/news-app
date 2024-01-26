@@ -1,4 +1,4 @@
-import { NavItemProps } from "../nav-item/NavItem";
+import { NavItemProps } from "../../shared/types/navItemProps";
 import { NavItem } from "../nav-item/NavItem";
 import { StyledNavigation } from "./Navigation.styles";
 
