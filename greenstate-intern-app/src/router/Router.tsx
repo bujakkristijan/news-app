@@ -5,11 +5,7 @@ import { routes } from "./routes";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
   {
-    path: routes.default,
-    element: <Home />,
-  },
-  {
-    path: routes.home,
+    path: routes.root,
     element: <Home />,
   },
   {

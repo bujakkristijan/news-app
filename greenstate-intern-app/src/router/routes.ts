@@ -1,7 +1,5 @@
 export const routes ={
-    default: "/",
-    home:'/home',
+    root: '/',
     newPost:'/new-post',
     allNews: '/all-news'
-    
 }
