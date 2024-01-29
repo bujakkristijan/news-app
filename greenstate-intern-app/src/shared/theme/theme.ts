@@ -99,6 +99,7 @@ const defaultTheme: Theme = {
     lighterBlack: "#242424",
     green: "#18B815",
     lightGreen: "#D1FADF",
+    lighterGreen: "#F3FFF7",
     orange: "#FFA218",
     lightOrange: "#FAEAD1",
     purple: "#7E44F8",

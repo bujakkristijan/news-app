@@ -11,8 +11,9 @@ export const StyledCard = styled.div<{
   $bgColor: Color;
   $borderColor: Color;
   $padding: Padding;
+  $width: string;
 }>`
-  width: fit-content;
+  width: ${({ $width }) => $width};
   padding: ${({ $padding }) => $padding};
   border-radius: ${({ theme, $borderRadius }) =>
     theme.typography.borderRadius[$borderRadius]};

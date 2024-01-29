@@ -5,18 +5,18 @@ import { SuccessIcon } from "../../assets/icons/SuccessIcon";
 import { WarningIcon } from "../../assets/icons/WarningIcon";
 import { ErrorIcon } from "../../assets/icons/ErrorIcon";
 
-interface CircleIconProps {
-  icon: "success" | "warning" | "error";
-}
+export type CircleIconProps = {
+  status: "success" | "warning" | "error";
+};
 
-interface IconDetails {
+type IconDetails = {
   selectedIcon: React.ComponentType;
   color: Color;
   bgColor: Color;
-}
+};
 
-const getIconDetails = (icon: CircleIconProps["icon"]): IconDetails => {
-  switch (icon) {
+const getIconDetails = (status: CircleIconProps["status"]): IconDetails => {
+  switch (status) {
     case "success":
       return {
         selectedIcon: SuccessIcon,
@@ -36,12 +36,12 @@ const getIconDetails = (icon: CircleIconProps["icon"]): IconDetails => {
         bgColor: "lightRed",
       };
     default:
-      throw new Error(`Unsupported icon: ${icon}`);
+      throw new Error(`Unsupported icon: ${status}`);
   }
 };
 
-export const CircleIcon = ({ icon }: CircleIconProps) => {
-  const { selectedIcon, color, bgColor } = getIconDetails(icon);
+export const CircleIcon = ({ status }: CircleIconProps) => {
+  const { selectedIcon, color, bgColor } = getIconDetails(status);
 
   return (
     <StyledCircleIcon color={bgColor} size="sm">
