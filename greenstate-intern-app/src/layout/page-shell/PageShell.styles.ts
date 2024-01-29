@@ -1,6 +1,6 @@
 import styled from "styled-components"
 export const StyledPageShell = styled.div`
-    width: 80%;
+    max-width: 77.5rem;
     margin: auto;
     background-color: aqua;
 `
