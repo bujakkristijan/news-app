@@ -84,9 +84,9 @@ function App() {
           <IconWrapper icon={AllNewsIcon} size="fill" color="blue" />
         </div>
 
-        {/* <CircleIcon icon="success"></CircleIcon>
-        <CircleIcon icon="warning"></CircleIcon>
-        <CircleIcon icon="error"></CircleIcon> */}
+        <CircleIcon status="success"></CircleIcon>
+        <CircleIcon status="warning"></CircleIcon>
+        <CircleIcon status="error"></CircleIcon>
         <IconWrapper icon={HomeIcon} size="sm" color="red"></IconWrapper>
         <Button size="sm" isDisabled={false}>
           Some text

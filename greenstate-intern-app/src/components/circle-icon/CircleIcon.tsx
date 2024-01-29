@@ -9,7 +9,7 @@ export type CircleIconProps = {
   status: "success" | "warning" | "error";
 };
 
-export type IconDetails = {
+type IconDetails = {
   selectedIcon: React.ComponentType;
   color: Color;
   bgColor: Color;
