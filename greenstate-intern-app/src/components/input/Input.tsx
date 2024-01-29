@@ -4,7 +4,7 @@ import { ErrorWrapper, LabelWrapper, StyledInput } from "./Input.styles";
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
-  error?: string | undefined;
+  error?: string;
 };
 
 export const Input = ({

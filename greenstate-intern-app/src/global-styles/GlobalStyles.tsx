@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Inter';
     }
     input{
-        font-family: 'Inter';
+        font-family: inherit;
     }
 `;
 
