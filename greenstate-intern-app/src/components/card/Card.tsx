@@ -12,6 +12,7 @@ type CardProps = {
   $bgColor?: Color;
   $padding?: Padding;
   $borderColor?: Color;
+  $width?: string;
 };
 
 export const Card = ({
@@ -21,6 +22,7 @@ export const Card = ({
   $bgColor = "white",
   $padding = "1rem",
   $borderColor = "lightestGrey",
+  $width = "fit-content",
 }: CardProps) => {
   return (
     <StyledCard
@@ -29,6 +31,7 @@ export const Card = ({
       $bgColor={$bgColor}
       $padding={$padding}
       $borderColor={$borderColor}
+      $width={$width}
     >
       {children}
     </StyledCard>

@@ -5,9 +5,9 @@ import { SuccessIcon } from "../../assets/icons/SuccessIcon";
 import { WarningIcon } from "../../assets/icons/WarningIcon";
 import { ErrorIcon } from "../../assets/icons/ErrorIcon";
 
-interface CircleIconProps {
+export type CircleIconProps = {
   icon: "success" | "warning" | "error";
-}
+};
 
 interface IconDetails {
   selectedIcon: React.ComponentType;

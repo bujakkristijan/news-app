@@ -20,6 +20,7 @@ import { Navigation } from "./components/navigation/Navigation";
 import { Headline } from "./components/headline/Headline";
 import { navigationItems } from "./shared/data/navigation/items/items";
 import { NavItem } from "./shared/types/ui-model/navItem";
+import { TrustCard } from "./components/card/trust-card/TrustCard";
 
 function App() {
   const [username, setUsername] = useState("Username pera 123");
@@ -141,6 +142,17 @@ function App() {
           selectedItem={selectedNavItem}
           onItemClick={handleItemClick}
         />
+
+        <TrustCard
+          title="News Recognized for Unparalleled Objectivity"
+          description="Our News has been acknowledged for its unparalleled commitment to objectivity, standing out in an era where unbiased reporting is increasingly valued"
+          circleIcon="success"
+        ></TrustCard>
+
+        <TrustCard
+          title="News Recognized for Unparalleled Objectivity"
+          description="Our News has been acknowledged for its unparalleled commitment to objectivity, standing out in an era where unbiased reporting is increasingly valued"
+        ></TrustCard>
       </ThemeProvider>
     </>
   );
