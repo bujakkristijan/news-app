@@ -21,7 +21,7 @@ export const StyledInput = styled.input<{
   padding: 1rem 1.25rem;
   line-height: ${({ theme }) => theme.typography.lineHeight.lg};
   padding: 1rem 1.25rem;
-  font-size: 1rem;
+  font-size: ${({ theme }) => theme.typography.fontSize.md};
   outline: none;
   border: 1px solid
     ${({ $hasError, $isFocused, theme }) =>
