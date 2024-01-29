@@ -135,6 +135,21 @@ function App() {
           onChange={(e) => setUsername(e.target.value)}
         ></Input>
 
+        <Headline title="Latest news" isActive={false} />
+        <Headline title="Latest news" isActive={true} />
+        <Headline title="Latest news" />
+
+        <Navigation
+          items={navigationItems}
+          selectedItem={selectedNavItem}
+          onItemClick={handleItemClick}
+        />
+
+        <TrustCard
+          title="News Recognized for Unparalleled Objectivity"
+          description="Our News has been acknowledged for its unparalleled commitment to objectivity, standing out in an era where unbiased reporting is increasingly valued"
+        ></TrustCard>
+
         <RouterProvider />
       </ThemeProvider>
     </>
