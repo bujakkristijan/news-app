@@ -8,7 +8,7 @@ export const navigationItems:NavItem[] = [
       title: "Home",
       icon: HomeIcon,
       value: "HomeNavItem",
-      route: "/home",
+      route: "/",
     },
     {
       title: "New Post",
