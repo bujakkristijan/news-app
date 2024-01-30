@@ -6,8 +6,7 @@ import { NavItem } from "../shared/types/ui-model/navItem";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { navigationItems } from "../shared/data/navigation/items/items";
-import { StyledPageShellWrapper } from "../components/page-shell/PageShell.styles";
-
+import { StyledPageShellWrapper } from "./Layout.styles";
 export const Layout = () => {
   const navigate = useNavigate();
 
