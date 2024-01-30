@@ -3,7 +3,7 @@ import { Navigation } from "../components/navigation/Navigation";
 import { StyledLayout } from "./Layout.styles";
 import { PageShell } from "../components/page-shell/PageShell";
 import { NavItem } from "../shared/types/ui-model/navItem";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { navigationItems } from "../shared/data/navigation/items/items";
 import { StyledPageShellWrapper } from "./Layout.styles";
 
