@@ -2,21 +2,18 @@ import { Home } from "../pages/home/Home";
 import { NewPost } from "../pages/new-post/NewPost";
 import { AllNews } from "../pages/all-news/AllNews";
 import { routes } from "./routes";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-const router = createBrowserRouter([
-  {
-    path: routes.root,
-    element: <Home />,
-  },
-  {
-    path: routes.allNews,
-    element: <AllNews />,
-  },
-  {
-    path: routes.newPost,
-    element: <NewPost />,
-  },
-]);
-export const RouterComponent = () => {
-  return <RouterProvider router={router} />;
-};
+import {
+  createBrowserRouter,
+  Route,
+  createRoutesFromElements,
+} from "react-router-dom";
+import { Layout } from "../layout/Layout";
+export const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path={routes.root} element={<Layout />}>
+      <Route index element={<Home />} />
+      <Route path={routes.newPost} element={<NewPost />} />
+      <Route path={routes.allNews} element={<AllNews />} />
+    </Route>
+  )
+);
