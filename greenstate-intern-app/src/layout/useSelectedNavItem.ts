@@ -26,7 +26,9 @@ export const useSelectedNavItem = () => {
     );
     if (matchingItem) {
       setSelectedNavItem(matchingItem.value);
-    } else {
+    }
+    else{
+      setSelectedNavItem(navigationItems[0].value);
       navigate(String(navigationItems[0].route));
     }
   }, [location.pathname, navigate]);
