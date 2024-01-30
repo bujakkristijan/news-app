@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { HeaderNavigation } from "./navigation/HeaderNavigation";
+import { HeaderNavigation } from "./header-navigation/HeaderNavigation";
 import { StyledLayout } from "./Layout.styles";
 import { PageShell } from "./page-shell/PageShell";
 
