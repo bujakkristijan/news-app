@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { NavItem } from "../shared/types/ui-model/navItem";
 import { navigationItems } from "../shared/data/navigation/items/items";
@@ -6,6 +6,7 @@ import { navigationItems } from "../shared/data/navigation/items/items";
 export const useSelectedNavItem = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const isInitialMount = useRef(true);
 
   const [selectedNavItem, setSelectedNavItem] = useState(() => {
     const matchingItem = navigationItems.find(
@@ -14,7 +15,17 @@ export const useSelectedNavItem = () => {
     return matchingItem ? matchingItem.value : navigationItems[0].value;
   });
 
+  const handleItemClick = (item: NavItem) => {
+    navigate(String(item.route));
+    setSelectedNavItem(item.value);
+  };
+
   useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+
     const normalizedPathname = location.pathname.replace(/\/+$/, "");
     const matchingItem = navigationItems.find(
       (item) => item.route === normalizedPathname,
@@ -26,11 +37,6 @@ export const useSelectedNavItem = () => {
       navigate(String(navigationItems[0].route));
     }
   }, [location.pathname, navigate]);
-
-  const handleItemClick = (item: NavItem) => {
-    navigate(String(item.route));
-    setSelectedNavItem(item.value);
-  };
 
   return { selectedNavItem, handleItemClick };
 };
