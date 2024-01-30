@@ -3,12 +3,16 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { navigationItems } from "../shared/data/navigation/items/items";
 
 const findCurrentRouteItem = (pathname: string) => {
-  const normalizedPathname = pathname.replace(/\/+$/, "");
+  let normalizedPathname = pathname.replace(/\/+$/, "");
+  console.log("NormalizedPathname: " + normalizedPathname);
+  if (normalizedPathname === "") {
+    normalizedPathname = "/";
+  }
   return navigationItems.find((item) => item.route === normalizedPathname);
 };
 
 export const useSelectedNavItem = () => {
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
   const navigate = useNavigate();
 
   const [selectedNavItem, setSelectedNavItem] = useState(() => {
@@ -18,8 +22,10 @@ export const useSelectedNavItem = () => {
 
   useEffect(() => {
     const currentRouteItem = findCurrentRouteItem(pathname);
-
-    setSelectedNavItem(currentRouteItem ? currentRouteItem.value : navigationItems[0].value);
+    console.log("CurrentRoute: " + currentRouteItem?.route);
+    setSelectedNavItem(
+      currentRouteItem ? currentRouteItem.value : navigationItems[0].value,
+    );
 
     currentRouteItem
       ? navigate(currentRouteItem.route)
