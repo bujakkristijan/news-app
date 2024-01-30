@@ -6,6 +6,7 @@ import { NavItem } from "../shared/types/ui-model/navItem";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { navigationItems } from "../shared/data/navigation/items/items";
+import { StyledPageShellWrapper } from "../components/page-shell/PageShell.styles";
 
 export const Layout = () => {
   const navigate = useNavigate();
@@ -26,9 +27,11 @@ export const Layout = () => {
         selectedItem={selectedNavItem}
         onItemClick={handleItemClick}
       />
-      <PageShell>
-        <Outlet />
-      </PageShell>
+      <StyledPageShellWrapper>
+        <PageShell>
+          <Outlet />
+        </PageShell>
+      </StyledPageShellWrapper>
     </StyledLayout>
   );
 };
