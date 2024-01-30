@@ -1,24 +1,46 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import { Navigation } from "../components/navigation/Navigation";
 import { StyledLayout } from "./Layout.styles";
 import { PageShell } from "../components/page-shell/PageShell";
 import { NavItem } from "../shared/types/ui-model/navItem";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navigationItems } from "../shared/data/navigation/items/items";
 import { StyledPageShellWrapper } from "./Layout.styles";
+
 export const Layout = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const [selectedNavItem, setSelectedNavItem] = useState(
-    navigationItems[0].value
-  );
+  const [selectedNavItem, setSelectedNavItem] = useState(() => {
+    const matchingItem = navigationItems.find(
+      (item) => item.route === location.pathname
+    );
+    return matchingItem ? matchingItem.value : navigationItems[0].value;
+  });
+
+  useEffect(() => {
+    setSelectedNavItem(() => {
+      const matchingItem = navigationItems.find(
+        (item) => item.route === location.pathname
+      );
+      const newSelectedNavItem = matchingItem
+        ? matchingItem.value
+        : navigationItems[0].value;
+
+      const newState = {
+        ...window.history.state,
+        selectedNavItem: newSelectedNavItem,
+      };
+      window.history.replaceState(newState, "");
+
+      return newSelectedNavItem;
+    });
+  }, [location.pathname]);
 
   const handleItemClick = (item: NavItem) => {
     navigate(String(item.route));
-    console.log(item.route);
-    setSelectedNavItem(item.value);
   };
+
   return (
     <StyledLayout>
       <Navigation
