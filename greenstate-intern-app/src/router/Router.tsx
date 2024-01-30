@@ -11,9 +11,9 @@ import { Layout } from "../layout/Layout";
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path={routes.root} element={<Layout />}>
-      <Route index element={<Home />}></Route>
-      <Route path={routes.newPost} element={<NewPost />}></Route>
-      <Route path={routes.allNews} element={<AllNews />}></Route>
+      <Route index element={<Home />} />
+      <Route path={routes.newPost} element={<NewPost />} />
+      <Route path={routes.allNews} element={<AllNews />} />
     </Route>
   )
 );
