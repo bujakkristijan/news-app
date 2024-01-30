@@ -23,17 +23,7 @@ export const Layout = () => {
       const matchingItem = navigationItems.find(
         (item) => item.route === location.pathname
       );
-      const newSelectedNavItem = matchingItem
-        ? matchingItem.value
-        : navigationItems[0].value;
-
-      const newState = {
-        ...window.history.state,
-        selectedNavItem: newSelectedNavItem,
-      };
-      window.history.replaceState(newState, "");
-
-      return newSelectedNavItem;
+      return matchingItem ? matchingItem.value : navigationItems[0].value;
     });
   }, [location.pathname]);
 
