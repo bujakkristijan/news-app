@@ -9,17 +9,11 @@ import { NavItem } from "../shared/types/ui-model/navItem";
 import { useNavigate } from "react-router-dom";
 
 export const Layout = () => {
-  const { selectedNavItem, setSelectedNavItem } = useSelectedNavItem();
+  const { selectedNavItem } = useSelectedNavItem();
   const navigate = useNavigate();
 
   const handleItemClick = (item: NavItem) => {
-    try {
-      setSelectedNavItem(item.value);
-      navigate(item.route);
-    } catch (error) {
-      setSelectedNavItem(navigationItems[0].value);
-      navigate(navigationItems[0].route);
-    }
+    navigate(item.route);
   };
 
   return (
