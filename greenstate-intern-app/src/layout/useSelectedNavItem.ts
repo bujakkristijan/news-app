@@ -16,7 +16,6 @@ export const useSelectedNavItem = () => {
 
   const handleItemClick = (item: NavItem) => {
     navigate(String(item.route));
-    setSelectedNavItem(item.value);
   };
 
   useEffect(() => {
