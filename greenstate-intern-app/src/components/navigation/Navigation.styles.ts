@@ -6,6 +6,6 @@ export const StyledNavigation = styled.div`
   justify-content: center;
   align-items: center;
   gap: 7.5rem;
-  background: ${({ theme}) => theme.colors.white};
+  background: ${({ theme }) => theme.colors.white};
   box-shadow: 0 0.25rem 1.25rem 0 rgba(16, 24, 40, 0.1);
 `;

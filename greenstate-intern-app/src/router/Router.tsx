@@ -14,6 +14,6 @@ export const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path={routes.newPost} element={<NewPost />} />
       <Route path={routes.allNews} element={<AllNews />} />
-    </Route>
-  )
+    </Route>,
+  ),
 );

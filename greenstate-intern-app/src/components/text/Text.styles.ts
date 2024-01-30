@@ -15,7 +15,6 @@ export const StyledText = styled.p<{
   $color: Color;
   $noWrap?: boolean;
 }>`
-
   font-size: ${({ theme, $fontSize }) => theme.typography.fontSize[$fontSize]};
   font-weight: ${({ theme, $fontWeight }) =>
     theme.typography.fontWeight[$fontWeight]};
@@ -24,5 +23,5 @@ export const StyledText = styled.p<{
   font-family: ${({ theme, $fontFamily }) =>
     theme.typography.fontFamily[$fontFamily]};
   color: ${({ theme, $color }) => theme.colors[$color]};
-  white-space: ${({$noWrap}) => $noWrap ? "nowrap": "wrap"};
+  white-space: ${({ $noWrap }) => ($noWrap ? "nowrap" : "wrap")};
 `;
