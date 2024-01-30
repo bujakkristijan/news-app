@@ -9,7 +9,7 @@ function App() {
     <>
       <ThemeProvider>
         <GlobalStyles />
-        <RouterProvider router={router}></RouterProvider>
+        <RouterProvider router={router} />
       </ThemeProvider>
     </>
   );
