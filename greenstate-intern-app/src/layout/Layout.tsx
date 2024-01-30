@@ -18,17 +18,9 @@ export const Layout = () => {
     return matchingItem ? matchingItem.value : navigationItems[0].value;
   });
 
-  useEffect(() => {
-    setSelectedNavItem(() => {
-      const matchingItem = navigationItems.find(
-        (item) => item.route === location.pathname
-      );
-      return matchingItem ? matchingItem.value : navigationItems[0].value;
-    });
-  }, [location.pathname]);
-
   const handleItemClick = (item: NavItem) => {
     navigate(String(item.route));
+    setSelectedNavItem(item.value);
   };
 
   return (
