@@ -9,6 +9,7 @@ type FormInputProps = {
   register: UseFormRegister<NewPostData>;
   fieldName: Extract<keyof NewPostData, string>;
   error?: FieldError | undefined;
+  defValues?: any;
   //   watch: UseFormWatch<NewPostData>; // Add watch as a prop
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
@@ -18,6 +19,7 @@ const FormInput = ({
   error,
   fieldName,
   //   watch,
+  defValues,
   ...inputProps
 }: FormInputProps) => {
   return (
@@ -29,6 +31,7 @@ const FormInput = ({
         // fieldName={fieldName}
         // watch={watch} // Pass watch as a prop
         error={error?.message}
+        defValue={defValues(fieldName)}
       />
     </div>
   );

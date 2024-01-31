@@ -8,7 +8,8 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
   error?: string;
   register: UseFormRegister<NewPostData>;
-  // fieldName: Extract<keyof NewPostData, string>;
+  defValue?: any;
+  fieldName: Extract<keyof NewPostData, string>;
   // watch: (field: string) => any;
 };
 
@@ -19,12 +20,15 @@ export const Input = ({
   placeholder,
   register,
   error,
+  defValue,
   // watch,
   // fieldName,
   ...restProps
 }: InputProps) => {
   const [isFocused, setFocused] = useState(false);
-  const [isFilled, setIsFilled] = useState(false);
+  const [isFilled, setIsFilled] = useState(
+    () => defValue !== "" && defValue !== undefined
+  );
 
   const handleFocus = () => {
     setFocused(true);
@@ -58,6 +62,7 @@ export const Input = ({
         type={type}
         disabled={disabled}
         placeholder={placeholder}
+        defaultValue={defValue}
         {...register}
         onFocus={handleFocus}
         onBlur={handleBlur}
