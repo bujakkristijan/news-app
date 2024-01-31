@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import { Text } from "../text/Text";
 import { ErrorWrapper, LabelWrapper, StyledInput } from "./Input.styles";
+import { UseFormRegister } from "react-hook-form";
+import { NewPostData } from "../../new-post-form/NewPostForm";
+import { useForm } from "react-hook-form";
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
   error?: string;
+  register: UseFormRegister<NewPostData>;
+  fieldName: Extract<keyof NewPostData, string>;
+  watch: (field: string) => any;
 };
 
 export const Input = ({
@@ -12,13 +18,14 @@ export const Input = ({
   type,
   disabled,
   placeholder,
-  value = "",
-  onChange,
+  register,
   error,
+  watch,
+  fieldName,
   ...restProps
 }: InputProps) => {
   const [isFocused, setFocused] = useState(false);
-  const isFilled = String(value).trim() !== "";
+  const [isFilled, setIsFilled] = useState(false);
 
   const handleFocus = () => {
     setFocused(true);
@@ -26,6 +33,15 @@ export const Input = ({
 
   const handleBlur = () => {
     setFocused(false);
+    checkIsFilled();
+    console.log("ERROR: " + error);
+    console.log("IS FILLED: " + isFilled);
+  };
+
+  const checkIsFilled = () => {
+    const inputValue = watch(fieldName);
+    setIsFilled(!!inputValue);
+    console.log("Input value: " + JSON.stringify(inputValue));
   };
 
   return (
@@ -49,8 +65,7 @@ export const Input = ({
         type={type}
         disabled={disabled}
         placeholder={placeholder}
-        value={value}
-        onChange={onChange}
+        {...register}
         onFocus={handleFocus}
         onBlur={handleBlur}
         {...restProps}
