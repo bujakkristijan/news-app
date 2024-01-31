@@ -7,17 +7,17 @@ import { NewPostData } from "../../new-post-form/NewPostForm";
 type FormInputProps = {
   label: string;
   register: UseFormRegister<NewPostData>;
-  watch: UseFormWatch<NewPostData>; // Add watch as a prop
   fieldName: Extract<keyof NewPostData, string>;
   error?: FieldError | undefined;
+  //   watch: UseFormWatch<NewPostData>; // Add watch as a prop
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 const FormInput = ({
   label,
   register,
-  watch,
-  fieldName,
   error,
+  fieldName,
+  //   watch,
   ...inputProps
 }: FormInputProps) => {
   return (
@@ -25,9 +25,9 @@ const FormInput = ({
       <Input
         label={label}
         register={register(fieldName)}
-        watch={watch} // Pass watch as a prop
-        fieldName={fieldName}
         {...inputProps}
+        // fieldName={fieldName}
+        // watch={watch} // Pass watch as a prop
         error={error?.message}
       />
     </div>

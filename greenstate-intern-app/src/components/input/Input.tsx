@@ -3,14 +3,13 @@ import { Text } from "../text/Text";
 import { ErrorWrapper, LabelWrapper, StyledInput } from "./Input.styles";
 import { UseFormRegister } from "react-hook-form";
 import { NewPostData } from "../../new-post-form/NewPostForm";
-import { useForm } from "react-hook-form";
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
   error?: string;
   register: UseFormRegister<NewPostData>;
-  fieldName: Extract<keyof NewPostData, string>;
-  watch: (field: string) => any;
+  // fieldName: Extract<keyof NewPostData, string>;
+  // watch: (field: string) => any;
 };
 
 export const Input = ({
@@ -20,8 +19,8 @@ export const Input = ({
   placeholder,
   register,
   error,
-  watch,
-  fieldName,
+  // watch,
+  // fieldName,
   ...restProps
 }: InputProps) => {
   const [isFocused, setFocused] = useState(false);
@@ -31,17 +30,11 @@ export const Input = ({
     setFocused(true);
   };
 
-  const handleBlur = () => {
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement, Element>) => {
     setFocused(false);
-    checkIsFilled();
-    console.log("ERROR: " + error);
-    console.log("IS FILLED: " + isFilled);
-  };
-
-  const checkIsFilled = () => {
-    const inputValue = watch(fieldName);
-    setIsFilled(!!inputValue);
-    console.log("Input value: " + JSON.stringify(inputValue));
+    // const inputValue = watch(fieldName);
+    // setIsFilled(!!inputValue);
+    setIsFilled(!!e.target.value);
   };
 
   return (

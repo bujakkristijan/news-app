@@ -15,9 +15,10 @@ export const NewPost: React.FC = () => {
   const {
     handleSubmit,
     register,
-    watch,
+    // watch,
     formState: { errors },
   } = useForm<NewPostData>({
+    // defaultValues: { description: "Some description", title: "Some title" },
     mode: "onChange",
     resolver: zodResolver(NewpostSchema),
   });
@@ -34,8 +35,8 @@ export const NewPost: React.FC = () => {
         register={register}
         placeholder="Title"
         fieldName="title"
+        // watch={watch}
         error={errors.title}
-        watch={watch}
       />
       <FormInput
         label="Full story"
@@ -43,8 +44,8 @@ export const NewPost: React.FC = () => {
         register={register}
         fieldName="description"
         placeholder="Description"
+        // watch={watch}
         error={errors.description}
-        watch={watch}
       />
       <FormInput
         label="Link"
@@ -52,8 +53,8 @@ export const NewPost: React.FC = () => {
         register={register}
         fieldName="url"
         placeholder="URL"
+        // watch={watch}
         error={errors.url}
-        watch={watch}
       />
       <button type="submit">Submit</button>
     </form>
