@@ -15,6 +15,7 @@ export const ErrorWrapper = styled.div`
 export const StyledInput = styled.input<{
   $hasError: boolean;
   $isFocused: boolean;
+  $isFilled: boolean;
 }>`
   width: 100%;
   height: 3.5rem;
@@ -32,6 +33,10 @@ export const StyledInput = styled.input<{
           : theme.colors.lightGrey};
   color: ${({ theme }) => theme.colors.lightBlack};
   border-radius: 0.75rem;
+  font-weight: ${({ theme, $hasError, $isFilled }) =>
+    $isFilled && !$hasError
+      ? theme.typography.fontWeight.semiBold
+      : theme.typography.fontWeight.regular};
   &:disabled {
     color: ${({ theme }) => theme.colors.lightGrey};
     background-color: ${({ theme }) => theme.colors.greyDisabled};
