@@ -54,5 +54,3 @@ export const NewPost = () => {
     </form>
   );
 };
-
-export default NewPost;
