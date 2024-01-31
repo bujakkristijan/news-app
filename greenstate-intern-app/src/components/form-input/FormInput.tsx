@@ -10,7 +10,7 @@ type FormInputProps = {
   error?: FieldError | undefined;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
-const FormInput = ({
+export const FormInput = ({
   label,
   register,
   error,

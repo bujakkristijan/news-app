@@ -1,5 +1,3 @@
-// NewPost.tsx
-import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { NewpostSchema } from "../zod-schema/NewPostSchema";
@@ -11,13 +9,13 @@ export type NewPostData = {
   url: string;
 };
 
-export const NewPost: React.FC = () => {
+export const NewPost = () => {
   const {
     handleSubmit,
     register,
     formState: { errors },
   } = useForm<NewPostData>({
-    defaultValues: { description: "Some description", title: "Some title" },
+    // defaultValues: { description: "Some description", title: "Some title" },
     mode: "onChange",
     resolver: zodResolver(NewpostSchema),
   });
