@@ -1,7 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { NewpostSchema } from "../zod-schema/NewPostSchema";
-import FormInput from "../components/form-input/FormInput";
+import { FormInput } from "../components/form-input/FormInput";
 
 export type NewPostData = {
   title: string;
