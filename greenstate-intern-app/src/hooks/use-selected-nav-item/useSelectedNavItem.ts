@@ -20,7 +20,7 @@ export const useSelectedNavItem = () => {
     if (currentRouteItem) {
       setSelectedNavItem(currentRouteItem.value);
       navigate(currentRouteItem.route);
-    } else {
+    } else if (normalizedPathname === "") {
       location.href = navigationItems[0].route;
       setSelectedNavItem(navigationItems[0].value);
     }
