@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const StyledNewPostContainer = styled.div`
-  width: 35rem;
-  margin: auto;
+  max-width: 35rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 2.5rem;
 `;
 export const TextWrapper = styled.div`

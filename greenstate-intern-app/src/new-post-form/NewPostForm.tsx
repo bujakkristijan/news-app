@@ -2,6 +2,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { NewpostSchema } from "../zod-schema/NewPostSchema";
 import { Input } from "../components/input/Input";
+import { TextArea } from "../components/text-area/TextArea";
 import {
   ButtonWrapper,
   StyledNewPostContainer,
@@ -17,7 +18,7 @@ export type NewPostData = {
   url: string;
 };
 
-export const NewPost = () => {
+export const NewPostForm = () => {
   const {
     handleSubmit,
     register,
@@ -47,9 +48,8 @@ export const NewPost = () => {
           placeholder="Title"
           error={errors.title?.message}
         />
-        <Input
+        <TextArea
           label="Full story"
-          type="text"
           {...register("description")}
           placeholder="Description"
           error={errors.description?.message}
