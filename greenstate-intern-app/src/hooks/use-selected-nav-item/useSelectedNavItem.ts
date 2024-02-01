@@ -9,7 +9,6 @@ export const useSelectedNavItem = () => {
   const [selectedNavItem, setSelectedNavItem] = useState<string>();
 
   useEffect(() => {
-    console.log(pathname)
     const normalizedPathname = pathname.endsWith("//")
       ? pathname.replace(/\/+$/, "")
       : pathname;
