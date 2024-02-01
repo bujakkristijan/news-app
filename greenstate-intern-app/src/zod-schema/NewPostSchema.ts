@@ -1,6 +1,5 @@
-// schema.ts
 import { z, ZodType } from "zod";
-import { NewPostData } from "../new-post-form/NewPostForm";
+import { NewPostData } from "../pages/new-post/NewPost";
 
 export const NewpostSchema: ZodType<NewPostData> = z.object({
   title: z
