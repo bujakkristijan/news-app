@@ -1,4 +1,3 @@
-import React from "react";
 import { NewPost as NewPostForm } from "../../new-post-form/NewPostForm";
 
 export const NewPost = () => {

@@ -1,7 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { NewpostSchema } from "../zod-schema/NewPostSchema";
-import { FormInput } from "../components/form-input/FormInput";
+import { Input } from "../components/input/Input";
 
 export type NewPostData = {
   title: string;
@@ -26,29 +26,26 @@ export const NewPost = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <FormInput
+      <Input
         label="Headline"
         type="text"
-        register={register}
+        {...register("title")}
         placeholder="Title"
-        fieldName="title"
-        error={errors.title}
+        error={errors.title?.message}
       />
-      <FormInput
+      <Input
         label="Full story"
         type="text"
-        register={register}
-        fieldName="description"
+        {...register("description")}
         placeholder="Description"
-        error={errors.description}
+        error={errors.description?.message}
       />
-      <FormInput
+      <Input
         label="Link"
         type="text"
-        register={register}
-        fieldName="url"
+        {...register("url")}
         placeholder="URL"
-        error={errors.url}
+        error={errors.url?.message}
       />
       <button type="submit">Submit</button>
     </form>
