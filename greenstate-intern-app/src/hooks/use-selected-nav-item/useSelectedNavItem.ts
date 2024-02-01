@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { navigationItems } from "../shared/data/navigation/items/items";
+import { navigationItems } from "../../shared/data/navigation/items/items";
 
 export const useSelectedNavItem = () => {
   const { pathname } = useLocation();
@@ -9,17 +9,20 @@ export const useSelectedNavItem = () => {
   const [selectedNavItem, setSelectedNavItem] = useState<string>();
 
   useEffect(() => {
-    const normalizedPathname = pathname.replace(/\/+$/, "");
-    const currentRouteItem =
-      normalizedPathname === ""
-        ? navigationItems[0]
-        : navigationItems.find((item) => item.route === normalizedPathname);
+    const normalizedPathname = pathname.endsWith("//")
+      ? pathname.replace(/\/+$/, "")
+      : pathname;
+
+    const currentRouteItem = navigationItems.find(
+      (item) => item.route === normalizedPathname,
+    );
+
     if (currentRouteItem) {
       setSelectedNavItem(currentRouteItem.value);
       navigate(currentRouteItem.route);
     } else {
+      location.href = navigationItems[0].route;
       setSelectedNavItem(navigationItems[0].value);
-      navigate(navigationItems[0].route);
     }
   }, [pathname, navigate]);
 

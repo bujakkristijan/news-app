@@ -4,7 +4,7 @@ import { StyledLayout } from "./Layout.styles";
 import { PageShell } from "../components/page-shell/PageShell";
 import { navigationItems } from "../shared/data/navigation/items/items";
 import { StyledPageShellWrapper } from "./Layout.styles";
-import { useSelectedNavItem } from "../hooks/useSelectedNavItem";
+import { useSelectedNavItem } from "../hooks/use-selected-nav-item/useSelectedNavItem";
 import { NavItem } from "../shared/types/ui-model/navItem";
 import { useNavigate } from "react-router-dom";
 
