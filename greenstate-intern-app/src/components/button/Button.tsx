@@ -12,9 +12,11 @@ type FontDetails = {
 };
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   size?: TypographyButtonSize;
   isDisabled?: boolean;
   children: string;
+  fill?: boolean;
 };
 
 const getFontDetails = (size: TypographyButtonSize): FontDetails => {
@@ -35,12 +37,12 @@ export const Button = ({
   size = "sm",
   children,
   isDisabled = false,
-  onClick,
+  fill = false,
 }: ButtonProps) => {
   const { fontSize, lineHeight } = getFontDetails(size);
 
   return (
-    <StyledButton size={size} disabled={isDisabled} onClick={onClick}>
+    <StyledButton size={size} disabled={isDisabled} $fill={fill}>
       <Text
         fontSize={fontSize}
         fontWeight="extraBold"

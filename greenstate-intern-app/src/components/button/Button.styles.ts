@@ -3,11 +3,13 @@ import { TypographyButtonSize } from "../../shared/theme/theme";
 
 export const StyledButton = styled.button<{
   size: TypographyButtonSize;
+  $fill?: boolean;
 }>`
   padding: ${({ theme, size }) => theme.typography.buttonSizes[size].padding};
   border-radius: ${({ theme, size }) =>
     theme.typography.buttonSizes[size].borderRadius};
   background-color: ${({ theme }) => theme.colors.purple};
+  width: ${({ $fill }) => ($fill ? "100%" : "fit-content")};
   cursor: pointer;
 
   &:hover {

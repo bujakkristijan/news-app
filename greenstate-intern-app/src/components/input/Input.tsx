@@ -1,27 +1,16 @@
 import React, { useState, forwardRef } from "react";
 import { Text } from "../text/Text";
 import { ErrorWrapper, LabelWrapper, StyledInput } from "./Input.styles";
-import { UseFormRegister } from "react-hook-form";
-import { NewPostData } from "../../new-post-form/NewPostForm";
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
   error?: string;
-  register?: UseFormRegister<NewPostData>;
 };
 
 export const Input = forwardRef(
   (
-    {
-      label,
-      type,
-      disabled,
-      placeholder,
-      register,
-      error,
-      ...restProps
-    }: InputProps,
-    ref: React.ForwardedRef<HTMLInputElement>
+    { label, type, disabled, placeholder, error, ...restProps }: InputProps,
+    ref: React.ForwardedRef<HTMLInputElement>,
   ) => {
     const [isFocused, setFocused] = useState(false);
     const [isFilled, setIsFilled] = useState(false);
@@ -58,7 +47,6 @@ export const Input = forwardRef(
           disabled={disabled}
           placeholder={placeholder}
           $isFilled={isFilled}
-          {...register}
           {...restProps}
           onFocus={handleFocus}
           onBlur={handleBlur}
@@ -77,5 +65,5 @@ export const Input = forwardRef(
         </ErrorWrapper>
       </div>
     );
-  }
+  },
 );
