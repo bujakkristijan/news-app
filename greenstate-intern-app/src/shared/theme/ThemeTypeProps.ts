@@ -9,6 +9,7 @@ export type Theme = {
       sm: string;
       md: string;
       lg: string;
+      xLg: string;
     };
     fontWeight: {
       extraBold: string;
@@ -20,6 +21,7 @@ export type Theme = {
       sm: string;
       md: string;
       lg: string;
+      xLg: string;
     };
     headingType: {
       h1: {
@@ -81,6 +83,7 @@ export type Theme = {
     darkGrey: string;
     lighterGrey: string;
     lightestGrey: string;
+    greyError: string;
     black: string;
     lighterBlack: string;
     green: string;
