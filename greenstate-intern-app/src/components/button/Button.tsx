@@ -15,7 +15,6 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   size?: TypographyButtonSize;
   isDisabled?: boolean;
   children: string;
-  onClick?: () => void;
 };
 
 const getFontDetails = (size: TypographyButtonSize): FontDetails => {
