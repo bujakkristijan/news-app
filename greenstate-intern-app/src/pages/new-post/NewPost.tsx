@@ -9,8 +9,10 @@ import { Button } from "../../components/button/Button";
 import { StyledForm } from "./NewPost.styled";
 import { NewPostData } from "./createNewPostSchema";
 import { formFieldNames } from "./createNewPostSchema";
+import { useNewsStore } from "../../store/NewsPostStore";
 
 export const NewPost = () => {
+  const { addNewsPost } = useNewsStore();
   const {
     handleSubmit,
     register,
@@ -20,8 +22,8 @@ export const NewPost = () => {
     resolver: zodResolver(newPostSchema),
   });
 
-  const onSubmit: SubmitHandler<NewPostData> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<NewPostFields> = (data) => {
+    addNewsPost(data);
   };
 
   return (

@@ -1,5 +1,18 @@
-import React from "react";
+import { useNewsStore } from "../../store/NewsPostStore";
 
 export const AllNews = () => {
-  return <div>AllNews</div>;
+  const { newsPosts } = useNewsStore();
+  console.log("News Posts: ", newsPosts);
+  return (
+    <div>
+      {newsPosts.map((post, index) => (
+        <div key={index}>
+          <label>
+            Title: {post.title}, Description: {post.description}, URL:{" "}
+            {post.url}
+          </label>
+        </div>
+      ))}
+    </div>
+  );
 };
