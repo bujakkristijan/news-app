@@ -55,11 +55,9 @@ export const NewPost = () => {
           placeholder="URL"
           error={errors.url?.message}
         />
-        <ButtonWrapper>
-          <Button type="submit" size="md" color="white" fill={true}>
-            Create post
-          </Button>
-        </ButtonWrapper>
+        <Button type="submit" size="md" color="white" fill={true}>
+          Create post
+        </Button>
       </StyledForm>
     </StyledNewPostContainer>
   );

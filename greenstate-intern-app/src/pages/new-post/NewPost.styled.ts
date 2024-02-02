@@ -10,10 +10,6 @@ export const TextWrapper = styled.div`
   margin: 1.5rem 0;
 `;
 
-export const ButtonWrapper = styled.div`
-  margin-top: 0.75rem;
-`;
-
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
