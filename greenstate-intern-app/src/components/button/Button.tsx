@@ -38,11 +38,12 @@ export const Button = ({
   children,
   isDisabled = false,
   fill = false,
+  type,
 }: ButtonProps) => {
   const { fontSize, lineHeight } = getFontDetails(size);
 
   return (
-    <StyledButton size={size} disabled={isDisabled} $fill={fill}>
+    <StyledButton size={size} disabled={isDisabled} $fill={fill} type={type}>
       <Text
         fontSize={fontSize}
         fontWeight="extraBold"

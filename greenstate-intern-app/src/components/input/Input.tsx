@@ -1,6 +1,7 @@
-import React, { useState, forwardRef } from "react";
+import React, { forwardRef } from "react";
 import { Text } from "../text/Text";
 import { ErrorWrapper, LabelWrapper, StyledInput } from "./Input.styles";
+import { StyledInputContainer } from "./Input.styles";
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
@@ -9,48 +10,11 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 
 export const Input = forwardRef(
   (
-    { label, type, disabled, placeholder, error, ...restProps }: InputProps,
+    { label, disabled, error, ...restProps }: InputProps,
     ref: React.ForwardedRef<HTMLInputElement>,
   ) => {
-    const [isFocused, setFocused] = useState(false);
-    const [isFilled, setIsFilled] = useState(false);
-
-    const handleFocus = () => {
-      setFocused(true);
-    };
-
-    const handleBlur = (e: React.FocusEvent<HTMLInputElement, Element>) => {
-      setFocused(false);
-      setIsFilled(!!e.target.value);
-    };
-
     return (
-      <div>
-        <LabelWrapper>
-          {(isFocused || (isFilled && !error)) && !disabled && (
-            <Text
-              fontSize="xSm"
-              color={error ? "darkRed" : isFocused ? "purple" : "darkGrey"}
-              fontFamily="montserrat"
-              lineHeight="sm"
-            >
-              {label}
-            </Text>
-          )}
-        </LabelWrapper>
-
-        <StyledInput
-          ref={ref}
-          $isFocused={isFocused}
-          $hasError={!!error}
-          type={type}
-          disabled={disabled}
-          placeholder={placeholder}
-          $isFilled={isFilled}
-          {...restProps}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-        />
+      <StyledInputContainer>
         <ErrorWrapper>
           {error && (
             <Text
@@ -63,7 +27,20 @@ export const Input = forwardRef(
             </Text>
           )}
         </ErrorWrapper>
-      </div>
+
+        <StyledInput
+          ref={ref}
+          $hasError={!!error}
+          disabled={disabled}
+          {...restProps}
+        />
+
+        <LabelWrapper>
+          <Text fontSize="xSm" fontFamily="montserrat" lineHeight="sm">
+            {label}
+          </Text>
+        </LabelWrapper>
+      </StyledInputContainer>
     );
   },
 );

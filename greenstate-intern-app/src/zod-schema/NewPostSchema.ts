@@ -1,7 +1,6 @@
-import { z, ZodType } from "zod";
-import { NewPostData } from "../pages/new-post/NewPost";
+import { z } from "zod";
 
-export const NewpostSchema: ZodType<NewPostData> = z.object({
+export const NewpostSchema = z.object({
   title: z
     .string()
     .min(3, { message: "Title should be at least 3 characters long" }),
@@ -12,3 +11,5 @@ export const NewpostSchema: ZodType<NewPostData> = z.object({
     .string()
     .min(3, { message: "Url should be at least 3 characters long" }),
 });
+
+export type NewPostFields = z.infer<typeof NewpostSchema>;

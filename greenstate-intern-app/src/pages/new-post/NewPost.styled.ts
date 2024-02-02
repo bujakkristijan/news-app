@@ -3,14 +3,11 @@ import styled from "styled-components";
 export const StyledNewPostContainer = styled.div`
   max-width: 35rem;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2.5rem;
+  margin: 2.5rem auto 0;
 `;
 export const TextWrapper = styled.div`
   text-align: center;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin: 1.5rem 0;
 `;
 
 export const ButtonWrapper = styled.div`

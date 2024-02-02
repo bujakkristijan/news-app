@@ -11,25 +11,19 @@ import {
 import { Text } from "../../components/text/Text";
 import { Button } from "../../components/button/Button";
 import { StyledForm } from "./NewPost.styled";
-
-export type NewPostData = {
-  title: string;
-  description: string;
-  url: string;
-};
+import { NewPostFields } from "../../zod-schema/NewPostSchema";
 
 export const NewPost = () => {
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm<NewPostData>({
-    // defaultValues: { description: "Some description", title: "Some title" },
+  } = useForm<NewPostFields>({
     mode: "onChange",
     resolver: zodResolver(NewpostSchema),
   });
 
-  const onSubmit: SubmitHandler<NewPostData> = (data) => {
+  const onSubmit: SubmitHandler<NewPostFields> = (data) => {
     console.log(data);
   };
 
