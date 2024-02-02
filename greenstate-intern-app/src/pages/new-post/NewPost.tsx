@@ -55,7 +55,7 @@ export const NewPost = () => {
           placeholder="URL"
           error={errors.url?.message}
         />
-        <Button type="submit" size="md" color="white" fill={true}>
+        <Button type="submit" size="xlg" color="white" fill={true}>
           Create post
         </Button>
       </StyledForm>
