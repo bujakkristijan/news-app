@@ -9,9 +9,10 @@ export const useSelectedNavItem = () => {
   const [selectedNavItem, setSelectedNavItem] = useState<string>();
 
   useEffect(() => {
-    const normalizedPathname = pathname.endsWith("//")
-      ? pathname.replace(/\/+$/, "")
-      : pathname;
+    const normalizedPathname =
+      pathname.endsWith("/") && pathname.length > 1
+        ? pathname.replace(/\/+$/, "")
+        : pathname;
 
     const currentRouteItem = navigationItems.find(
       (item) => item.route === normalizedPathname,
@@ -23,16 +24,6 @@ export const useSelectedNavItem = () => {
     } else if (normalizedPathname === "") {
       location.href = navigationItems[0].route;
       setSelectedNavItem(navigationItems[0].value);
-    } 
-    else if (normalizedPathname.endsWith("/")) {
-      const pathWithoutSlash = normalizedPathname.replace(/\/+$/, "");
-      const currentRouteItem = navigationItems.find(
-        (item) => item.route === pathWithoutSlash,
-      );
-      if (currentRouteItem) {
-        setSelectedNavItem(currentRouteItem.value);
-        navigate(currentRouteItem.route);
-      }
     }
   }, [pathname, navigate]);
 
