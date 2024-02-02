@@ -3,11 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { NewpostSchema } from "../../zod-schema/NewPostSchema";
 import { Input } from "../../components/input/Input";
 import { TextArea } from "../../components/text-area/TextArea";
-import {
-  ButtonWrapper,
-  StyledNewPostContainer,
-  TextWrapper,
-} from "./NewPost.styled";
+import { StyledNewPostContainer, TextWrapper } from "./NewPost.styled";
 import { Text } from "../../components/text/Text";
 import { Button } from "../../components/button/Button";
 import { StyledForm } from "./NewPost.styled";
