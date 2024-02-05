@@ -10,5 +10,6 @@ export const StyledTextArea = styled.textarea<{
   $hasError: boolean;
 }>`
   ${inputStyles};
+  resize: none;
   height: 10rem;
 `;

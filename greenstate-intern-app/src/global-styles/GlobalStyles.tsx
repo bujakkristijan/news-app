@@ -10,10 +10,7 @@ const GlobalStyles = createGlobalStyle`
     body {
         font-family: 'Inter';
     }
-    input{
-        font-family: inherit;
-    }
-    textarea{
+    input, textarea{
         font-family: inherit;
     }
 `;

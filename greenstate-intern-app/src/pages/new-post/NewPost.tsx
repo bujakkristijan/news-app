@@ -1,25 +1,26 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { NewpostSchema } from "../../zod-schema/NewPostSchema";
+import { newPostSchema } from "./createNewPostSchema";
 import { Input } from "../../components/input/Input";
 import { TextArea } from "../../components/text-area/TextArea";
 import { StyledNewPostContainer, TextWrapper } from "./NewPost.styled";
 import { Text } from "../../components/text/Text";
 import { Button } from "../../components/button/Button";
 import { StyledForm } from "./NewPost.styled";
-import { NewPostFields } from "../../zod-schema/NewPostSchema";
+import { NewPostData } from "./createNewPostSchema";
+import { formFieldNames } from "./createNewPostSchema";
 
 export const NewPost = () => {
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm<NewPostFields>({
+  } = useForm<NewPostData>({
     mode: "onChange",
-    resolver: zodResolver(NewpostSchema),
+    resolver: zodResolver(newPostSchema),
   });
 
-  const onSubmit: SubmitHandler<NewPostFields> = (data) => {
+  const onSubmit: SubmitHandler<NewPostData> = (data) => {
     console.log(data);
   };
 
@@ -34,22 +35,22 @@ export const NewPost = () => {
         <Input
           label="Headline"
           type="text"
-          {...register("title")}
+          {...register(formFieldNames.title)}
           placeholder="Title"
-          error={errors.title?.message}
+          error={errors[formFieldNames.title]?.message}
         />
         <TextArea
           label="Full story"
-          {...register("description")}
+          {...register(formFieldNames.description)}
           placeholder="Description"
-          error={errors.description?.message}
+          error={errors[formFieldNames.description]?.message}
         />
         <Input
           label="Link"
           type="text"
-          {...register("url")}
+          {...register(formFieldNames.url)}
           placeholder="URL"
-          error={errors.url?.message}
+          error={errors[formFieldNames.url]?.message}
         />
         <Button type="submit" size="xlg" color="white" fill={true}>
           Create post

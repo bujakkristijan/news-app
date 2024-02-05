@@ -28,13 +28,6 @@ export const inputStyles = css<{ $hasError: boolean }>`
   color: ${({ theme }) => theme.colors.lightBlack};
   border-radius: 0.75rem;
 
-  &:not(:placeholder-shown) {
-    font-weight: ${({ theme, $hasError }) =>
-      !$hasError
-        ? theme.typography.fontWeight.semiBold
-        : theme.typography.fontWeight.regular};
-  }
-
   &:disabled {
     color: ${({ theme }) => theme.colors.lightGrey};
     background-color: ${({ theme }) => theme.colors.greyDisabled};
@@ -44,36 +37,49 @@ export const inputStyles = css<{ $hasError: boolean }>`
     }
   }
 
+  &:placeholder-shown {
+    font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
+  }
+
+  &:not(:placeholder-shown) {
+    font-weight: ${({ theme, $hasError }) =>
+      !$hasError
+        ? theme.typography.fontWeight.semiBold
+        : theme.typography.fontWeight.regular};
+    &:focus {
+      font-weight: ${({ theme }) => theme.typography.fontWeight.semiBold};
+    }
+
+    &:not(:focus) + ${LabelWrapper} {
+      visibility: ${({ $hasError }) => ($hasError ? "hidden" : "visible")};
+    }
+  }
+
   &:not(:focus) {
     border: 1px solid
       ${({ $hasError, theme }) =>
         $hasError ? theme.colors.darkRed : theme.colors.lightGrey};
+
+    + ${LabelWrapper} ${StyledText} {
+      color: ${({ theme, $hasError }) =>
+        $hasError ? theme.colors.darkRed : theme.colors.grey};
+    }
+
+    &:placeholder-shown + ${LabelWrapper} {
+      visibility: hidden;
+    }
   }
 
   &:focus {
-    font-weight: ${({ theme }) => theme.typography.fontWeight.semiBold};
     color: ${({ theme }) => theme.colors.lightBlack};
     border: 1px solid
       ${({ $hasError, theme }) =>
         $hasError ? theme.colors.darkRed : theme.colors.purple};
-  }
 
-  &:focus + ${LabelWrapper} ${StyledText} {
-    color: ${({ theme, $hasError }) =>
-      $hasError ? theme.colors.darkRed : theme.colors.purple};
-  }
-
-  &:not(:focus) + ${LabelWrapper} ${StyledText} {
-    color: ${({ theme, $hasError }) =>
-      $hasError ? theme.colors.darkRed : theme.colors.grey};
-  }
-
-  &:not(:focus):placeholder-shown + ${LabelWrapper} {
-    visibility: hidden;
-  }
-
-  &:not(:focus):not(:placeholder-shown) + ${LabelWrapper} {
-    visibility: ${({ $hasError }) => ($hasError ? "hidden" : "visible")};
+    + ${LabelWrapper} ${StyledText} {
+      color: ${({ theme, $hasError }) =>
+        $hasError ? theme.colors.darkRed : theme.colors.purple};
+    }
   }
 `;
 

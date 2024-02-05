@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const NewpostSchema = z.object({
+export const newPostSchema = z.object({
   title: z
     .string()
     .min(3, { message: "Title should be at least 3 characters long" }),
@@ -12,4 +12,14 @@ export const NewpostSchema = z.object({
     .min(3, { message: "Url should be at least 3 characters long" }),
 });
 
-export type NewPostFields = z.infer<typeof NewpostSchema>;
+export type NewPostData = z.infer<typeof newPostSchema>;
+
+type FormNames<T> = {
+  [name in keyof T]: name;
+};
+
+export const formFieldNames: FormNames<NewPostData> = {
+  title: "title",
+  description: "description",
+  url: "url",
+};
