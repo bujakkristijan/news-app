@@ -54,10 +54,8 @@ export const inputStyles = css<{ $hasError: boolean }>`
     font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
   }
 
-  &:not(:placeholder-shown) {
-    + ${LabelWrapper} {
-      visibility: ${({ $hasError }) => ($hasError ? "hidden" : "visible")};
-    }
+  &:not(:placeholder-shown) + ${LabelWrapper} {
+    visibility: ${({ $hasError }) => ($hasError ? "hidden" : "visible")};
   }
 
   &:focus {
