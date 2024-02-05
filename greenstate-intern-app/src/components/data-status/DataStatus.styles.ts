@@ -8,17 +8,6 @@ export const StyledDataStatusContainer = styled.div`
   gap: 3rem;
   max-width: 37.5rem;
   width: 100%;
-  height: 100%;
-`;
-
-export const StyledDataMainContainer = styled.div`
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem 2rem;
 `;
 
 export const TextContainer = styled.div`

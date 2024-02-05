@@ -2,7 +2,6 @@ import React from "react";
 import { Button } from "../button/Button";
 import {
   StyledDataStatusContainer,
-  StyledDataMainContainer,
   TextContainer,
   ButtonWrapper,
 } from "./DataStatus.styles";
@@ -23,28 +22,26 @@ export const DataStatus = ({
 }: DataStatusProps) => {
   const MemoizedButton = React.memo(Button);
   return (
-    <StyledDataMainContainer>
-      <StyledDataStatusContainer>
-        <IconComponent />
-        <TextContainer>
-          <Text
-            fontSize="xLg"
-            fontWeight="extraBold"
-            fontFamily="montserrat"
-            lineHeight="xLg"
-          >
-            {title}
-          </Text>
-          <Text lineHeight="md" color="greyError">
-            {description}
-          </Text>
-        </TextContainer>
-        <ButtonWrapper>
-          <MemoizedButton size="xlg" onClick={onClick}>
-            Back to home
-          </MemoizedButton>
-        </ButtonWrapper>
-      </StyledDataStatusContainer>
-    </StyledDataMainContainer>
+    <StyledDataStatusContainer>
+      <IconComponent />
+      <TextContainer>
+        <Text
+          fontSize="xLg"
+          fontWeight="extraBold"
+          fontFamily="montserrat"
+          lineHeight="xLg"
+        >
+          {title}
+        </Text>
+        <Text lineHeight="md" color="greyError">
+          {description}
+        </Text>
+      </TextContainer>
+      <ButtonWrapper>
+        <MemoizedButton size="xlg" onClick={onClick}>
+          Back to home
+        </MemoizedButton>
+      </ButtonWrapper>
+    </StyledDataStatusContainer>
   );
 };
