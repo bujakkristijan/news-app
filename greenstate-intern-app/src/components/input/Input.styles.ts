@@ -27,6 +27,19 @@ export const inputStyles = css<{ $hasError: boolean }>`
   outline: none;
   color: ${({ theme }) => theme.colors.lightBlack};
   border-radius: 0.75rem;
+  font-weight: ${({ theme }) => theme.typography.fontWeight.semiBold};
+  border: 1px solid
+    ${({ $hasError, theme }) =>
+      $hasError ? theme.colors.darkRed : theme.colors.lightGrey};
+
+  + ${LabelWrapper} {
+    visibility: hidden;
+
+    ${StyledText} {
+      color: ${({ theme, $hasError }) =>
+        $hasError ? theme.colors.darkRed : theme.colors.grey};
+    }
+  }
 
   &:disabled {
     color: ${({ theme }) => theme.colors.lightGrey};
@@ -42,43 +55,22 @@ export const inputStyles = css<{ $hasError: boolean }>`
   }
 
   &:not(:placeholder-shown) {
-    font-weight: ${({ theme, $hasError }) =>
-      !$hasError
-        ? theme.typography.fontWeight.semiBold
-        : theme.typography.fontWeight.regular};
-    &:focus {
-      font-weight: ${({ theme }) => theme.typography.fontWeight.semiBold};
-    }
-
     &:not(:focus) + ${LabelWrapper} {
       visibility: ${({ $hasError }) => ($hasError ? "hidden" : "visible")};
     }
   }
 
-  &:not(:focus) {
-    border: 1px solid
-      ${({ $hasError, theme }) =>
-        $hasError ? theme.colors.darkRed : theme.colors.lightGrey};
-
-    + ${LabelWrapper} ${StyledText} {
-      color: ${({ theme, $hasError }) =>
-        $hasError ? theme.colors.darkRed : theme.colors.grey};
-    }
-
-    &:placeholder-shown + ${LabelWrapper} {
-      visibility: hidden;
-    }
-  }
-
   &:focus {
     color: ${({ theme }) => theme.colors.lightBlack};
-    border: 1px solid
-      ${({ $hasError, theme }) =>
-        $hasError ? theme.colors.darkRed : theme.colors.purple};
+    border-color: ${({ $hasError, theme }) =>
+      $hasError ? theme.colors.darkRed : theme.colors.purple};
 
-    + ${LabelWrapper} ${StyledText} {
-      color: ${({ theme, $hasError }) =>
-        $hasError ? theme.colors.darkRed : theme.colors.purple};
+    + ${LabelWrapper} {
+      visibility: visible;
+      ${StyledText} {
+        color: ${({ theme, $hasError }) =>
+          $hasError ? theme.colors.darkRed : theme.colors.purple};
+      }
     }
   }
 `;
