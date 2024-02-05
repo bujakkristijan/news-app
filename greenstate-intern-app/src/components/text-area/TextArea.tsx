@@ -10,7 +10,7 @@ type TextAreaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
 
 export const TextArea = forwardRef(
   (
-    { label, disabled, error, ...restProps }: TextAreaProps,
+    { label, error, ...restProps }: TextAreaProps,
     ref: React.ForwardedRef<HTMLTextAreaElement>,
   ) => {
     return (
@@ -28,12 +28,7 @@ export const TextArea = forwardRef(
           )}
         </ErrorWrapper>
 
-        <StyledTextArea
-          ref={ref}
-          $hasError={!!error}
-          disabled={disabled}
-          {...restProps}
-        />
+        <StyledTextArea ref={ref} $hasError={!!error} {...restProps} />
 
         <LabelWrapper>
           <Text fontSize="xSm" fontFamily="montserrat" lineHeight="sm">

@@ -41,6 +41,10 @@ export const inputStyles = css<{ $hasError: boolean }>`
     }
   }
 
+  &::placeholder {
+    font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
+  }
+
   &:disabled {
     color: ${({ theme }) => theme.colors.lightGrey};
     background-color: ${({ theme }) => theme.colors.greyDisabled};
@@ -48,10 +52,6 @@ export const inputStyles = css<{ $hasError: boolean }>`
     &::placeholder {
       color: ${({ theme }) => theme.colors.lightGrey};
     }
-  }
-
-  &:placeholder-shown {
-    font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
   }
 
   &:not(:placeholder-shown) + ${LabelWrapper} {
