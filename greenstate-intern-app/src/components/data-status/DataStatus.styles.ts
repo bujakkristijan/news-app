@@ -8,6 +8,7 @@ export const StyledDataStatusContainer = styled.div`
   gap: 3rem;
   max-width: 37.5rem;
   width: 100%;
+  height: 100%;
 `;
 
 export const StyledDataMainContainer = styled.div`
@@ -17,17 +18,7 @@ export const StyledDataMainContainer = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 2rem;
-  overflow-y: auto;
-
-  @media (max-height: 573px) {
-    padding-top: 15rem;
-    padding-bottom: 5rem;
-  }
-
-  @media (max-height: 420px) {
-    padding-top: 20rem;
-  }
+  padding: 2rem 2rem;
 `;
 
 export const TextContainer = styled.div`
