@@ -55,7 +55,7 @@ export const inputStyles = css<{ $hasError: boolean }>`
   }
 
   &:not(:placeholder-shown) {
-    &:not(:focus) + ${LabelWrapper} {
+    + ${LabelWrapper} {
       visibility: ${({ $hasError }) => ($hasError ? "hidden" : "visible")};
     }
   }
