@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "../button/Button";
 import {
   StyledDataStatusContainer,
@@ -20,6 +21,7 @@ export const DataStatus = ({
   description,
   icon: IconComponent,
 }: DataStatusProps) => {
+  const MemoizedButton = React.memo(Button);
   return (
     <StyledDataMainContainer>
       <StyledDataStatusContainer>
@@ -38,9 +40,9 @@ export const DataStatus = ({
           </Text>
         </TextContainer>
         <ButtonWrapper>
-          <Button size="xlg" onClick={onClick}>
+          <MemoizedButton size="xlg" onClick={onClick}>
             Back to home
-          </Button>
+          </MemoizedButton>
         </ButtonWrapper>
       </StyledDataStatusContainer>
     </StyledDataMainContainer>

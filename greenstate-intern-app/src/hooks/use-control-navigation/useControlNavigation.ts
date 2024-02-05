@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { navigationItems } from "../../shared/data/navigation/items/items";
 import { NavItem } from "../../shared/types/ui-model/navItem";
+import { removeTrailingSlashes } from "../../shared/regex/pathUtils";
 
 export const useControlNavigation = () => {
   const { pathname } = useLocation();
@@ -10,21 +11,19 @@ export const useControlNavigation = () => {
   const [selectedNavItem, setSelectedNavItem] = useState<NavItem>();
 
   useEffect(() => {
-    const normalizedPathname =
-      pathname.endsWith("/") && pathname.length > 1
-        ? pathname.replace(/\/+$/, "")
-        : pathname;
-
     const currentRouteItem = navigationItems.find(
-      (item) => item.route === normalizedPathname,
+      (item) => item.route === pathname,
     );
 
     if (currentRouteItem) {
       setSelectedNavItem(currentRouteItem);
-      navigate(currentRouteItem.route);
-    } else if (normalizedPathname === "") {
-      location.href = navigationItems[0].route;
-      setSelectedNavItem(navigationItems[0]);
+    } else {
+      if (pathname.endsWith("/") && pathname !== "/") {
+        const pathnameWithoutTrailingSlashes = removeTrailingSlashes(pathname);
+        pathnameWithoutTrailingSlashes
+          ? navigate(pathnameWithoutTrailingSlashes)
+          : (location.href = "/");
+      }
     }
   }, [pathname, navigate]);
 
