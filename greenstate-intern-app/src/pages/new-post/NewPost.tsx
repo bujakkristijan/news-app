@@ -22,8 +22,9 @@ export const NewPost = () => {
     resolver: zodResolver(newPostSchema),
   });
 
-  const onSubmit: SubmitHandler<NewPostFields> = (data) => {
+  const onSubmit: SubmitHandler<NewPostData> = (data) => {
     addNewsPost(data);
+    console.log(data);
   };
 
   return (
