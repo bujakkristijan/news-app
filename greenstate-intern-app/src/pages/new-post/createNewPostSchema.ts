@@ -1,5 +1,5 @@
 import { z } from "zod";
-
+import { FormNames } from "../../shared/types/form/formNames";
 export const newPostSchema = z.object({
   title: z
     .string()
@@ -13,10 +13,6 @@ export const newPostSchema = z.object({
 });
 
 export type NewPostData = z.infer<typeof newPostSchema>;
-
-type FormNames<T> = {
-  [name in keyof T]: name;
-};
 
 export const formFieldNames: FormNames<NewPostData> = {
   title: "title",
