@@ -17,6 +17,7 @@ const defaultTheme: Theme = {
       inter: "Inter",
     },
     fontSize: {
+      xLg: "1.5rem",
       lg: "1.25rem",
       md: "1rem",
       sm: "0.875rem",
@@ -29,6 +30,7 @@ const defaultTheme: Theme = {
       regular: "400",
     },
     lineHeight: {
+      xLg: "1.75rem",
       lg: "1.5rem",
       md: "1.25rem",
       sm: "1rem",
@@ -94,6 +96,7 @@ const defaultTheme: Theme = {
     lightestGrey: "#E6E6E6",
     greyDesc: "#5D5D63",
     greyDisabled: "#F3F4F8",
+    greyError: "#606060",
     black: "#111111",
     lightBlack: "#181E25",
     lighterBlack: "#242424",

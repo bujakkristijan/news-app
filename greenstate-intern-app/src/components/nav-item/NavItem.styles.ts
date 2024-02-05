@@ -13,4 +13,4 @@ export const StyledNavItem = styled.div`
 export const StyledTextWrapper = styled.div`
   max-width: 10rem;
   overflow: hidden;
-`
+`;
