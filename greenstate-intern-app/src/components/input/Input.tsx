@@ -11,7 +11,7 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 export const Input = forwardRef(
   (
     { label, error, ...restProps }: InputProps,
-    ref: React.ForwardedRef<HTMLInputElement>
+    ref: React.ForwardedRef<HTMLInputElement>,
   ) => {
     return (
       <StyledInputContainer>
@@ -37,5 +37,5 @@ export const Input = forwardRef(
         </LabelWrapper>
       </StyledInputContainer>
     );
-  }
+  },
 );

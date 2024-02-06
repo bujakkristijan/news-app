@@ -9,11 +9,11 @@ import { Button } from "../../components/button/Button";
 import { StyledForm } from "./NewPost.styled";
 import { NewPostData } from "./createNewPostSchema";
 import { formFieldNames } from "./createNewPostSchema";
-import { useNewsStore } from "../../store/NewsPostStore";
-import { NewsState } from "../../store/NewsPostStore";
+import { useNewsState } from "../../store/newsPostStore";
+import { NewsState } from "../../store/newsPostStore";
 
 export const NewPost = () => {
-  const { addNewsPost } = useNewsStore() as NewsState;
+  const { addNewsPost } = useNewsState() as NewsState;
   const {
     handleSubmit,
     register,

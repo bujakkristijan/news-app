@@ -1,8 +1,8 @@
-import { useNewsStore } from "../../store/NewsPostStore";
+import { useNewsState } from "../../store/newsPostStore";
 
 export const AllNews = () => {
-  const { newsPosts } = useNewsStore();
-  console.log("News Posts: ", newsPosts);
+  const { newsPosts, removeAllNewsPosts } = useNewsState();
+
   return (
     <div>
       {newsPosts.map((post, index) => (
@@ -13,6 +13,7 @@ export const AllNews = () => {
           </label>
         </div>
       ))}
+      <button onClick={removeAllNewsPosts}>REMOVE ALL</button>
     </div>
   );
 };

@@ -9,15 +9,18 @@ export type NewsState = {
   removeAllNewsPosts: () => void;
 };
 
-export const useNewsStore = create(
+export const useNewsState = create(
   persist(
     immer((set) => ({
       newsPosts: [],
       addNewsPost: (newPost: NewPostData) =>
-        set((state: NewsState) => ({
-          newsPosts: [...state.newsPosts, newPost],
-        })),
-      removeAllNewsPosts: () => set({ newsPosts: [] }),
+        set((state: NewsState) => {
+          state.newsPosts.push(newPost);
+        }),
+      removeAllNewsPosts: () =>
+        set((state: NewsState) => {
+          state.newsPosts = [];
+        }),
     })),
     {
       name: "news-posts",
