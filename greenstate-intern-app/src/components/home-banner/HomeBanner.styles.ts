@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledHomeBanner = styled.div`
   height: 8.938rem;
-  border-radius: var(--Spacing-1, 16px);
+  border-radius: 1rem;
   background: linear-gradient(271deg, #2249af -8.54%, #2d99e7 103.39%);
   padding: 1.5rem;
   display: flex;
