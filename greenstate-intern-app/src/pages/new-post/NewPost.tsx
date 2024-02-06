@@ -9,7 +9,7 @@ import { Button } from "../../components/button/Button";
 import { StyledForm } from "./NewPost.styled";
 import { NewPostData } from "./createNewPostSchema";
 import { formFieldNames } from "./createNewPostSchema";
-import { useNewsState } from "../../store/newsPostStore";
+import { useNewsState } from "../../store/useNewsState";
 
 export const NewPost = () => {
   const { addNewsPost } = useNewsState();
