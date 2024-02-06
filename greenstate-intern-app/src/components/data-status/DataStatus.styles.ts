@@ -18,4 +18,5 @@ export const TextContainer = styled.div`
 
 export const ButtonWrapper = styled.div`
   padding: 0 6.25rem;
+  width: 100%;
 `;
