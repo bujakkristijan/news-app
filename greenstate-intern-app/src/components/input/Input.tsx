@@ -10,8 +10,8 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 
 export const Input = forwardRef(
   (
-    { label, disabled, error, ...restProps }: InputProps,
-    ref: React.ForwardedRef<HTMLInputElement>,
+    { label, error, ...restProps }: InputProps,
+    ref: React.ForwardedRef<HTMLInputElement>
   ) => {
     return (
       <StyledInputContainer>
@@ -28,12 +28,7 @@ export const Input = forwardRef(
           )}
         </ErrorWrapper>
 
-        <StyledInput
-          ref={ref}
-          $hasError={!!error}
-          disabled={disabled}
-          {...restProps}
-        />
+        <StyledInput ref={ref} $hasError={!!error} {...restProps} />
 
         <LabelWrapper>
           <Text fontSize="xSm" fontFamily="montserrat" lineHeight="sm">
@@ -42,5 +37,5 @@ export const Input = forwardRef(
         </LabelWrapper>
       </StyledInputContainer>
     );
-  },
+  }
 );
