@@ -1,72 +1,41 @@
-import React, { useState } from "react";
+import React, { forwardRef } from "react";
 import { Text } from "../text/Text";
 import { ErrorWrapper, LabelWrapper, StyledInput } from "./Input.styles";
+import { StyledInputContainer } from "./Input.styles";
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
   error?: string;
 };
 
-export const Input = ({
-  label,
-  type,
-  disabled,
-  placeholder,
-  value = "",
-  onChange,
-  error,
-  ...restProps
-}: InputProps) => {
-  const [isFocused, setFocused] = useState(false);
-  const isFilled = String(value).trim() !== "";
+export const Input = forwardRef(
+  (
+    { label, error, ...restProps }: InputProps,
+    ref: React.ForwardedRef<HTMLInputElement>
+  ) => {
+    return (
+      <StyledInputContainer>
+        <ErrorWrapper>
+          {error && (
+            <Text
+              fontSize="xSm"
+              color="darkRed"
+              fontFamily="montserrat"
+              lineHeight="sm"
+            >
+              {error}
+            </Text>
+          )}
+        </ErrorWrapper>
 
-  const handleFocus = () => {
-    setFocused(true);
-  };
+        <StyledInput ref={ref} $hasError={!!error} {...restProps} />
 
-  const handleBlur = () => {
-    setFocused(false);
-  };
-
-  return (
-    <div>
-      <LabelWrapper>
-        {(isFocused || (isFilled && !error)) && !disabled && (
-          <Text
-            fontSize="xSm"
-            color={error ? "darkRed" : isFocused ? "purple" : "darkGrey"}
-            fontFamily="montserrat"
-            lineHeight="sm"
-          >
+        <LabelWrapper>
+          <Text fontSize="xSm" fontFamily="montserrat" lineHeight="sm">
             {label}
           </Text>
-        )}
-      </LabelWrapper>
-
-      <StyledInput
-        $isFocused={isFocused}
-        $hasError={!!error}
-        type={type}
-        disabled={disabled}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        {...restProps}
-      />
-      <ErrorWrapper>
-        {error && (
-          <Text
-            fontSize="xSm"
-            color="darkRed"
-            fontFamily="montserrat"
-            lineHeight="sm"
-          >
-            {error}
-          </Text>
-        )}
-      </ErrorWrapper>
-    </div>
-  );
-};
+        </LabelWrapper>
+      </StyledInputContainer>
+    );
+  }
+);
