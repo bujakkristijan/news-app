@@ -94,6 +94,7 @@ const defaultTheme: Theme = {
     lightGrey: "#C9D2DE",
     lighterGrey: "#EFEFEF",
     lightestGrey: "#E6E6E6",
+    greyHomeBanner: "#F1F1F1",
     greyDesc: "#5D5D63",
     greyDisabled: "#F3F4F8",
     greyError: "#606060",

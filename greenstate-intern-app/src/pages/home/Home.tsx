@@ -10,6 +10,10 @@ export const Home = () => {
   const { newsPosts } = useNewsState();
   return (
     <StyledHomeContainer>
+      <HomeBanner
+        title="The best news always available"
+        description="On all devices, always on time"
+      />
       <Headline isActive={true} title="Latest news" />
       <StyledLatestNewsContainer>
         {newsPosts.map((post) => (
