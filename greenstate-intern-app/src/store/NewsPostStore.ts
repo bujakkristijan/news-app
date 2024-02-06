@@ -14,9 +14,9 @@ export const useNewsStore = create(
     immer((set) => ({
       newsPosts: [],
       addNewsPost: (newPost: NewPostDataWithDate) =>
-        set((state: NewsState) => ({
-          newsPosts: [...state.newsPosts, newPost],
-        })),
+        set((state: NewsState) => {
+          state.newsPosts.push(newPost);
+        }),
       removeAllNewsPosts: () => set({ newsPosts: [] }),
     })),
     {
