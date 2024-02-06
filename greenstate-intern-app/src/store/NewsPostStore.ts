@@ -3,7 +3,7 @@ import { NewPostData } from "../pages/new-post/createNewPostSchema";
 import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 
-type NewsState = {
+export type NewsState = {
   newsPosts: NewPostData[];
   addNewsPost: (newPost: NewPostData) => void;
   removeAllNewsPosts: () => void;
