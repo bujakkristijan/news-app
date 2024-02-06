@@ -38,7 +38,7 @@ export const DataStatus = ({
         </Text>
       </TextContainer>
       <ButtonWrapper>
-        <MemoizedButton size="xlg" onClick={onClick}>
+        <MemoizedButton fill={true} size="xlg" onClick={onClick}>
           Back to home
         </MemoizedButton>
       </ButtonWrapper>

@@ -17,6 +17,5 @@ export const TextContainer = styled.div`
 `;
 
 export const ButtonWrapper = styled.div`
-  // TODO: After fill prop logic add padding
-  // padding: 0 6.25rem;
+  padding: 0 6.25rem;
 `;
