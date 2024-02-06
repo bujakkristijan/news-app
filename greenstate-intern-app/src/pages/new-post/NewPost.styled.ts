@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledNewPostContainer = styled.div`
   max-width: 35rem;
   width: 100%;
-  margin: 2.5rem auto 0;
+  margin: 2.5rem auto;
 `;
 export const TextWrapper = styled.div`
   text-align: center;
