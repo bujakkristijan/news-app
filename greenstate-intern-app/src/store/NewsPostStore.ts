@@ -9,7 +9,7 @@ export type NewsState = {
   removeAllNewsPosts: () => void;
 };
 
-export const useNewsState = create(
+export const useNewsState = create<NewsState>()(
   persist(
     immer((set) => ({
       newsPosts: [],

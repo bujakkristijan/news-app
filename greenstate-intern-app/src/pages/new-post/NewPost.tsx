@@ -10,10 +10,9 @@ import { StyledForm } from "./NewPost.styled";
 import { NewPostData } from "./createNewPostSchema";
 import { formFieldNames } from "./createNewPostSchema";
 import { useNewsState } from "../../store/newsPostStore";
-import { NewsState } from "../../store/newsPostStore";
 
 export const NewPost = () => {
-  const { addNewsPost } = useNewsState() as NewsState;
+  const { addNewsPost } = useNewsState();
   const {
     handleSubmit,
     register,
