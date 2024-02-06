@@ -1,5 +1,3 @@
-import React from "react";
-
 export const AllNews = () => {
-  return <div>AllNews</div>;
+  return <div>All news</div>;
 };

@@ -9,8 +9,10 @@ import { Button } from "../../components/button/Button";
 import { StyledForm } from "./NewPost.styled";
 import { NewPostData } from "./createNewPostSchema";
 import { formFieldNames } from "./createNewPostSchema";
+import { useNewsState } from "../../store/useNewsState";
 
 export const NewPost = () => {
+  const { addNewsPost } = useNewsState();
   const {
     handleSubmit,
     register,
@@ -21,6 +23,7 @@ export const NewPost = () => {
   });
 
   const onSubmit: SubmitHandler<NewPostData> = (data) => {
+    addNewsPost(data);
     console.log(data);
   };
 
