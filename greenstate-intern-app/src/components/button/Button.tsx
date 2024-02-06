@@ -12,7 +12,6 @@ type FontDetails = {
 };
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   size?: TypographyButtonSize;
   children: string;
   fill?: boolean;
