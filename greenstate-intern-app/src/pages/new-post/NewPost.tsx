@@ -23,7 +23,8 @@ export const NewPost = () => {
   });
 
   const onSubmit: SubmitHandler<NewPostData> = (data) => {
-    addNewsPost(data);
+    //url za sliku kada dodajem novi post: src/assets/images/news-image.png
+    addNewsPost({ ...data, date: convertDateFormat(new Date().toString()) });
     console.log(data);
   };
 
