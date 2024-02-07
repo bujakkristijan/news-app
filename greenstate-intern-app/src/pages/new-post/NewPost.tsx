@@ -34,10 +34,11 @@ export const NewPost = () => {
         date: convertDateFormat(new Date().toString()),
         id: generateUniqueId(),
       });
+      alertError("Something went wrong, try again!");
       await alertSuccess("Succesfully added new post!");
       reset();
     } catch (error) {
-      alertError("Something went wrong, try again!");
+      await alertError("Something went wrong, try again!");
     }
   };
 
