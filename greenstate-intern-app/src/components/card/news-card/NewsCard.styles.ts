@@ -2,9 +2,7 @@ import styled from "styled-components";
 import { StyledText } from "../../text/Text.styles";
 
 export const StyledNewsCard = styled.div`
-  max-width: 18rem;
-  width: 100%;
-  min-width: 16.338rem;
+  min-width: 16.313rem;
   position: relative;
   display: flex;
   flex-direction: column;

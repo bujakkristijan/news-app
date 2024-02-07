@@ -3,7 +3,7 @@ import { useNewsState } from "../../store/useNewsState";
 import { StyledLatestNewsContainer } from "./Home.style";
 import { Headline } from "../../components/headline/Headline";
 import { NewsCard } from "../../components/card/news-card/NewsCard";
-import { convertDateFormat } from "../../helper/date-formatter/dateFormatter";
+import { formatDate } from "../../helper/format-date/formatDate";
 import { StyledHomeContainer } from "./Home.style";
 
 export const Home = () => {
@@ -19,7 +19,7 @@ export const Home = () => {
             description={post.description}
             imageURL={post.url}
             date={post.date}
-            isActive={post.date === convertDateFormat(new Date().toString())}
+            isActive={post.date === formatDate(new Date().toString())}
           ></NewsCard>
         ))}
       </StyledLatestNewsContainer>

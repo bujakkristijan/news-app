@@ -7,7 +7,7 @@ export const StyledLatestNewsContainer = styled.div`
     visibility: hidden;
   }
 
-  overflow-y: auto;
+  overflow-x: auto;
 `;
 
 export const StyledHomeContainer = styled.div`

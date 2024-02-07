@@ -1,4 +1,4 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { newPostSchema } from "./createNewPostSchema";
 import { Input } from "../../components/input/Input";
@@ -7,11 +7,10 @@ import { StyledNewPostContainer, TextWrapper } from "./NewPost.styled";
 import { Text } from "../../components/text/Text";
 import { Button } from "../../components/button/Button";
 import { StyledForm } from "./NewPost.styled";
-import { NewPostData } from "./createNewPostSchema";
-import { formFieldNames } from "./createNewPostSchema";
+import { NewPostData, formFieldNames } from "./createNewPostSchema";
 import { useNewsState } from "../../store/useNewsState";
-import { convertDateFormat } from "../../helper/date-formatter/dateFormatter";
-import { generateUniqueId } from "../../helper/id-generator/idGenerator";
+import { formatDate } from "../../helper/format-date/formatDate";
+import { generateUniqueId } from "../../helper/generate-unique-id/generateUniqueId";
 import { alertError, alertSuccess } from "../../shared/alert/alert";
 
 export const NewPost = () => {
@@ -26,11 +25,11 @@ export const NewPost = () => {
     resolver: zodResolver(newPostSchema),
   });
 
-  const onSubmit: SubmitHandler<NewPostData> = async (data) => {
+  const onSubmit = async (data: NewPostData) => {
     try {
       addNewsPost({
         ...data,
-        date: convertDateFormat(new Date().toString()),
+        date: formatDate(new Date().toString()),
         id: generateUniqueId(),
       });
       await alertSuccess("Succesfully added new post!");
