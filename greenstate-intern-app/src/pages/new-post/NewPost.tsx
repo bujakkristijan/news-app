@@ -10,6 +10,8 @@ import { StyledForm } from "./NewPost.styled";
 import { NewPostData } from "./createNewPostSchema";
 import { formFieldNames } from "./createNewPostSchema";
 import { useNewsState } from "../../store/useNewsState";
+import { convertDateFormat } from "../../helper/date-formatter/dateFormatter";
+import { generateUniqueId } from "../../helper/id-generator/idGenerator";
 
 export const NewPost = () => {
   const { addNewsPost } = useNewsState();
@@ -24,7 +26,11 @@ export const NewPost = () => {
 
   const onSubmit: SubmitHandler<NewPostData> = (data) => {
     //url za sliku kada dodajem novi post: src/assets/images/news-image.png
-    addNewsPost({ ...data, date: convertDateFormat(new Date().toString()) });
+    addNewsPost({
+      ...data,
+      date: convertDateFormat(new Date().toString()),
+      id: generateUniqueId(),
+    });
     console.log(data);
   };
 

@@ -1,21 +1,10 @@
 import styled from "styled-components";
 
-export const StyledNewsContainer = styled.div``;
-
 export const StyledLatestNewsContainer = styled.div`
   display: flex;
   gap: 1.25rem;
   &::-webkit-scrollbar {
     visibility: hidden;
-    height: 0.75rem;
-    width: 0.75rem;
-    background: #ebebeb;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    visibility: hidden;
-    background: #cdcdcd;
-    -webkit-border-radius: 3.125rem;
   }
 
   overflow-y: auto;
