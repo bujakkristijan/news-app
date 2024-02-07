@@ -1,4 +1,3 @@
-export const formatDate = (dateString: string): string => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("en-GB");
+export const formatDate = (date: string): string => {
+  return new Date(date).toLocaleDateString("en-GB");
 };

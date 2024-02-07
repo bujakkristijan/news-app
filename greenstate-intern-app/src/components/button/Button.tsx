@@ -1,4 +1,5 @@
 import { StyledButton } from "./Button.styles";
+import React from "react";
 import {
   TypographyButtonSize,
   TypographyFontSize,
@@ -31,26 +32,28 @@ const getFontDetails = (size: TypographyButtonSize): FontDetails => {
   }
 };
 
-export const Button = ({
-  size = "sm",
-  children,
-  fill = false,
-  disabled,
-  ...restProps
-}: ButtonProps) => {
-  const { fontSize, lineHeight } = getFontDetails(size);
+export const Button = React.memo(
+  ({
+    size = "sm",
+    children,
+    fill = false,
+    disabled,
+    ...restProps
+  }: ButtonProps) => {
+    const { fontSize, lineHeight } = getFontDetails(size);
 
-  return (
-    <StyledButton size={size} disabled={disabled} $fill={fill} {...restProps}>
-      <Text
-        fontSize={fontSize}
-        fontWeight="extraBold"
-        lineHeight={lineHeight}
-        fontFamily="inter"
-        color={disabled ? "darkGrey" : "white"}
-      >
-        {children}
-      </Text>
-    </StyledButton>
-  );
-};
+    return (
+      <StyledButton size={size} disabled={disabled} $fill={fill} {...restProps}>
+        <Text
+          fontSize={fontSize}
+          fontWeight="extraBold"
+          lineHeight={lineHeight}
+          fontFamily="inter"
+          color={disabled ? "darkGrey" : "white"}
+        >
+          {children}
+        </Text>
+      </StyledButton>
+    );
+  }
+);

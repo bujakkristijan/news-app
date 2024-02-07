@@ -1,5 +1,5 @@
 import React from "react";
-import { Button as ButtonComponent } from "../button/Button";
+import { Button } from "../button/Button";
 import {
   StyledDataStatusContainer,
   TextContainer,
@@ -20,7 +20,6 @@ export const DataStatus = ({
   description,
   icon: IconComponent,
 }: DataStatusProps) => {
-  const Button = React.memo(ButtonComponent);
   return (
     <StyledDataStatusContainer>
       <IconComponent />
