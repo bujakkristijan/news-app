@@ -12,26 +12,29 @@ import { formFieldNames } from "./createNewPostSchema";
 import { useNewsState } from "../../store/useNewsState";
 import { convertDateFormat } from "../../helper/date-formatter/dateFormatter";
 import { generateUniqueId } from "../../helper/id-generator/idGenerator";
+import { alertSuccess } from "../../shared/alert/alert";
 
 export const NewPost = () => {
   const { addNewsPost } = useNewsState();
   const {
     handleSubmit,
     register,
+    reset,
     formState: { errors },
   } = useForm<NewPostData>({
     mode: "onChange",
     resolver: zodResolver(newPostSchema),
   });
 
-  const onSubmit: SubmitHandler<NewPostData> = (data) => {
+  const onSubmit: SubmitHandler<NewPostData> = async (data) => {
     //url za sliku kada dodajem novi post: src/assets/images/news-image.png
     addNewsPost({
       ...data,
       date: convertDateFormat(new Date().toString()),
       id: generateUniqueId(),
     });
-    console.log(data);
+    await alertSuccess("Succesfully added new post!");
+    reset();
   };
 
   return (
