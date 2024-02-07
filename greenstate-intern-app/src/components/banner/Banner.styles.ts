@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "../../shared/data/breakpoints/breakpoints";
 
 export const StyledHomeBanner = styled.div`
   min-height: 8.938rem;
@@ -8,7 +9,7 @@ export const StyledHomeBanner = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  @media (max-width: 768px) {
+  @media ${breakpoints.tablet} {
     padding-right: 1.5rem;
   }
 `;
