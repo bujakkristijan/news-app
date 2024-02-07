@@ -1,7 +1,7 @@
 import { Card } from "../card/Card";
 import { Text } from "../text/Text";
-import { StyledHomeBanner, StyledImageHomeBanner } from "./HomeBanner.styles";
-import { StyledTextContainer } from "./HomeBanner.styles";
+import { StyledHomeBanner, StyledImageHomeBanner } from "./Banner.styles";
+import { StyledTextContainer } from "./Banner.styles";
 
 type HomeBannerProps = {
   title: string;
