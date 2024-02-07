@@ -27,18 +27,16 @@ export const NewPost = () => {
   });
 
   const onSubmit: SubmitHandler<NewPostData> = async (data) => {
-    //url za sliku kada dodajem novi post: src/assets/images/news-image.png
     try {
       addNewsPost({
         ...data,
         date: convertDateFormat(new Date().toString()),
         id: generateUniqueId(),
       });
-      alertError("Something went wrong, try again!");
       await alertSuccess("Succesfully added new post!");
       reset();
     } catch (error) {
-      await alertError("Something went wrong, try again!");
+      alertError("Something went wrong, try again!");
     }
   };
 
