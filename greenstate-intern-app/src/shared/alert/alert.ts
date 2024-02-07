@@ -9,3 +9,11 @@ export const alertSuccess = (message: string) => {
     timer: 1500,
   });
 };
+
+export const alertError = (message: string) => {
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: message,
+  });
+};
