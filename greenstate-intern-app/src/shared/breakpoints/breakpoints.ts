@@ -1,3 +1,3 @@
 export const breakpoints = {
-  tablet: "(max-width: 768px)",
+  tablet: "(min-width: 768px)",
 };

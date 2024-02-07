@@ -1,5 +1,5 @@
 import React from "react";
-import { Button as ButtonComponent } from "../button/Button";
+import { Button } from "../button/Button";
 import {
   StyledDataStatusContainer,
   TextContainer,

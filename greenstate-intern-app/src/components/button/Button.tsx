@@ -1,5 +1,6 @@
 import { StyledButton } from "./Button.styles";
 import React from "react";
+import React from "react";
 import {
   TypographyButtonSize,
   TypographyFontSize,
