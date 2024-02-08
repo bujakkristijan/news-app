@@ -5,11 +5,16 @@ import { Headline } from "../../components/headline/Headline";
 import { NewsCard } from "../../components/card/news-card/NewsCard";
 import { formatDate } from "../../helper/format-date/formatDate";
 import { StyledHomeContainer } from "./Home.style";
+import { Banner } from "../../components/banner/Banner";
 
 export const Home = () => {
   const { newsPosts } = useNewsState();
   return (
     <StyledHomeContainer>
+      <Banner
+        title="The best news always available"
+        description="On all devices, always on time"
+      />
       <Headline isActive={true} title="Latest news" />
       <StyledLatestNewsContainer>
         {newsPosts.map((post) => (

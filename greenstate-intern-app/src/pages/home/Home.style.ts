@@ -6,7 +6,6 @@ export const StyledLatestNewsContainer = styled.div`
   &::-webkit-scrollbar {
     visibility: hidden;
   }
-
   overflow-x: auto;
 `;
 

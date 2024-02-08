@@ -83,6 +83,7 @@ export type Theme = {
     darkGrey: string;
     lighterGrey: string;
     lightestGrey: string;
+    greyHomeBanner: string;
     greyError: string;
     black: string;
     lighterBlack: string;

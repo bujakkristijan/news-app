@@ -55,5 +55,5 @@ export const Button = React.memo(
         </Text>
       </StyledButton>
     );
-  }
+  },
 );
