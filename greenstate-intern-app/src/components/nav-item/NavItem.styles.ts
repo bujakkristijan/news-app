@@ -16,18 +16,21 @@ export const StyledNavItem = styled.div`
   cursor: pointer;
   width: 6rem;
 
+  ${StyledTextWrapper} {
+    display: none;
+  }
   ${StyledIcon} {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
-  @media ${breakpoints.mobile} {
+  @media ${breakpoints.tablet} {
     ${StyledTextWrapper} {
-      display: none;
+      display: block;
     }
     ${StyledIcon} {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
 `;
