@@ -5,7 +5,7 @@ export const StyledHomeBanner = styled.div`
   min-height: 8.938rem;
   border-radius: 1rem;
   background: linear-gradient(271deg, #2249af -8.54%, #2d99e7 103.39%);
-  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  padding: 1.5rem;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
