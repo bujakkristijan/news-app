@@ -1,4 +1,4 @@
-import { fetchNewsFromApi } from "../../services/fetchNews";
+import { fetchNews } from "../../services/fetchNews";
 import { useNewsState } from "../../store/useNewsState";
 
 const isInitFLAG = "newsDataInitialized";
@@ -7,7 +7,7 @@ export const initializeNewsData = async () => {
   try {
     const isInitialized = localStorage.getItem(isInitFLAG);
     if (isInitialized !== "true") {
-      const data = await fetchNewsFromApi();
+      const data = await fetchNews();
       useNewsState.setState({ newsPosts: data.newsPosts });
       localStorage.setItem(isInitFLAG, "true");
     }

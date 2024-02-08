@@ -1,4 +1,4 @@
-export const fetchNewsFromApi = async () => {
+export const fetchNews = async () => {
   try {
     const response = await fetch(
       "https://my-json-server.typicode.com/bujakkristijan/news-api/db",
