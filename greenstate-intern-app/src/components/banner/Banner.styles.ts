@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { breakpoints } from "../../shared/breakpoints/breakpoints";
 
-export const StyledHomeBanner = styled.div`
+export const StyledBanner = styled.div`
   min-height: 8.938rem;
   border-radius: 1rem;
   background: linear-gradient(271deg, #2249af -8.54%, #2d99e7 103.39%);
@@ -20,6 +20,6 @@ export const StyledTextContainer = styled.div`
   gap: 1rem;
 `;
 
-export const StyledImageHomeBanner = styled.img`
+export const StyledImageBanner = styled.img`
   max-height: 5.938rem;
 `;

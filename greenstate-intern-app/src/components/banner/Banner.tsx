@@ -1,17 +1,17 @@
 import { Card } from "../card/Card";
 import { Text } from "../text/Text";
-import { StyledHomeBanner, StyledImageHomeBanner } from "./Banner.styles";
+import { StyledBanner, StyledImageBanner } from "./Banner.styles";
 import { StyledTextContainer } from "./Banner.styles";
 
-type HomeBannerProps = {
+type BannerProps = {
   title: string;
   description: string;
 };
 
-export const HomeBanner = ({ title, description }: HomeBannerProps) => {
+export const Banner = ({ title, description }: BannerProps) => {
   return (
     <Card $width="100%" $padding="0rem">
-      <StyledHomeBanner>
+      <StyledBanner>
         <StyledTextContainer>
           <Text
             fontSize="xLg"
@@ -32,8 +32,8 @@ export const HomeBanner = ({ title, description }: HomeBannerProps) => {
             {description}
           </Text>
         </StyledTextContainer>
-        <StyledImageHomeBanner src="src/assets/images/news-home-banner.png"></StyledImageHomeBanner>
-      </StyledHomeBanner>
+        <StyledImageBanner src="src/assets/images/news-home-banner.png"></StyledImageBanner>
+      </StyledBanner>
     </Card>
   );
 };
