@@ -6,10 +6,10 @@ import { NewsCard } from "../../components/card/news-card/NewsCard";
 import { formatDate } from "../../helper/format-date/formatDate";
 import { StyledHomeContainer } from "./Home.style";
 import { Banner } from "../../components/banner/Banner";
-import { AllNews } from "../all-news/AllNews";
 import { Button } from "../../components/button/Button";
 import { ButtonWrapper } from "./Home.style";
 import { useNavigate } from "react-router-dom";
+import { AllNews } from "../../components/all-news/AllNews";
 
 export const Home = () => {
   const { newsPosts } = useNewsState();
@@ -41,7 +41,7 @@ export const Home = () => {
         title="News Recognized for Unparalleled Objectivity"
         description="Our News has been acknowledged for its unparalleled commitment to objectivity, standing out in an era where unbiased reporting is increasingly valued"
       ></TrustCard>
-      <AllNews />
+      <AllNews title="All news" newsPosts={newsPosts} />
       <ButtonWrapper>
         <Button size="xlg" onClick={navigateToAllNews}>
           View all news
