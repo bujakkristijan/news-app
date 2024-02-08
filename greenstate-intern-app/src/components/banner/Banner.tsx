@@ -10,7 +10,7 @@ type BannerProps = {
 
 export const Banner = ({ title, description }: BannerProps) => {
   return (
-    <Card $width="100%" $padding="0rem">
+    <Card width="100%" padding="0rem">
       <StyledBanner>
         <StyledTextContainer>
           <Text
