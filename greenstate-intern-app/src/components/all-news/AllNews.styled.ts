@@ -14,8 +14,4 @@ export const StyledAllNewsContainer = styled.div`
   );
   gap: 1.25rem;
   justify-content: center;
-
-  & > * {
-    width: 100%;
-  }
 `;
