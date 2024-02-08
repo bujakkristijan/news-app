@@ -5,7 +5,6 @@ import { Headline } from "../../components/headline/Headline";
 import { NewsCard } from "../../components/card/news-card/NewsCard";
 import { formatDate } from "../../helper/format-date/formatDate";
 import { StyledHomeContainer } from "./Home.style";
-import { StyledLatestNewsCard } from "./Home.style";
 import { HomeBanner } from "../../components/banner/Banner";
 
 export const Home = () => {
