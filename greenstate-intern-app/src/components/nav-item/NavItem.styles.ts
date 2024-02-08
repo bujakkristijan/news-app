@@ -16,23 +16,18 @@ export const StyledNavItem = styled.div`
   cursor: pointer;
   width: 6rem;
 
-    ${StyledIcon}{
-     width: 1.5rem;
-     height: 1.5rem;
+  ${StyledIcon} {
+    width: 1.5rem;
+    height: 1.5rem;
   }
-  
+
   @media ${breakpoints.mobile} {
-
-
-  ${StyledTextWrapper} {
-    display: none;
-    
-  }
-  ${StyledIcon}{
-     width: 2.5rem;
-     height: 2.5rem;
-  }
+    ${StyledTextWrapper} {
+      display: none;
+    }
+    ${StyledIcon} {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
   }
 `;
-
-
