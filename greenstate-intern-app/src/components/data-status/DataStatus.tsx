@@ -20,7 +20,6 @@ export const DataStatus = ({
   description,
   icon: IconComponent,
 }: DataStatusProps) => {
-  const MemoizedButton = React.memo(Button);
   return (
     <StyledDataStatusContainer>
       <IconComponent />
@@ -38,9 +37,9 @@ export const DataStatus = ({
         </Text>
       </TextContainer>
       <ButtonWrapper>
-        <MemoizedButton size="xlg" onClick={onClick}>
+        <Button fill={true} size="xlg" onClick={onClick}>
           Back to home
-        </MemoizedButton>
+        </Button>
       </ButtonWrapper>
     </StyledDataStatusContainer>
   );
