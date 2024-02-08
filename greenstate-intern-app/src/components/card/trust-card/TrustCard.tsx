@@ -11,7 +11,7 @@ type TrustCardProps = {
 
 export const TrustCard = ({ title, description }: TrustCardProps) => {
   return (
-    <Card $bgColor="lighterGreen" $borderColor="green" $width="100%">
+    <Card bgColor="lighterGreen" borderColor="green" width="100%">
       <StyledTrustCard>
         <CircleIcon status="success"></CircleIcon>
         <StyledTextContainer>
