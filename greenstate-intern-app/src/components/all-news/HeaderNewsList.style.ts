@@ -8,10 +8,7 @@ export const StyledAllNewsMainContainer = styled.div`
 
 export const StyledAllNewsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(18.438rem, 1fr)
-  );
+  grid-template-columns: repeat(auto-fill, minmax(18.438rem, 1fr));
   gap: 1.25rem;
   justify-content: center;
 `;

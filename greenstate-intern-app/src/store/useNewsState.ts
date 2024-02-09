@@ -1,14 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
-
-export type NewsPostPublicAPI = {
-  title: string;
-  description: string;
-  image_url: string;
-  pubDate: string;
-  article_id: string;
-}
+import { NewsPostPublicAPI } from "../shared/types/new-post/newPost";
 
 export type NewsState = {
   allNewsPosts: NewsPostPublicAPI[];
@@ -27,7 +20,7 @@ export const useNewsState = create<NewsState>()(
         set((state) => {
           state.allNewsPosts.push(newPost);
         }),
-        addNewsPostToLatest: (newPost: NewsPostPublicAPI) =>
+      addNewsPostToLatest: (newPost: NewsPostPublicAPI) =>
         set((state) => {
           state.latestNewsPosts.push(newPost);
         }),

@@ -2,19 +2,19 @@ import GlobalStyles from "./global-styles/GlobalStyles";
 import ThemeProvider from "./shared/theme/ThemeProvider";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router/Router";
-import { useEffect } from "react";
-import { initializeNewsData } from "./helper/initialize-news-data/initializeNewsData";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 function App() {
-  useEffect(() => {
-    initializeNewsData();
-  }, []);
+  const queryClient = new QueryClient();
+
   return (
     <>
-      <ThemeProvider>
-        <GlobalStyles />
-        <RouterProvider router={router} />
-      </ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider>
+          <GlobalStyles />
+          <RouterProvider router={router} />
+        </ThemeProvider>
+      </QueryClientProvider>
     </>
   );
 }
