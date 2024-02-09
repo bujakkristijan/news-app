@@ -7,7 +7,7 @@ export const newPostSchema = z.object({
   description: z
     .string()
     .min(10, { message: "Description should be at least 10 characters long" }),
-  url: z
+  image_url: z
     .string()
     .min(3, { message: "Url should be at least 3 characters long" }),
 });
@@ -17,5 +17,5 @@ export type NewPostData = z.infer<typeof newPostSchema>;
 export const formFieldNames: FormNames<NewPostData> = {
   title: "title",
   description: "description",
-  url: "url",
+  image_url: "image_url",
 };

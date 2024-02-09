@@ -12,13 +12,20 @@ import { useNavigate } from "react-router-dom";
 import { HeaderNewsList } from "../../components/all-news/HeaderNewsList";
 
 export const Home = () => {
-  const { newsPosts } = useNewsState();
+  const { latestNewsPosts, allNewsPosts } = useNewsState();
   const navigate = useNavigate();
 
   const onAllNewsClick = () => {
     navigate("/all-news");
     window.scrollTo(0, 0);
   };
+
+  const clonedLatestNewsPosts: NewsPostPublicAPI[] = [...latestNewsPosts];
+  // When I add new post, if I want that one to be shown first, then I need to sort it
+  const latestNewsPostsSorted: NewsPostPublicAPI[] = sortNewsByDate(
+    clonedLatestNewsPosts
+  );
+
   return (
     <StyledHomeContainer>
       <Banner
@@ -27,14 +34,14 @@ export const Home = () => {
       />
       <Headline isActive={true} title="Latest news" />
       <StyledLatestNewsContainer>
-        {newsPosts.map((post) => (
+        {latestNewsPostsSorted.map((post) => (
           <NewsCard
-            key={post.id}
+            key={post.article_id}
             title={post.title}
             description={post.description}
-            imageURL={post.url}
-            date={post.date}
-            isActive={post.date === formatDate(new Date().toString())}
+            imageURL={post.image_url}
+            date={formatDate(post.pubDate)}
+            isActive={true}
           ></NewsCard>
         ))}
       </StyledLatestNewsContainer>
