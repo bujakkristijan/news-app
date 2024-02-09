@@ -1,8 +1,8 @@
-import { Headline } from "../../components/headline/Headline";
-import { NewsCard } from "../../components/card/news-card/NewsCard";
+import { Headline } from "../headline/Headline";
+import { NewsCard } from "../card/news-card/NewsCard";
 import { formatDate } from "../../helper/format-date/formatDate";
-import { StyledAllNewsContainer } from "./AllNews.styled";
-import { StyledAllNewsMainContainer } from "./AllNews.styled";
+import { StyledAllNewsContainer } from "./HeaderNewsList.style";
+import { StyledAllNewsMainContainer } from "./HeaderNewsList.style";
 import { NewPostDataWithDate } from "../../shared/types/new-post/newPost";
 
 type AllNewsProps = {
@@ -10,7 +10,7 @@ type AllNewsProps = {
   newsPosts: NewPostDataWithDate[];
 };
 
-export const AllNews = ({ title, newsPosts }: AllNewsProps) => {
+export const HeaderNewsList = ({ title, newsPosts }: AllNewsProps) => {
   return (
     <StyledAllNewsMainContainer>
       <Headline title={title} />
