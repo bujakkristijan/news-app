@@ -13,12 +13,20 @@ import { useQuery } from "react-query";
 import { getLatestNews } from "../../services/getLatestNewsAPI";
 import { getAllNews } from "../../services/getAllNewsAPI";
 import { NewsPostPublicAPI } from "../../shared/types/new-post/newPost";
+import { LoadingSpinner } from "../../components/loading-spinner/LoadingSpinner";
+import { NotFoundWrapper } from "../not-found/NotFound.styles";
+import { DataStatus } from "../../components/data-status/DataStatus";
+import { ErrorFetchIcon } from "../../assets/icons/ErrorFetchIcon";
+import { routes } from "../../router/routes";
+import { useEffect } from "react";
+import { useAppState } from "../../store/useAppState";
 
 export const Home = () => {
   const navigate = useNavigate();
+  const { setIsLoading, setIsError } = useAppState();
 
   const onAllNewsClick = () => {
-    navigate("/all-news");
+    navigate(routes.allNews);
     window.scrollTo(0, 0);
   };
 
@@ -34,8 +42,13 @@ export const Home = () => {
     isError: allNewsError,
   } = useQuery<NewsPostPublicAPI[], Error>("allNews", getAllNews);
 
-  if (latestNewsLoading || allNewsLoading) return <div>Loading...</div>;
-  if (latestNewsError || allNewsError) return <div>Error fetching news...</div>;
+  useEffect(() => {
+    setIsLoading(latestNewsLoading || allNewsLoading);
+  }, [latestNewsLoading, allNewsLoading, setIsLoading]);
+
+  useEffect(() => {
+    setIsError(latestNewsError || allNewsError);
+  }, [latestNewsError, allNewsError, setIsError]);
 
   return (
     <StyledHomeContainer>
@@ -45,7 +58,7 @@ export const Home = () => {
       />
       <Headline isActive={true} title="Latest news" />
       <StyledLatestNewsContainer>
-        {latestNewsPosts.map((post) => (
+        {latestNewsPosts?.map((post) => (
           <NewsCard
             key={post.article_id}
             title={post.title}

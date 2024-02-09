@@ -3,11 +3,11 @@ import { NewsCard } from "../../components/card/news-card/NewsCard";
 import { formatDate } from "../../helper/format-date/formatDate";
 import { StyledAllNewsContainer } from "./AllNews.styled";
 import { StyledAllNewsMainContainer } from "./AllNews.styled";
-import { NewsPostPublicAPI } from "../../store/useNewsState";
+import { NewsPostPublicAPI } from "../../shared/types/new-post/newPost";
 
 type AllNewsProps = {
   title: string;
-  newsPosts: NewsPostPublicAPI[];
+  newsPosts?: NewsPostPublicAPI[];
 };
 
 export const AllNews = ({ title, newsPosts }: AllNewsProps) => {
@@ -15,7 +15,7 @@ export const AllNews = ({ title, newsPosts }: AllNewsProps) => {
     <StyledAllNewsMainContainer>
       <Headline title={title} />
       <StyledAllNewsContainer>
-        {newsPosts.map((post) => (
+        {newsPosts?.map((post) => (
           <NewsCard
             key={post.article_id}
             title={post.title}
