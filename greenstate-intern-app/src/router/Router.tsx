@@ -18,6 +18,6 @@ export const router = createBrowserRouter(
         <Route path={routes.allNews} element={<AllNews />} />
       </Route>
       <Route path="*" element={<NotFound />} />
-    </>
-  )
+    </>,
+  ),
 );
