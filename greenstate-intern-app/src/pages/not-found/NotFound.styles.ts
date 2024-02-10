@@ -1,7 +1,11 @@
 import styled from "styled-components";
 export const NotFoundWrapper = styled.div`
-  min-height: 100vh;
-  width: 100vw;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
