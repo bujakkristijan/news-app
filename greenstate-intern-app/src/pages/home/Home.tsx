@@ -8,18 +8,20 @@ import { Banner } from "../../components/banner/Banner";
 import { Button } from "../../components/button/Button";
 import { ButtonWrapper } from "./Home.style";
 import { useNavigate } from "react-router-dom";
-import { AllNews } from "../../components/all-news/AllNews";
+import { NewsList } from "../../components/news-list/NewsList";
 import { useQuery } from "react-query";
 import { getLatestNews } from "../../services/getLatestNewsAPI";
 import { getAllNews } from "../../services/getAllNewsAPI";
 import { NewsPostPublicAPI } from "../../shared/types/new-post/newPost";
 import { routes } from "../../router/routes";
-import { useEffect } from "react";
-import { useAppState } from "../../store/useAppState";
+// import { useEffect } from "react";
+// import { useAppState } from "../../store/useAppState";
+import { LoadingSpinner } from "../../components/loading-spinner/LoadingSpinner";
+import { ErrorFetch } from "../error-fetch/ErrorFetch";
 
 export const Home = () => {
   const navigate = useNavigate();
-  const { setIsLoading, setIsError } = useAppState();
+  // const { setIsLoading, setIsError } = useAppState();
 
   const onAllNewsClick = () => {
     navigate(routes.allNews);
@@ -38,13 +40,16 @@ export const Home = () => {
     isError: allNewsError,
   } = useQuery<NewsPostPublicAPI[], Error>("allNews", getAllNews);
 
-  useEffect(() => {
-    setIsLoading(latestNewsLoading || allNewsLoading);
-  }, [latestNewsLoading, allNewsLoading, setIsLoading]);
+  if (latestNewsLoading || allNewsLoading) return <LoadingSpinner />;
+  if (latestNewsError || allNewsError) return <ErrorFetch />;
 
-  useEffect(() => {
-    setIsError(latestNewsError || allNewsError);
-  }, [latestNewsError, allNewsError, setIsError]);
+  // useEffect(() => {
+  //   setIsLoading(latestNewsLoading || allNewsLoading);
+  // }, [latestNewsLoading, allNewsLoading, setIsLoading]);
+
+  // useEffect(() => {
+  //   setIsError(latestNewsError || allNewsError);
+  // }, [latestNewsError, allNewsError, setIsError]);
 
   return (
     <StyledHomeContainer>
@@ -69,7 +74,7 @@ export const Home = () => {
         title="News Recognized for Unparalleled Objectivity"
         description="Our News has been acknowledged for its unparalleled commitment to objectivity, standing out in an era where unbiased reporting is increasingly valued"
       ></TrustCard>
-      <HeaderNewsList title="All news" newsPosts={newsPosts} />
+      <NewsList title="All news" newsPosts={allNewsPosts} />
       <ButtonWrapper>
         <Button size="xlg" onClick={onAllNewsClick}>
           View all news

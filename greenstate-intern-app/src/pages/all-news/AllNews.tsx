@@ -1,11 +1,22 @@
-import { useNewsState } from "../../store/useNewsState";
-import { HeaderNewsList } from "../../components/all-news/HeaderNewsList";
+import { NewsList } from "../../components/news-list/NewsList";
 import { StyledAllNewsContainer } from "./AllNews.styles";
+import { useQuery } from "react-query";
+import { NewsPostPublicAPI } from "../../shared/types/new-post/newPost";
+import { getAllNews } from "../../services/getAllNewsAPI";
+import { LoadingSpinner } from "../../components/loading-spinner/LoadingSpinner";
+import { ErrorFetch } from "../error-fetch/ErrorFetch";
 export const AllNews = () => {
-  const { allNewsPosts } = useNewsState();
+  const {
+    data: allNewsPosts,
+    isLoading: allNewsLoading,
+    isError: allNewsError,
+  } = useQuery<NewsPostPublicAPI[], Error>("allNews", getAllNews);
+
+  if (allNewsLoading) return <LoadingSpinner />;
+  if (allNewsError) return <ErrorFetch />;
   return (
     <StyledAllNewsContainer>
-      <HeaderNewsList title="All news" newsPosts={newsPosts} />
+      <NewsList title="All news" newsPosts={allNewsPosts} />
     </StyledAllNewsContainer>
   );
 };

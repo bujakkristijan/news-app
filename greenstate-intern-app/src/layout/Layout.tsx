@@ -7,13 +7,13 @@ import { StyledPageShellWrapper } from "./Layout.styles";
 import { useControlNavigation } from "../hooks/use-control-navigation/useControlNavigation";
 import { NavItem } from "../shared/types/ui-model/navItem";
 import { useNavigate } from "react-router-dom";
-import { useAppState } from "../store/useAppState";
-import { LoadingSpinner } from "../components/loading-spinner/LoadingSpinner";
-import { ErrorFetch } from "../pages/error-fetch/ErrorFetch";
+// import { useAppState } from "../store/useAppState";
+// import { LoadingSpinner } from "../components/loading-spinner/LoadingSpinner";
+// import { ErrorFetch } from "../pages/error-fetch/ErrorFetch";
 
 export const Layout = () => {
   const { selectedNavItem } = useControlNavigation();
-  const { isLoading, isError } = useAppState();
+  // const { isLoading, isError } = useAppState();
   const navigate = useNavigate();
 
   const handleItemClick = (item: NavItem) => {
@@ -27,8 +27,8 @@ export const Layout = () => {
         selectedItem={selectedNavItem?.value}
         onItemClick={handleItemClick}
       />
-      {isLoading && <LoadingSpinner />}
-      {isError && <ErrorFetch />}
+      {/* {isLoading && <LoadingSpinner />}
+      {isError && <ErrorFetch />} */}
       <StyledPageShellWrapper>
         <PageShell>
           <Outlet />

@@ -2,23 +2,23 @@ import { DataStatus } from "../../components/data-status/DataStatus";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../router/routes";
 import { ErrorFetchIcon } from "../../assets/icons/ErrorFetchIcon";
-import { NotFoundWrapper } from "../not-found/NotFound.styles";
+import { StyledErrorFetchWrapper } from "./ErrorFetch.styles";
 
 export const ErrorFetch = () => {
   const navigate = useNavigate();
 
-  const goBackToHome = () => {
+  const handleGoBackClick = () => {
     navigate(routes.root);
   };
 
   return (
-    <NotFoundWrapper>
+    <StyledErrorFetchWrapper>
       <DataStatus
         icon={ErrorFetchIcon}
-        onClick={goBackToHome}
+        onClick={handleGoBackClick}
         title="Something went wrong!"
         description="An error occurred while attempting to retrieve data from the server."
       />
-    </NotFoundWrapper>
+    </StyledErrorFetchWrapper>
   );
 };
