@@ -7,7 +7,7 @@ export const ErrorFetchIcon = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_1953_4407)">
+      <g clipPath="url(#clip0_1953_4407)">
         <path
           d="M55.0588 50.4067L8.80029 81.3496L54.3625 149.463L100.621 118.521L55.0588 50.4067Z"
           fill="#F5F5F5"
