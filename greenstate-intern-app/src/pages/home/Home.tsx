@@ -48,7 +48,8 @@ export const Home = () => {
       />
       <NewsList
         title="Latest news"
-        isActive={true}
+        isActiveHeadline={true}
+        isActiveChip={true}
         newsPosts={latestNewsPosts}
         container={StyledLatestNewsContainer}
       />
