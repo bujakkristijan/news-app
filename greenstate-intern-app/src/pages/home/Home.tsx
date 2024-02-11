@@ -1,9 +1,12 @@
 import { TrustCard } from "../../components/card/trust-card/TrustCard";
-import { StyledLatestNewsContainer } from "./Home.style";
-import { StyledHomeContainer } from "./Home.style";
+import {
+  StyledLatestNewsContainer,
+  StyledHomeContainer,
+  ButtonWrapper,
+  StyledAllNewsContainer,
+} from "./Home.style";
 import { Banner } from "../../components/banner/Banner";
 import { Button } from "../../components/button/Button";
-import { ButtonWrapper } from "./Home.style";
 import { useNavigate } from "react-router-dom";
 import { NewsList } from "../../components/news-list/NewsList";
 import { useQuery } from "react-query";
@@ -13,7 +16,6 @@ import { NewsPostPublicAPI } from "../../shared/types/new-post/newPost";
 import { routes } from "../../router/routes";
 import { LoadingSpinner } from "../../components/loading-spinner/LoadingSpinner";
 import { ErrorFetch } from "../error-fetch/ErrorFetch";
-import { StyledAllNewsContainer } from "./Home.style";
 
 export const Home = () => {
   const navigate = useNavigate();
