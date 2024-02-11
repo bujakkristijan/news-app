@@ -11,20 +11,18 @@ type AllNewsProps = {
   title: string;
   newsPosts?: NewsPostPublicAPI[];
   container?: typeof StyledAllNewsContainer | typeof StyledLatestNewsContainer;
-  isActiveHeadline?: boolean;
-  isActiveChip?: boolean;
+  isActive?: boolean;
 };
 
 export const NewsList = ({
   title,
   newsPosts,
   container: Container = StyledAllNewsContainer,
-  isActiveHeadline,
-  isActiveChip,
+  isActive,
 }: AllNewsProps) => {
   return (
     <StyledNewsMainContainer>
-      <Headline title={title} isActive={isActiveHeadline} />
+      <Headline title={title} isActive={isActive} />
       <Container>
         {newsPosts?.map((post) => (
           <NewsCard
@@ -33,7 +31,7 @@ export const NewsList = ({
             description={post.description}
             imageURL={post.image_url}
             date={formatDate(post.pubDate)}
-            isActive={isActiveChip}
+            isActive={isActive}
           ></NewsCard>
         ))}
       </Container>
