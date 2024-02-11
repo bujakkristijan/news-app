@@ -1,5 +1,6 @@
 import { NewsList } from "../../components/news-list/NewsList";
-import { StyledAllNewsContainer } from "./AllNews.styles";
+import { StyledAllNewsMainContainer } from "./AllNews.styles";
+import { StyledAllNewsContainer } from "../home/Home.style";
 import { useQuery } from "react-query";
 import { NewsPostPublicAPI } from "../../shared/types/new-post/newPost";
 import { getAllNews } from "../../services/getAllNewsAPI";
@@ -15,8 +16,12 @@ export const AllNews = () => {
   if (allNewsLoading) return <LoadingSpinner />;
   if (allNewsError) return <ErrorFetch />;
   return (
-    <StyledAllNewsContainer>
-      <NewsList title="All news" newsPosts={allNewsPosts} />
-    </StyledAllNewsContainer>
+    <StyledAllNewsMainContainer>
+      <NewsList
+        title="All news"
+        newsPosts={allNewsPosts}
+        container={StyledAllNewsContainer}
+      />
+    </StyledAllNewsMainContainer>
   );
 };

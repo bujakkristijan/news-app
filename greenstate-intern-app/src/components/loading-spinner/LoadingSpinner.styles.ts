@@ -20,7 +20,7 @@ export const StyledSpinner = styled.div`
   display: inline-block;
   position: relative;
   border: 3px solid;
-  border-color: #fff #fff #3381FF;
+  border-color: #fff #fff #3381ff;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 
@@ -34,7 +34,7 @@ export const StyledSpinner = styled.div`
     bottom: 0;
     margin: auto;
     border: 3px solid;
-    border-color: transparent #3381FF #3381FF;
+    border-color: transparent #3381ff #3381ff;
     width: 24px;
     height: 24px;
     border-radius: 50%;

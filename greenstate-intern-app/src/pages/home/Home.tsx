@@ -1,8 +1,5 @@
 import { TrustCard } from "../../components/card/trust-card/TrustCard";
 import { StyledLatestNewsContainer } from "./Home.style";
-import { Headline } from "../../components/headline/Headline";
-import { NewsCard } from "../../components/card/news-card/NewsCard";
-import { formatDate } from "../../helper/format-date/formatDate";
 import { StyledHomeContainer } from "./Home.style";
 import { Banner } from "../../components/banner/Banner";
 import { Button } from "../../components/button/Button";
@@ -18,6 +15,7 @@ import { routes } from "../../router/routes";
 // import { useAppState } from "../../store/useAppState";
 import { LoadingSpinner } from "../../components/loading-spinner/LoadingSpinner";
 import { ErrorFetch } from "../error-fetch/ErrorFetch";
+import { StyledAllNewsContainer } from "./Home.style";
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -57,24 +55,21 @@ export const Home = () => {
         title="The best news always available"
         description="On all devices, always on time"
       />
-      <Headline isActive={true} title="Latest news" />
-      <StyledLatestNewsContainer>
-        {latestNewsPosts?.map((post) => (
-          <NewsCard
-            key={post.article_id}
-            title={post.title}
-            description={post.description}
-            imageURL={post.image_url}
-            date={formatDate(post.pubDate)}
-            isActive={true}
-          ></NewsCard>
-        ))}
-      </StyledLatestNewsContainer>
+      <NewsList
+        title="Latest news"
+        isActive={true}
+        newsPosts={latestNewsPosts}
+        container={StyledLatestNewsContainer}
+      />
       <TrustCard
         title="News Recognized for Unparalleled Objectivity"
         description="Our News has been acknowledged for its unparalleled commitment to objectivity, standing out in an era where unbiased reporting is increasingly valued"
-      ></TrustCard>
-      <NewsList title="All news" newsPosts={allNewsPosts} />
+      />
+      <NewsList
+        title="All news"
+        newsPosts={allNewsPosts}
+        container={StyledAllNewsContainer}
+      />
       <ButtonWrapper>
         <Button size="xlg" onClick={onAllNewsClick}>
           View all news
