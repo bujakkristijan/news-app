@@ -11,15 +11,12 @@ import { getLatestNews } from "../../services/getLatestNewsAPI";
 import { getAllNews } from "../../services/getAllNewsAPI";
 import { NewsPostPublicAPI } from "../../shared/types/new-post/newPost";
 import { routes } from "../../router/routes";
-// import { useEffect } from "react";
-// import { useAppState } from "../../store/useAppState";
 import { LoadingSpinner } from "../../components/loading-spinner/LoadingSpinner";
 import { ErrorFetch } from "../error-fetch/ErrorFetch";
 import { StyledAllNewsContainer } from "./Home.style";
 
 export const Home = () => {
   const navigate = useNavigate();
-  // const { setIsLoading, setIsError } = useAppState();
 
   const onAllNewsClick = () => {
     navigate(routes.allNews);
@@ -40,14 +37,6 @@ export const Home = () => {
 
   if (latestNewsLoading || allNewsLoading) return <LoadingSpinner />;
   if (latestNewsError || allNewsError) return <ErrorFetch />;
-
-  // useEffect(() => {
-  //   setIsLoading(latestNewsLoading || allNewsLoading);
-  // }, [latestNewsLoading, allNewsLoading, setIsLoading]);
-
-  // useEffect(() => {
-  //   setIsError(latestNewsError || allNewsError);
-  // }, [latestNewsError, allNewsError, setIsError]);
 
   return (
     <StyledHomeContainer>
