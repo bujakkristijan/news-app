@@ -14,12 +14,12 @@ export const StyledSpinnerWrapper = styled.div`
 `;
 
 export const StyledSpinner = styled.div`
-  width: 48px;
-  height: 48px;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   display: inline-block;
   position: relative;
-  border: 3px solid;
+  border: 0.25rem solid;
   border-color: #fff #fff #3381ff;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
@@ -33,10 +33,10 @@ export const StyledSpinner = styled.div`
     top: 0;
     bottom: 0;
     margin: auto;
-    border: 3px solid;
+    border: 0.25rem solid;
     border-color: transparent #3381ff #3381ff;
-    width: 24px;
-    height: 24px;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     animation: rotationBack 0.5s linear infinite;
     transform-origin: center center;

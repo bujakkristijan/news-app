@@ -37,7 +37,7 @@ export const Home = () => {
     isError: allNewsError,
   } = useQuery<NewsPostPublicAPI[], Error>("allNews", getAllNews);
 
-  if (latestNewsLoading || allNewsLoading) return <LoadingSpinner />;
+  return <LoadingSpinner />;
   if (latestNewsError || allNewsError) return <ErrorFetch />;
 
   return (
