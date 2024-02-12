@@ -3,14 +3,12 @@ import { NewsCard } from "../card/news-card/NewsCard";
 import { formatDate } from "../../helper/format-date/formatDate";
 import { StyledNewsMainContainer } from "./NewsList.styled";
 import { NewsPostPublicAPI } from "../../shared/types/new-post/newPost";
-import {
-  StyledAllNewsContainer,
-  StyledLatestNewsContainer,
-} from "../../pages/home/Home.style";
+import { StyledAllNewsContainer } from "../../pages/home/Home.style";
+import { ContainerType } from "../../shared/types/container/container";
 type AllNewsProps = {
   title: string;
-  newsPosts?: NewsPostPublicAPI[];
-  container?: typeof StyledAllNewsContainer | typeof StyledLatestNewsContainer;
+  newsPosts: NewsPostPublicAPI[];
+  container?: ContainerType;
   isActive?: boolean;
 };
 
@@ -24,7 +22,7 @@ export const NewsList = ({
     <StyledNewsMainContainer>
       <Headline title={title} isActive={isActive} />
       <Container>
-        {newsPosts?.map((post) => (
+        {newsPosts.map((post) => (
           <NewsCard
             key={post.article_id}
             title={post.title}
