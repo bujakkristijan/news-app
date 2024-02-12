@@ -9,6 +9,7 @@ export const AllNews = () => {
   const allNewsQuery = useQuery<NewsPostPublicAPI[], Error>({
     queryKey: "allNews",
     queryFn: getAllNews,
+    staleTime: 120000,
   });
 
   const {
