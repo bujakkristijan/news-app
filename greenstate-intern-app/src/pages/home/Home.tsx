@@ -28,13 +28,11 @@ export const Home = () => {
   const latestNewsQuery = useQuery<NewsPostPublicAPI[], Error>({
     queryKey: QueryKeys.LatestNews,
     queryFn: getLatestNews,
-    staleTime: 120000,
   });
 
   const allNewsQuery = useQuery<NewsPostPublicAPI[], Error>({
     queryKey: QueryKeys.AllNews,
     queryFn: getAllNews,
-    staleTime: 120000,
   });
 
   const {

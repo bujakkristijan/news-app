@@ -5,7 +5,13 @@ import { router } from "./router/Router";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 function App() {
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: Infinity,
+      },
+    },
+  });
 
   return (
     <>
