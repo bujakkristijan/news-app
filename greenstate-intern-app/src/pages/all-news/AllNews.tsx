@@ -16,7 +16,6 @@ export const AllNews = () => {
 
   const onGoBackClick = () => {
     navigate(routes.root);
-    window.scrollTo(0, 0);
   };
 
   const {

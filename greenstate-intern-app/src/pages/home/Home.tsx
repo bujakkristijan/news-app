@@ -28,7 +28,6 @@ export const Home = () => {
 
   const onGoBackClick = () => {
     navigate(routes.root);
-    window.scrollTo(0, 0);
   };
 
   const {
