@@ -1,4 +1,4 @@
-export type NewsPostPublicAPI = {
+export type NewsPost = {
   title: string;
   description: string;
   image_url: string;
@@ -6,6 +6,6 @@ export type NewsPostPublicAPI = {
   article_id: string;
 };
 
-export type NewsPostPublicAPIResponse = {
-  results: NewsPostPublicAPI[];
+export type NewsPostResponse = {
+  results: NewsPost[];
 };

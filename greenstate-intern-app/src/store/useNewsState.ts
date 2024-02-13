@@ -1,13 +1,13 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
-import { NewsPostPublicAPI } from "../api/responses/newsPost";
+import { NewsPost } from "../api/responses/newsPost";
 
 export type NewsState = {
-  allNewsPosts: NewsPostPublicAPI[];
-  latestNewsPosts: NewsPostPublicAPI[];
-  addNewsPostToLatest: (newPost: NewsPostPublicAPI) => void;
-  addNewsPostToAll: (newPost: NewsPostPublicAPI) => void;
+  allNewsPosts: NewsPost[];
+  latestNewsPosts: NewsPost[];
+  addNewsPostToLatest: (newPost: NewsPost) => void;
+  addNewsPostToAll: (newPost: NewsPost) => void;
   removeAllNewsPosts: () => void;
 };
 
@@ -16,11 +16,11 @@ export const useNewsState = create<NewsState>()(
     immer((set) => ({
       allNewsPosts: [],
       latestNewsPosts: [],
-      addNewsPostToAll: (newPost: NewsPostPublicAPI) =>
+      addNewsPostToAll: (newPost: NewsPost) =>
         set((state) => {
           state.allNewsPosts.push(newPost);
         }),
-      addNewsPostToLatest: (newPost: NewsPostPublicAPI) =>
+      addNewsPostToLatest: (newPost: NewsPost) =>
         set((state) => {
           state.latestNewsPosts.push(newPost);
         }),

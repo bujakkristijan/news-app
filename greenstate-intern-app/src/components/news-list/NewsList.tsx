@@ -2,12 +2,12 @@ import { Headline } from "../headline/Headline";
 import { NewsCard } from "../card/news-card/NewsCard";
 import { formatDate } from "../../helper/format-date/formatDate";
 import { StyledNewsMainContainer } from "./NewsList.styled";
-import { NewsPostPublicAPI } from "../../api/responses/newsPost";
-import { StyledAllNewsContainer } from "../../pages/home/Home.style";
+import { NewsPost } from "../../api/responses/newsPost";
+import { StyledAllNewsContainer } from "./NewsList.styled";
 import { ContainerType } from "../../shared/types/container/container";
 type AllNewsProps = {
   title: string;
-  newsPosts: NewsPostPublicAPI[];
+  newsPosts: NewsPost[];
   container?: ContainerType;
   isActive?: boolean;
 };

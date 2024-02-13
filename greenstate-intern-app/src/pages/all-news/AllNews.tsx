@@ -3,14 +3,12 @@ import { StyledAllNewsMainContainer } from "./AllNews.styles";
 import { StyledAllNewsContainer } from "../home/Home.style";
 import { useQuery } from "react-query";
 import { axiosInstance } from "../../api/instance/axiosInstance";
-import {
-  NewsPostPublicAPI,
-  NewsPostPublicAPIResponse,
-} from "../../api/responses/newsPost";
+import { NewsPostResponse } from "../../api/responses/newsPost";
 import { PageStateContainer } from "../../components/page-state-container/PageStateContainer";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../router/routes";
 import { QueryKeys } from "../../enums/query-keys/queryKeys";
+import { AxiosResponse } from "axios";
 export const AllNews = () => {
   const navigate = useNavigate();
 
@@ -22,12 +20,9 @@ export const AllNews = () => {
     data: allNewsPosts,
     isLoading: allNewsLoading,
     isError: allNewsError,
-  } = useQuery<NewsPostPublicAPI[], Error>({
+  } = useQuery<AxiosResponse<NewsPostResponse>>({
     queryKey: QueryKeys.ALL_NEWS,
-    queryFn: async () => {
-      const response = await axiosInstance.get<NewsPostPublicAPIResponse>("");
-      return response.data.results;
-    },
+    queryFn: () => axiosInstance.get(""),
   });
 
   return (
@@ -41,7 +36,7 @@ export const AllNews = () => {
       <StyledAllNewsMainContainer>
         <NewsList
           title="All news"
-          newsPosts={allNewsPosts || []}
+          newsPosts={allNewsPosts?.data.results || []}
           container={StyledAllNewsContainer}
         />
       </StyledAllNewsMainContainer>

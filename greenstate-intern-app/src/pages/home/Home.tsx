@@ -14,10 +14,8 @@ import { routes } from "../../router/routes";
 import { PageStateContainer } from "../../components/page-state-container/PageStateContainer";
 import { QueryKeys } from "../../enums/query-keys/queryKeys";
 import { axiosInstance } from "../../api/instance/axiosInstance";
-import {
-  NewsPostPublicAPIResponse,
-  NewsPostPublicAPI,
-} from "../../api/responses/newsPost";
+import { AxiosResponse } from "axios";
+import { NewsPostResponse } from "../../api/responses/newsPost";
 export const Home = () => {
   const navigate = useNavigate();
 
@@ -34,28 +32,23 @@ export const Home = () => {
     data: latestNewsPosts,
     isLoading: latestNewsLoading,
     isError: latestNewsError,
-  } = useQuery<NewsPostPublicAPI[], Error>({
+  } = useQuery<AxiosResponse<NewsPostResponse>>({
     queryKey: QueryKeys.LATEST_NEWS,
-    queryFn: async () => {
-      const response = await axiosInstance.get<NewsPostPublicAPIResponse>("", {
+    queryFn: () =>
+      axiosInstance.get("", {
         params: {
           size: 5,
         },
-      });
-      return response.data.results;
-    },
+      }),
   });
 
   const {
     data: allNewsPosts,
     isLoading: allNewsLoading,
     isError: allNewsError,
-  } = useQuery<NewsPostPublicAPI[], Error>({
+  } = useQuery<AxiosResponse<NewsPostResponse>>({
     queryKey: QueryKeys.ALL_NEWS,
-    queryFn: async () => {
-      const response = await axiosInstance.get<NewsPostPublicAPIResponse>("");
-      return response.data.results;
-    },
+    queryFn: () => axiosInstance.get(""),
   });
 
   return (
@@ -74,7 +67,7 @@ export const Home = () => {
         <NewsList
           title="Latest news"
           isActive={true}
-          newsPosts={latestNewsPosts || []}
+          newsPosts={latestNewsPosts?.data.results || []}
           container={StyledLatestNewsContainer}
         />
         <TrustCard
@@ -83,7 +76,7 @@ export const Home = () => {
         />
         <NewsList
           title="All news"
-          newsPosts={allNewsPosts || []}
+          newsPosts={allNewsPosts?.data.results || []}
           container={StyledAllNewsContainer}
         />
         <ButtonWrapper>
