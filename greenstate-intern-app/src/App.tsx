@@ -9,7 +9,7 @@ function App() {
     defaultOptions: {
       queries: {
         staleTime: Infinity,
-        cacheTime: 300000,
+        cacheTime: Infinity,
       },
     },
   });

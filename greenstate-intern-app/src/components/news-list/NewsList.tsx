@@ -2,7 +2,7 @@ import { Headline } from "../headline/Headline";
 import { NewsCard } from "../card/news-card/NewsCard";
 import { formatDate } from "../../helper/format-date/formatDate";
 import { StyledNewsMainContainer } from "./NewsList.styled";
-import { NewsPostPublicAPI } from "../../shared/types/new-post/newPost";
+import { NewsPostPublicAPI } from "../../api/responses/newsPost";
 import { StyledAllNewsContainer } from "../../pages/home/Home.style";
 import { ContainerType } from "../../shared/types/container/container";
 type AllNewsProps = {

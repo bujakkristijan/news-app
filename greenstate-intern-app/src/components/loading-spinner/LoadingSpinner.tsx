@@ -1,5 +1,5 @@
 import { Puff } from "react-loader-spinner";
-import { StyledSpinnerWrapper } from "./LoadingSpinner.styles";
+import { StyledSpinnerWrapper } from "./LoadingSpinnerWrapper.styles";
 
 export const LoadingSpinner = () => {
   return (

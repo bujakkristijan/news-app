@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
-import { NewsPostPublicAPI } from "../shared/types/new-post/newPost";
+import { NewsPostPublicAPI } from "../api/responses/newsPost";
 
 export type NewsState = {
   allNewsPosts: NewsPostPublicAPI[];

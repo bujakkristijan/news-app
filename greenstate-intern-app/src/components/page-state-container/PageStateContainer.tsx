@@ -1,39 +1,37 @@
 import { ReactNode } from "react";
 import { LoadingSpinner } from "../../components/loading-spinner/LoadingSpinner";
-import { StyledErrorFetchWrapper } from "./PageStateContainer.styles";
+import { StyledPageStateContainer } from "./PageStateContainer.styles";
 import { DataStatus } from "../data-status/DataStatus";
 import { ErrorFetchIcon } from "../../assets/icons/ErrorFetchIcon";
-import { routes } from "../../router/routes";
-import { useNavigate } from "react-router-dom";
 
 type PageStateContainerProps = {
   isLoading: boolean;
   isError: boolean;
   children: ReactNode;
+  onClick: () => void;
+  title: string;
+  description: string;
 };
 
 export const PageStateContainer = ({
   isLoading,
   isError,
   children,
+  onClick,
+  title,
+  description,
 }: PageStateContainerProps) => {
-  const navigate = useNavigate();
-
-  const handleGoBackClick = () => {
-    navigate(routes.root);
-  };
-
   if (isLoading) return <LoadingSpinner />;
   if (isError)
     return (
-      <StyledErrorFetchWrapper>
+      <StyledPageStateContainer>
         <DataStatus
           icon={ErrorFetchIcon}
-          onClick={handleGoBackClick}
-          title="Something went wrong!"
-          description="An error occurred while attempting to retrieve data from the server."
+          onClick={onClick}
+          title={title}
+          description={description}
         />
-      </StyledErrorFetchWrapper>
+      </StyledPageStateContainer>
     );
   return <>{children}</>;
 };

@@ -1,9 +1,10 @@
 import axios from "axios";
+import { environmentVariables } from "../env/environmentVariables";
 
 export const axiosInstance = axios.create({
   baseURL: "https://newsdata.io/api/1/news",
   params: {
-    apikey: import.meta.env.VITE_REACT_APP_NEWS_API_KEY,
+    apikey: environmentVariables.newsApiKey,
     country: "au,us",
     image: 1,
   },

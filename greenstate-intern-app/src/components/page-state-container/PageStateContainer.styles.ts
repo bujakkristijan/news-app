@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const StyledErrorFetchWrapper = styled.div`
+export const StyledPageStateContainer = styled.div`
   position: fixed;
   top: 0;
   left: 0;
