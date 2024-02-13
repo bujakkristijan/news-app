@@ -2,7 +2,7 @@ import { NewsList } from "../../components/news-list/NewsList";
 import { StyledAllNewsMainContainer } from "./AllNews.styles";
 import { StyledAllNewsContainer } from "../home/Home.style";
 import { useQuery } from "react-query";
-import { axiosInstance } from "../../api/axiosInstance";
+import { axiosInstance } from "../../api/instance/axiosInstance";
 import {
   NewsPostPublicAPI,
   NewsPostPublicAPIResponse,

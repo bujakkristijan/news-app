@@ -13,7 +13,7 @@ import { useQuery } from "react-query";
 import { routes } from "../../router/routes";
 import { PageStateContainer } from "../../components/page-state-container/PageStateContainer";
 import { QueryKeys } from "../../enums/query-keys/queryKeys";
-import { axiosInstance } from "../../api/axiosInstance";
+import { axiosInstance } from "../../api/instance/axiosInstance";
 import {
   NewsPostPublicAPIResponse,
   NewsPostPublicAPI,
