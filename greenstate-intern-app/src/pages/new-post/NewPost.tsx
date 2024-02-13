@@ -10,7 +10,7 @@ import { StyledForm } from "./NewPost.styled";
 import { NewPostData, formFieldNames } from "./createNewPostSchema";
 import { useNewsState } from "../../store/useNewsState";
 import { generateUniqueId } from "../../helper/generate-unique-id/generateUniqueId";
-import { alertError, alertSuccess } from "../../shared/alert/alert";
+import { alertError, alertSuccess } from "../../helper/alert/alert";
 
 export const NewPost = () => {
   const { addNewsPostToLatest, addNewsPostToAll } = useNewsState();
