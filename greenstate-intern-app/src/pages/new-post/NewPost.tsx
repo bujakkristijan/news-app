@@ -27,12 +27,16 @@ export const NewPost = () => {
   const onSubmit = async (data: NewPostData) => {
     try {
       addNewsPostToLatest({
-        ...data,
+        title: data.title,
+        description: data.description,
+        image_url: data.imageUrl,
         pubDate: new Date().toString(),
         article_id: generateUniqueId(),
       });
       addNewsPostToAll({
-        ...data,
+        title: data.title,
+        description: data.description,
+        image_url: data.imageUrl,
         pubDate: new Date().toString(),
         article_id: generateUniqueId(),
       });
@@ -67,9 +71,9 @@ export const NewPost = () => {
         <Input
           label="Link"
           type="text"
-          {...register(formFieldNames.image_url)}
+          {...register(formFieldNames.imageUrl)}
           placeholder="URL"
-          error={errors[formFieldNames.image_url]?.message}
+          error={errors[formFieldNames.imageUrl]?.message}
         />
         <Button type="submit" size="xlg" color="white" fill={true}>
           Create post
