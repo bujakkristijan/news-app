@@ -7,7 +7,7 @@ import { NotFoundWrapper } from "./NotFound.styles";
 export const NotFound = () => {
   const navigate = useNavigate();
 
-  const goBackToHome = () => {
+  const handleGoBackClick = () => {
     navigate(routes.root);
   };
 
@@ -15,7 +15,7 @@ export const NotFound = () => {
     <NotFoundWrapper>
       <DataStatus
         icon={Error404Icon}
-        onClick={goBackToHome}
+        onClick={handleGoBackClick}
         title="Page not found"
         description="We apologize for the inconvenience, but it appears that the page you
         are attempting to access is currently unavailable. This might be due

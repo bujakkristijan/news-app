@@ -1,26 +1,32 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { NewPostDataWithDate } from "../shared/types/new-post/newPost";
 import { immer } from "zustand/middleware/immer";
-import { initialNewsPosts } from "../shared/data/news-post/initialNewsPost";
+import { NewsPost } from "../api/responses/newsPost";
 
 export type NewsState = {
-  newsPosts: NewPostDataWithDate[];
-  addNewsPost: (newPost: NewPostDataWithDate) => void;
+  allNewsPosts: NewsPost[];
+  latestNewsPosts: NewsPost[];
+  addNewsPostToLatest: (newPost: NewsPost) => void;
+  addNewsPostToAll: (newPost: NewsPost) => void;
   removeAllNewsPosts: () => void;
 };
 
 export const useNewsState = create<NewsState>()(
   persist(
     immer((set) => ({
-      newsPosts: initialNewsPosts,
-      addNewsPost: (newPost: NewPostDataWithDate) =>
-        set((state: NewsState) => {
-          state.newsPosts.push(newPost);
+      allNewsPosts: [],
+      latestNewsPosts: [],
+      addNewsPostToAll: (newPost: NewsPost) =>
+        set((state) => {
+          state.allNewsPosts.push(newPost);
+        }),
+      addNewsPostToLatest: (newPost: NewsPost) =>
+        set((state) => {
+          state.latestNewsPosts.push(newPost);
         }),
       removeAllNewsPosts: () =>
-        set((state: NewsState) => {
-          state.newsPosts = [];
+        set((state) => {
+          state.allNewsPosts = [];
         }),
     })),
     {

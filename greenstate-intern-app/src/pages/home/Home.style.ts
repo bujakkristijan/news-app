@@ -9,15 +9,18 @@ export const StyledLatestNewsContainer = styled.div`
   overflow-x: auto;
 `;
 
+export const StyledAllNewsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18.438rem, 1fr));
+  gap: 1.25rem;
+  justify-content: center;
+`;
+
 export const StyledHomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   margin-bottom: 2.25rem;
-`;
-
-export const StyledLatestNewsCard = styled.div`
-  min-width: 18.438rem;
 `;
 
 export const ButtonWrapper = styled.div`

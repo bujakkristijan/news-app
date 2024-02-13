@@ -2,14 +2,26 @@ import GlobalStyles from "./global-styles/GlobalStyles";
 import ThemeProvider from "./shared/theme/ThemeProvider";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router/Router";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 function App() {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: Infinity,
+        cacheTime: Infinity,
+      },
+    },
+  });
+
   return (
     <>
-      <ThemeProvider>
-        <GlobalStyles />
-        <RouterProvider router={router} />
-      </ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider>
+          <GlobalStyles />
+          <RouterProvider router={router} />
+        </ThemeProvider>
+      </QueryClientProvider>
     </>
   );
 }

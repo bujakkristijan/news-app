@@ -1,53 +1,90 @@
 import { TrustCard } from "../../components/card/trust-card/TrustCard";
-import { useNewsState } from "../../store/useNewsState";
-import { StyledLatestNewsContainer } from "./Home.style";
-import { Headline } from "../../components/headline/Headline";
-import { NewsCard } from "../../components/card/news-card/NewsCard";
-import { formatDate } from "../../helper/format-date/formatDate";
-import { StyledHomeContainer } from "./Home.style";
+import {
+  StyledLatestNewsContainer,
+  StyledHomeContainer,
+  ButtonWrapper,
+  StyledAllNewsContainer,
+} from "./Home.style";
 import { Banner } from "../../components/banner/Banner";
 import { Button } from "../../components/button/Button";
-import { ButtonWrapper } from "./Home.style";
 import { useNavigate } from "react-router-dom";
-import { HeaderNewsList } from "../../components/all-news/HeaderNewsList";
-
+import { NewsList } from "../../components/news-list/NewsList";
+import { useQuery } from "react-query";
+import { routes } from "../../router/routes";
+import { PageStateContainer } from "../../components/page-state-container/PageStateContainer";
+import { QueryKeys } from "../../enums/query-keys/queryKeys";
+import { axiosInstance } from "../../api/instance/axiosInstance";
+import { AxiosResponse } from "axios";
+import { NewsPostResponse } from "../../api/responses/newsPost";
 export const Home = () => {
-  const { newsPosts } = useNewsState();
   const navigate = useNavigate();
 
   const onAllNewsClick = () => {
-    navigate("/all-news");
+    navigate(routes.allNews);
     window.scrollTo(0, 0);
   };
+
+  const onGoBackClick = () => {
+    navigate(routes.root);
+  };
+
+  const {
+    data: latestNewsPosts,
+    isLoading: latestNewsLoading,
+    isError: latestNewsError,
+  } = useQuery<AxiosResponse<NewsPostResponse>>({
+    queryKey: QueryKeys.LATEST_NEWS,
+    queryFn: () =>
+      axiosInstance.get("", {
+        params: {
+          size: 5,
+        },
+      }),
+  });
+
+  const {
+    data: allNewsPosts,
+    isLoading: allNewsLoading,
+    isError: allNewsError,
+  } = useQuery<AxiosResponse<NewsPostResponse>>({
+    queryKey: QueryKeys.ALL_NEWS,
+    queryFn: () => axiosInstance.get(""),
+  });
+
   return (
-    <StyledHomeContainer>
-      <Banner
-        title="The best news always available"
-        description="On all devices, always on time"
-      />
-      <Headline isActive={true} title="Latest news" />
-      <StyledLatestNewsContainer>
-        {newsPosts.map((post) => (
-          <NewsCard
-            key={post.id}
-            title={post.title}
-            description={post.description}
-            imageURL={post.url}
-            date={post.date}
-            isActive={post.date === formatDate(new Date().toString())}
-          ></NewsCard>
-        ))}
-      </StyledLatestNewsContainer>
-      <TrustCard
-        title="News Recognized for Unparalleled Objectivity"
-        description="Our News has been acknowledged for its unparalleled commitment to objectivity, standing out in an era where unbiased reporting is increasingly valued"
-      ></TrustCard>
-      <HeaderNewsList title="All news" newsPosts={newsPosts} />
-      <ButtonWrapper>
-        <Button size="xlg" onClick={onAllNewsClick}>
-          View all news
-        </Button>
-      </ButtonWrapper>
-    </StyledHomeContainer>
+    <PageStateContainer
+      isLoading={allNewsLoading || latestNewsLoading}
+      isError={allNewsError || latestNewsError}
+      onClick={onGoBackClick}
+      title="Something went wrong!"
+      description="An error occurred while attempting to retrieve data from the server."
+    >
+      <StyledHomeContainer>
+        <Banner
+          title="The best news always available"
+          description="On all devices, always on time"
+        />
+        <NewsList
+          title="Latest news"
+          isActive={true}
+          newsPosts={latestNewsPosts?.data.results || []}
+          container={StyledLatestNewsContainer}
+        />
+        <TrustCard
+          title="News Recognized for Unparalleled Objectivity"
+          description="Our News has been acknowledged for its unparalleled commitment to objectivity, standing out in an era where unbiased reporting is increasingly valued"
+        />
+        <NewsList
+          title="All news"
+          newsPosts={allNewsPosts?.data.results || []}
+          container={StyledAllNewsContainer}
+        />
+        <ButtonWrapper>
+          <Button size="xlg" onClick={onAllNewsClick}>
+            View all news
+          </Button>
+        </ButtonWrapper>
+      </StyledHomeContainer>
+    </PageStateContainer>
   );
 };

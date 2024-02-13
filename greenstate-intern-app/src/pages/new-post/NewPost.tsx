@@ -9,12 +9,11 @@ import { Button } from "../../components/button/Button";
 import { StyledForm } from "./NewPost.styled";
 import { NewPostData, formFieldNames } from "./createNewPostSchema";
 import { useNewsState } from "../../store/useNewsState";
-import { formatDate } from "../../helper/format-date/formatDate";
 import { generateUniqueId } from "../../helper/generate-unique-id/generateUniqueId";
 import { alertError, alertSuccess } from "../../shared/alert/alert";
 
 export const NewPost = () => {
-  const { addNewsPost } = useNewsState();
+  const { addNewsPostToLatest, addNewsPostToAll } = useNewsState();
   const {
     handleSubmit,
     register,
@@ -27,10 +26,19 @@ export const NewPost = () => {
 
   const onSubmit = async (data: NewPostData) => {
     try {
-      addNewsPost({
-        ...data,
-        date: formatDate(new Date().toString()),
-        id: generateUniqueId(),
+      addNewsPostToLatest({
+        title: data.title,
+        description: data.description,
+        image_url: data.imageUrl,
+        pubDate: new Date().toString(),
+        article_id: generateUniqueId(),
+      });
+      addNewsPostToAll({
+        title: data.title,
+        description: data.description,
+        image_url: data.imageUrl,
+        pubDate: new Date().toString(),
+        article_id: generateUniqueId(),
       });
       await alertSuccess("Succesfully added new post!");
       reset();
@@ -63,9 +71,9 @@ export const NewPost = () => {
         <Input
           label="Link"
           type="text"
-          {...register(formFieldNames.url)}
+          {...register(formFieldNames.imageUrl)}
           placeholder="URL"
-          error={errors[formFieldNames.url]?.message}
+          error={errors[formFieldNames.imageUrl]?.message}
         />
         <Button type="submit" size="xlg" color="white" fill={true}>
           Create post
