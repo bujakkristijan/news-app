@@ -22,8 +22,8 @@ export const StyledTextContainer = styled.div`
 `;
 
 export const StyledImageBanner = styled.img`
-    height: 4rem;
-    @media ${breakpoints.tablet} {
+  height: 4rem;
+  @media ${breakpoints.tablet} {
     height: 5.938rem;
   }
 `;
