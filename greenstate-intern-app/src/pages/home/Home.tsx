@@ -61,7 +61,7 @@ export const Home = () => {
     >
       <StyledHomeContainer>
         <Banner
-          title="The best news always available"
+          title="The best news always available test 123"
           description="On all devices, always on time"
         />
         <NewsList
