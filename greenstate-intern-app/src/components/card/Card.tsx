@@ -22,7 +22,7 @@ export const Card = ({
   bgColor = "white",
   padding = "1rem",
   borderColor = "lightestGrey",
-  width = "fit-content",
+  width = "auto",
 }: CardProps) => {
   return (
     <StyledCard
