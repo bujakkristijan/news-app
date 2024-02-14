@@ -32,7 +32,8 @@ export const Banner = ({ title, description }: BannerProps) => {
             {description}
           </Text>
         </StyledTextContainer>
-        <StyledImageBanner src="src/assets/images/news-home-banner.png"></StyledImageBanner>
+        {/* <StyledImageBanner src="src/assets/images/news-home-banner.png"></StyledImageBanner> */}
+        <StyledImageBanner src="/news-home-banner.png"></StyledImageBanner>
       </StyledBanner>
     </Card>
   );

@@ -9,6 +9,7 @@ export const StyledBanner = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+  align-items: center;
   @media ${breakpoints.tablet} {
     padding-right: 4rem;
   }
@@ -21,5 +22,8 @@ export const StyledTextContainer = styled.div`
 `;
 
 export const StyledImageBanner = styled.img`
-  max-height: 5.938rem;
+    height: 4rem;
+    @media ${breakpoints.tablet} {
+    height: 5.938rem;
+  }
 `;
